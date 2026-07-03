@@ -1,0 +1,103 @@
+{
+  "_method": "Manual LLM-as-judge pass. src/eval_llm.py's judge_record() needs a live API call (blocked in the sandbox this was prepared in); until that's run for real, this file is Claude (the assistant in this conversation) applying eval_llm.py's exact JUDGE_PROMPT rubric by hand: read the real transcript + the cached extraction JSON for each of the 10 golden-set patients, score fidelity 1-5, and list hallucinations (asserted, unsupported) vs misses (stated, absent/wrong). This checks fidelity to the TRANSCRIPT, independent of the golden-set hand labels -- a different question from evaluate.py's field-accuracy score.",
+  "rubric": "fidelity: 5 = every field supported and nothing important missed; 1 = major invention or omission. hallucinations = fields/values asserted in the JSON the transcript does NOT support. misses = facts clearly in the transcript but absent/wrong in the JSON. Correct use of not_mentioned/unknown_churned/inferred is NOT penalized.",
+  "results": {
+    "P001": {
+      "fidelity": 4,
+      "hallucinations": [
+        "barriers includes step_therapy ('Dr. Chen brought up biologics only after both prior treatments failed') -- the transcript shows a natural treatment progression, not a stated insurance step-therapy mandate; conflates clinical sequence with payer policy."
+      ],
+      "misses": [],
+      "comment": "Dates, treatments, encounters, and the on-Humira/remission picture are all accurate and well-quoted. The extra step_therapy barrier is the one soft spot."
+    },
+    "P002": {
+      "fidelity": 4,
+      "hallucinations": [
+        "barriers includes step_therapy ('standard step therapy progression') -- same pattern as P001: the transcript's actual fight is about a $800/month tier-4 cost, never an insurance-mandated step requirement."
+      ],
+      "misses": [],
+      "comment": "Everything else (severity appropriately inferred not stated, comorbidity exclusions explained in extraction_notes, Stelara correctly 'planned' not 'on') is solid."
+    },
+    "P047": {
+      "fidelity": 4,
+      "hallucinations": [],
+      "misses": [
+        "barriers_status = not_mentioned, when unknown_churned is arguably the better call -- the transcript never raises biologics before cutting off, but the whole narrative is escalating toward that exact conversation (methotrexate already failing), so it plausibly would have surfaced next."
+      ],
+      "comment": "disease_control='partial' vs the gold 'poor' is a defensible read too (30% symptom improvement literally supports 'partial'); the gold call weighted the psychosocial collapse more heavily -- a real judgment-call difference, not a fidelity error."
+    },
+    "P048": {
+      "fidelity": 2,
+      "hallucinations": [
+        "barriers includes comorbidity_risk, and the model's OWN evidence text concedes it isn't real: '...though the stated reason for delay is surgical recovery.' It invented a second barrier its own reasoning says isn't supported."
+      ],
+      "misses": [
+        "Never picks up the stated cost_insurance barrier ('Insurance fighting everything ... May have to sell house') despite it being one of the most direct, quotable lines in the transcript.",
+        "Marks the same-admission emergency surgery as on_referral_path=true, inflating referral_steps to 3 instead of 2 (known bug, prompt fix written, not yet re-verified)."
+      ],
+      "comment": "The weakest of the 10 -- kept in the golden set and in the patient-card viewer on purpose rather than only showing clean examples."
+    },
+    "P015": {
+      "fidelity": 4,
+      "hallucinations": [],
+      "misses": [
+        "disease.location inferred as 'colonic' from 'colonoscopy is the primary diagnostic tool' -- a weak inference (colonoscopies visualize the terminal ileum too, so this doesn't actually favor colonic over ileocolonic), but honestly hedged at confidence 0.5, so this is a soft call, not an assertion."
+      ],
+      "comment": "One barrier call (labeling the Cimzia insurance denial as 'step_therapy' rather than 'cost_insurance'/'access') is a borderline version of the same over-inference pattern seen elsewhere, softened here by a real, specific insurance-denial fact anchoring it."
+    },
+    "P031": {
+      "fidelity": 4,
+      "hallucinations": [],
+      "misses": [
+        "'partial bowel obstruction (twice)' and 'scar tissue from inflammation' are listed BOTH as comorbidities and (bowel_obstruction) as a symptom flag -- these are Crohn's complications, not separate conditions, so filing them under comorbidities double-counts the same fact in two buckets.",
+        "Encounters list splits the continuous GI relationship into three separate gi_specialist entries (diagnosis, Remicade start, Stelara start) rather than one continuing relationship -- doesn't change the final referral_steps number here (derive.py's consecutive-merge logic absorbs it), but is more fragmented than the transcript supports."
+      ],
+      "comment": "No fabricated facts anywhere; the issues are classification/structure, not invention. Good demonstration of why the deterministic derive layer matters -- it neutralized the encounter over-segmentation automatically."
+    },
+    "P004": {
+      "fidelity": 3,
+      "hallucinations": [],
+      "misses": [
+        "biologic.status = 'discussed_rejected', but the transcript describes an open, ongoing, cost-blocked pursuit (Dr. Williams recommended it, patient is exploring clinical trials as an alternative) -- 'planned' fits much better than a settled rejection. NOTE: evaluate.py's Q1 scoring didn't catch this, because both 'planned' and 'discussed_rejected' collapse to the same on_biologic=False -- a real blind spot in exact-match scoring on the derived boolean, and exactly the kind of thing this manual judge pass exists to catch."
+      ],
+      "comment": "Every other field (treatments, cost figure, ER->GI encounter chain, cost_insurance barrier) is accurate. The status-value miscategorization is moderate but real."
+    },
+    "P038": {
+      "fidelity": 3,
+      "hallucinations": [
+        "symptoms includes 'fatigue', but the transcript explicitly attributes it to a different condition: 'Fatigue from kidney disease' -- crediting a stated comorbidity's symptom to the Crohn's symptom list.",
+        "barriers includes cost_insurance on thin evidence ('For insurance to approve. For something to work. Waiting is all I do.') -- generic exhaustion language, not a specific stated insurance fact the way other patients' cost barriers are."
+      ],
+      "misses": [],
+      "comment": "Also marks the pre-diagnosis rheumatologist visit as on_referral_path=true (gold treats it as off-path, a different condition) -- a legitimate judgment call already surfaced by evaluate.py, not new here. Extraction_notes correctly and transparently flags the suicidal-ideation content."
+    },
+    "P024": {
+      "fidelity": 4,
+      "hallucinations": [
+        "comorbidities includes 'obesity' -- the transcript only says 'always been bigger guy,' a colloquial hint, never a stated diagnosis."
+      ],
+      "misses": [],
+      "comment": "barriers adds comorbidity_risk with the extraction_notes itself saying 'implicitly affecting treatment escalation path' -- the prednisone/blood-sugar issue explains why prednisone was stopped early, not why the BIOLOGIC specifically is being withheld (that's squarely step_therapy per the transcript). Same recurring extra-barrier pattern as P001/P002/P048."
+    },
+    "P045": {
+      "fidelity": 4,
+      "hallucinations": [
+        "symptoms includes 'nausea_vomiting' sourced from 'The nausea is terrible' -- but that's a stated methotrexate side effect, not a baseline Crohn's symptom, similar in kind to P038's fatigue misattribution (side-effect vs. comorbidity vs. disease-symptom conflation)."
+      ],
+      "misses": [
+        "completeness='complete' when the transcript ends mid-sentence ('...it's hard...') -- the v4 truncation-detection bug, already the headline finding of this session."
+      ],
+      "comment": "severity='moderate' (vs the gold 'moderate_to_severe') is actually a thoughtfully-argued call in the extraction_notes ('not hospitalized or described as severe/fulminant') -- arguably as well-reasoned as the gold call, not a fidelity issue. barriers=['step_therapy'] is clean here, directly quoted, no extra invented barrier -- shows the over-inference pattern isn't universal."
+    }
+  },
+  "summary": {
+    "mean_fidelity": 3.6,
+    "n": 10,
+    "recurring_patterns": [
+      "Extra, unsupported barrier invented beyond the one clearly stated (P001, P002, P015-soft, P024, P038, P048) -- the single most consistent finding. The model reasons from adjacent facts (a treatment sequence, an unrelated side effect, a vague 'waiting') to a specific barrier TYPE the transcript doesn't actually assert as a reason for withholding the biologic.",
+      "Symptom list sometimes credits a stated comorbidity- or medication-side-effect-caused symptom to the Crohn's symptom list (P038 fatigue-from-kidney-disease, P045 nausea-from-methotrexate) -- a narrower, previously-undetected sibling of the treatments-conflation issue the v2 prompt fix already addressed; symptoms never got the same explicit guardrail.",
+      "The model's own self-reported `derived` sub-object (referral_steps_gp_to_prescriber) sometimes drifts from what its own `encounters`/`biologic` fields would actually compute (P002, P038) -- concrete evidence for why the pipeline discards this field and recomputes deterministically in derive.py instead of trusting it.",
+      "evaluate.py's exact-match Q1 scoring on the derived on_biologic boolean can miss a real biologic.status VALUE error, because 'planned' and 'discussed_rejected' both collapse to False (P004) -- a genuine blind spot in the automated golden-set score that this manual judge pass exists to catch."
+    ]
+  }
+}

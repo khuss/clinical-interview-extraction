@@ -1,0 +1,18 @@
+# Secrets — never commit
+.env
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS junk
+.DS_Store
+
+# Pipeline state — the raw extraction cache is regenerable (and 50 files of noise
+# in a diff), so it stays out of git. data/outputs/ (CSVs, charts, records.json,
+# analysis_summary.json) IS committed — it's the evidence behind the README's
+# answers, so a reviewer can see real results without an API key or re-running
+# anything (see src/analysis.py and src/evaluate.py's records.json fallback).
+data/cache/
+data/cache_gemini/

@@ -1,0 +1,65 @@
+{
+  "q1": {
+    "n": 50,
+    "on": 36,
+    "off": 14,
+    "unknown": 0,
+    "pct_on_point_estimate": 0.72,
+    "band_low": 0.72,
+    "band_high": 0.72,
+    "band_detail": {
+      "stated_on": 36,
+      "inferred_on": 0,
+      "unknown": 0,
+      "off": 14,
+      "n": 50,
+      "confidence_weighted_estimate": 0.72
+    }
+  },
+  "q2": {
+    "denominator_n": 14,
+    "barrier_counts": {
+      "cost_insurance": 5,
+      "step_therapy": 6,
+      "patient_fear": 5,
+      "comorbidity_risk": 5,
+      "surgery_first": 1
+    },
+    "no_barrier_identified": 1,
+    "of_which_churned_before_known": 0
+  },
+  "q3": {
+    "n": 50,
+    "class_counts": {
+      "aminosalicylate": 41,
+      "immunomodulator": 31,
+      "corticosteroid": 36,
+      "other": 5,
+      "antibiotic": 1
+    },
+    "none_tried_first": 2
+  },
+  "q4": {
+    "n_resolved": 49,
+    "not_assessable_n": 1,
+    "step_counts": {
+      "2": 30,
+      "3": 7,
+      "5": 1,
+      "1": 11
+    },
+    "mean_steps": 1.9795918367346939,
+    "entry_point_mix": {
+      "gp_pcp": 23,
+      "other_specialist": 5,
+      "er": 8,
+      "gi_specialist": 12,
+      "surgeon": 1
+    }
+  },
+  "churn": {
+    "n": 50,
+    "churned": 2,
+    "churn_rate": 0.04
+  }
+}
