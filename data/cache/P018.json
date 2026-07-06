@@ -1,0 +1,135 @@
+{
+ "patient_id": "P018",
+ "profile": {
+  "name": "Richard",
+  "age": {
+   "value": 58,
+   "status": "stated",
+   "evidence": "Richard here, 58 years old.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.5,
+   "status": "stated",
+   "evidence": "Just got hit with this Crohn's diagnosis six months ago.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "retired",
+   "status": "inferred",
+   "evidence": "Retirement was supposed to be for travel, not medical bills.",
+   "confidence": 0.95
+  },
+  "comorbidities": [
+   "type 2 diabetes",
+   "myocardial infarction (minor, 3 years ago)"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "they found inflammation throughout large intestine",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate",
+   "status": "inferred",
+   "evidence": "Multiple failed/partial treatments (prednisone, mesalamine ineffective, budesonide 'okay, not great'), ongoing symptoms, weight loss, but still ambulatory and functional",
+   "confidence": 0.7
+  },
+  "symptoms": [
+   "constipation",
+   "diarrhea",
+   "weight_loss",
+   "urgency"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Budesonide described as 'okay, not great'; still having bathroom urgency during golf; ongoing dietary restrictions",
+   "confidence": 0.8
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Blood sugars went crazy; cardiologist unhappy about steroids; tapered off",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started me on prednisone first. Blood sugars went crazy, had to increase insulin. Cardiologist wasn't happy about steroids either."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Didn't do much",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Tried mesalamine after tapering prednisone. Didn't do much."
+  },
+  {
+   "name_raw": "budesonide",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Now on something called budesonide. It's okay, not great."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI doctor",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "GI doctor wants to try biologics but I'm hesitant. Colonoscopy found inflammation throughout large intestine. Started on prednisone, then mesalamine, now budesonide. Next appointment will discuss options."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "discussed_rejected",
+   "status": "inferred",
+   "evidence": "GI doctor wants to try biologics but patient is hesitant due to fear of immunosuppression and cost/insurance concerns; patient has not agreed to start. 'Next appointment will discuss options' suggests ongoing deliberation, but patient's current stance is resistance/rejection rather than a settled plan to start.",
+   "confidence": 0.72
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "Adding immunosuppressants seems risky. What if I get sick? I help watch my grandkids twice a week. They're walking petri dishes.",
+    "overcome": false
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "These biologics, the cost alone is staggering. We're on Medicare. Coverage is complicated. Donut hole, prior authorizations.",
+    "overcome": false
+   },
+   {
+    "type": "comorbidity_risk",
+    "evidence": "Cardiologist wasn't happy about steroids; patient notes multiple comorbidities (heart attack, diabetes) and polypharmacy as reasons biologics feel risky; 'Between all my doctors, feels like they're playing medication chess with my body.'",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Only a GI specialist is mentioned; no GP/PCP referral step described explicitly, but GI is the treating specialist. Minimum 1 step (GI).",
+   "confidence": 0.6
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "budesonide"
+  ]
+ },
+ "extraction_notes": "Patient is currently on budesonide (a corticosteroid used for Crohn's). GI has recommended biologics but patient is actively resisting due to fear of immunosuppression with grandchildren exposure, cost/Medicare complexity, and polypharmacy concerns given cardiac and diabetic comorbidities. 'discussed_rejected' chosen because the biologic was explicitly raised by the GI and explicitly declined by the patient at this time, though 'next appointment will discuss options' leaves some ambiguity. Blood thinners, diabetes meds, cholesterol meds, and blood pressure meds excluded from treatments as they are for unrelated comorbidities. Insulin increase noted as consequence of prednisone adverse reaction, not a separate IBD treatment. No GP/PCP encounter explicitly described; only GI specialist mentioned."
+}

@@ -1,0 +1,6954 @@
+[
+ {
+  "patient_id": "P001",
+  "profile": {
+   "name": "Sarah",
+   "age": {
+    "value": 34,
+    "status": "stated",
+    "evidence": "34 years old",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 8.0,
+    "status": "stated",
+    "evidence": "I've been dealing with Crohn's for about eight years now. It all started when I was 26",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "marketing manager",
+    "status": "stated",
+    "evidence": "working as a marketing manager in Chicago",
+    "confidence": null
+   },
+   "comorbidities": [
+    "psoriasis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "The colonoscopy showed significant inflammation in my ileum and parts of my colon",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "stated",
+    "evidence": "She explained that Humira or Remicade could be game-changers for someone with moderate to severe Crohn's like mine.",
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "weight_loss",
+    "diarrhea"
+   ],
+   "disease_control": {
+    "value": "remission",
+    "status": "stated",
+    "evidence": "My Crohn's is mostly in remission, though I still have the occasional flare",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 0,
+    "evidence": "We started with mesalamine, 4 grams daily. I was hopeful, but after three months, there wasn't much improvement."
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "developed severe nausea and my liver enzymes went up",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Then we tried azathioprine, which actually made me feel worse. I developed severe nausea and my liver enzymes went up."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": "I've been on Humira for five years now, self-injecting every two weeks. ... My Crohn's is mostly in remission"
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gp_pcp",
+    "specialty_raw": "primary care doctor",
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 0,
+    "evidence": "My primary care doctor, Dr. Martinez, initially diagnosed me with IBS and told me to manage my stress better, eat more fiber."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": "gastroenterologist",
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Dr. Martinez referred me to a gastroenterologist, Dr. Rebecca Chen. ... That's when Dr. Chen brought up biologics. She explained that Humira or Remicade could be game-changers"
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "I've been on Humira for five years now",
+    "confidence": null
+   },
+   "drug_name": "Humira",
+   "barriers": [
+    {
+     "type": "patient_fear",
+     "evidence": "I was terrified of the injections and the potential side effects - increased infection risk, possible lymphoma.",
+     "overcome": true
+    },
+    {
+     "type": "cost_insurance",
+     "evidence": "Plus, my insurance initially denied coverage. It took three appeals and four months of back and forth before they approved it.",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 2,
+    "status": "inferred",
+    "evidence": "GP (Dr. Martinez) -> GI Specialist (Dr. Chen)",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "azathioprine",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P002",
+  "profile": {
+   "name": "Michael",
+   "age": {
+    "value": 42,
+    "status": "stated",
+    "evidence": "I'm 42",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 3.0,
+    "status": "inferred",
+    "evidence": "The digestive issues started about three years ago. Diagnosed with Crohn's.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "high school teacher",
+    "status": "stated",
+    "evidence": "I'm a high school teacher",
+    "confidence": null
+   },
+   "comorbidities": [
+    "type 2 diabetes",
+    "anemia",
+    "minor stroke",
+    "arthritis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Diagnosed with Crohn's affecting my terminal ileum and ascending colon.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "The abdominal pain got progressively worse, and I started having bloody diarrhea... Had to significantly increase my insulin. Then tried mesalamine, no improvement. Moved to methotrexate, but my liver wasn't happy... Meanwhile, I'm on budesonide, which helps somewhat but isn't a long-term solution. I've also developed anemia from the chronic bleeding... Dr. Patel keeps pushing for the biologic, saying it could change my life... I'm also dealing with arthritis now, which Dr. Patel says is related to the Crohn's.",
+    "confidence": null
+   },
+   "symptoms": [
+    "nausea_vomiting",
+    "abdominal_pain",
+    "bloody_diarrhea",
+    "anemia",
+    "joint"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "budesonide, which helps somewhat but isn't a long-term solution. The diet restrictions are killing me... I've also developed anemia from the chronic bleeding... I'm also dealing with arthritis now, which Dr. Patel says is related to the Crohn's.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "wreaked havoc on my blood sugar control",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started on prednisone for immediate relief, which wreaked havoc on my blood sugar control."
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Then tried mesalamine, no improvement."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "my liver wasn't happy, probably because of my diabetes medications",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Moved to methotrexate, but my liver wasn't happy, probably because of my diabetes medications."
+   },
+   {
+    "name_raw": "budesonide",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Meanwhile, I'm on budesonide, which helps somewhat but isn't a long-term solution."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "other_specialist",
+    "specialty_raw": "endocrinologist",
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "At first, my endocrinologist thought it was diabetic gastroparesis"
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": "gastroenterologist",
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "The abdominal pain got progressively worse, and I started having bloody diarrhea, which finally triggered a GI referral. The gastroenterologist, Dr. Patel, was thorough. Diagnosed with Crohn's... Dr. Patel wanted to start me on a biologic, specifically Stelara..."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "planned",
+    "status": "stated",
+    "evidence": "Dr. Patel wanted to start me on a biologic, specifically Stelara, but my insurance classified it as tier 4, meaning I'd have to pay $800 per month even with coverage. We're currently trying to get financial assistance from the drug company.",
+    "confidence": null
+   },
+   "drug_name": "Stelara",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "my insurance classified it as tier 4, meaning I'd have to pay $800 per month even with coverage. I'm a high school teacher, that's not feasible. The financial burden terrifies me.",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "mesalamine",
+    "methotrexate",
+    "budesonide"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P003",
+  "profile": {
+   "name": "Emma",
+   "age": {
+    "value": 28,
+    "status": "stated",
+    "evidence": "28 years old",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 12.0,
+    "status": "inferred",
+    "evidence": "diagnosed with Crohn's at 16. ... 28 years old",
+    "confidence": 1.0
+   },
+   "occupation": {
+    "value": "remote work",
+    "status": "stated",
+    "evidence": "finding remote work. That's been a game-changer for managing symptoms.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "anxiety disorder",
+    "PCOS",
+    "osteopenia",
+    "depression"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "severity": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "fatigue",
+    "joint",
+    "skin",
+    "bowel_obstruction",
+    "fistula"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Nothing really worked well. ... developed antibodies and it stopped working. Switched to Humira, worked for about two years, then lost effectiveness. Currently on Stelara every 8 weeks. The fatigue is what gets me most. ... It's joint pain, skin problems, extreme exhaustion. ... canceling dates because of flares? ... Stress is my biggest trigger. Lost three jobs due to excessive sick days",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "sulfasalazine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "Nothing really worked well.",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well."
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "Nothing really worked well.",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well."
+   },
+   {
+    "name_raw": "6-MP",
+    "drug_class": "immunomodulator",
+    "outcome": "ineffective",
+    "reason_stopped": "Nothing really worked well.",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "ineffective",
+    "reason_stopped": "Nothing really worked well.",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": "Started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well."
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "developed antibodies and it stopped working",
+    "is_current": false,
+    "sequence_index": 5,
+    "evidence": "Finally started Remicade infusions at 19. Life-changing at first, but after three years, developed antibodies and it stopped working."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "lost effectiveness",
+    "is_current": false,
+    "sequence_index": 6,
+    "evidence": "Switched to Humira, worked for about two years, then lost effectiveness."
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 7,
+    "evidence": "Currently on Stelara every 8 weeks."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gp_pcp",
+    "specialty_raw": "multiple doctors",
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Saw multiple doctors over two years before getting diagnosed."
+   },
+   {
+    "encounter_type": "surgeon",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 2,
+    "evidence": "By then, I had developed a fistula that required surgery."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 3,
+    "evidence": "Finally started Remicade infusions at 19. ... Switched to Humira ... Currently on Stelara every 8 weeks."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Currently on Stelara every 8 weeks.",
+    "confidence": null
+   },
+   "drug_name": "Stelara",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Each biologic switch required insurance pre-authorization battles that took months. ... Even with insurance, my out-of-pocket costs are about $6,000 annually.",
+     "overcome": false
+    },
+    {
+     "type": "patient_fear",
+     "evidence": "The injection anxiety never goes away, even after all these years.",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Initial 'multiple doctors' (GP/PCP) -> GI specialist (prescriber)",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "sulfasalazine",
+    "mesalamine",
+    "6-MP",
+    "methotrexate",
+    "Remicade",
+    "Humira",
+    "Stelara"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P004",
+  "profile": {
+   "name": "Robert",
+   "age": {
+    "value": 55,
+    "status": "stated",
+    "evidence": "55 years old",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.5,
+    "status": "inferred",
+    "evidence": "just diagnosed with Crohn's six months ago",
+    "confidence": 0.9
+   },
+   "occupation": {
+    "value": "construction business owner",
+    "status": "inferred",
+    "evidence": "running my construction business",
+    "confidence": 0.9
+   },
+   "comorbidities": [
+    "hypertension",
+    "high cholesterol",
+    "depression"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "stated",
+    "evidence": "extensive involvement of my colon",
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "inferred",
+    "evidence": "collapsed at a job site from dehydration and severe abdominal pain... fatigue affects my work... joint pain is getting worse... can barely manage 6 [hours of work]... can barely get out of bed... inflammation needs to be controlled to prevent complications, mentioned something about increased colon cancer risk",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "fatigue",
+    "joint"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "prednisone immediately, which helped, but he said it's not a long-term solution. Tried mesalamine next, minimal improvement. Then sulfasalazine, which gave me terrible headaches. I've been trying to manage with diet changes and budesonide, but I know it's not enough. The fatigue affects my work... The joint pain is getting worse too, some days I can barely get out of bed.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "effective",
+    "reason_stopped": "not a long-term solution",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started me on prednisone immediately, which helped, but he said it's not a long-term solution."
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": "minimal improvement",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Tried mesalamine next, minimal improvement."
+   },
+   {
+    "name_raw": "sulfasalazine",
+    "drug_class": "aminosalicylate",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "terrible headaches",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Then sulfasalazine, which gave me terrible headaches."
+   },
+   {
+    "name_raw": "budesonide",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "I've been trying to manage with diet changes and budesonide, but I know it's not enough."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Emergency room visit led to CT scan showing significant inflammation."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": "GI specialist",
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "They referred me to a GI specialist, took two months to get in. Dr. Williams did a colonoscopy and confirmed Crohn's disease... Now he wants me on a biologic, recommended Entyvio."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "planned",
+    "status": "stated",
+    "evidence": "Now he wants me on a biologic, recommended Entyvio.",
+    "confidence": null
+   },
+   "drug_name": "Entyvio",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "The problem is I'm self-employed, my insurance is catastrophic coverage only. The medication would cost me $5,000 per infusion, every 8 weeks. That's impossible.",
+     "overcome": null
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 0,
+    "status": "inferred",
+    "evidence": "Patient went to ER, then referred to GI specialist. No mention of GP/PCP in the referral chain.",
+    "confidence": 0.8
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "mesalamine",
+    "sulfasalazine",
+    "budesonide"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P005",
+  "profile": {
+   "name": "Lisa",
+   "age": {
+    "value": 31,
+    "status": "stated",
+    "evidence": "Lisa, 31, female",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 5.0,
+    "status": "stated",
+    "evidence": "diagnosed with Crohn's five years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "endometriosis",
+    "migraines"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Colonoscopy showed Crohn's in my ileum and cecum.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate",
+    "status": "inferred",
+    "evidence": "Been stable on Humira for two years now, though I still have mini-flares during my period. The fatigue affects everything - work performance, social life, relationship with my boyfriend.",
+    "confidence": null
+   },
+   "symptoms": [
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Been stable on Humira for two years now, though I still have mini-flares during my period.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started with conventional therapy - mesalamine and brief prednisone. Helped initially, but symptoms returned within months."
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Started with conventional therapy - mesalamine and brief prednisone. Helped initially, but symptoms returned within months."
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Developed pancreatitis",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Tried immunomodulators next, azathioprine specifically. Developed pancreatitis, a rare but serious side effect, spent a week in the hospital."
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "infusion center was an hour away, and taking that much time off work every 8 weeks was difficult",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": "That's when we moved to biologics. Started Remicade, but the infusion center was an hour away, and taking that much time off work every 8 weeks was difficult."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 5,
+    "evidence": "Switched to Humira for the convenience of home injections. ... Been stable on Humira for two years now, though I still have mini-flares during my period."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gp_pcp",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "doctors kept dismissing my symptoms as period-related or stress."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "Finally, a female GI doctor took me seriously and ordered proper testing. Colonoscopy showed Crohn's in my ileum and cecum."
+   },
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 3,
+    "evidence": "Developed pancreatitis, a rare but serious side effect, spent a week in the hospital."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 4,
+    "evidence": "That's when we moved to biologics. Started Remicade"
+   },
+   {
+    "encounter_type": "other_specialist",
+    "specialty_raw": "Dermatologist",
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 5,
+    "evidence": "Dermatologist says it might be Humira-induced psoriasis."
+   },
+   {
+    "encounter_type": "other_specialist",
+    "specialty_raw": "nutritionist",
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 6,
+    "evidence": "Tried working with a nutritionist, but she wasn't familiar with IBD dietary needs."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Been stable on Humira for two years now",
+    "confidence": null
+   },
+   "drug_name": "Humira",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 2,
+    "status": "inferred",
+    "evidence": "GP/PCP (dismissed) -> GI specialist (diagnosed and prescribed initial treatments/biologics)",
+    "confidence": null
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "azathioprine",
+    "Remicade",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P006",
+  "profile": {
+   "name": "Tom",
+   "age": {
+    "value": 38,
+    "status": "stated",
+    "evidence": "38",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 8.0,
+    "status": "inferred",
+    "evidence": "dealing with Crohn's for about ten years now. Took two years to get the correct Crohn's diagnosis",
+    "confidence": 0.9
+   },
+   "occupation": {
+    "value": "IT",
+    "status": "stated",
+    "evidence": "Work in IT",
+    "confidence": null
+   },
+   "comorbidities": [
+    "depression",
+    "sleep apnea",
+    "short bowel syndrome"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "small_intestine_other",
+    "status": "inferred",
+    "evidence": "small bowel follow-through showed involvement beyond the colon. Lost about 30cm of small intestine.",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "strictures requiring surgical resection. Lost about 30cm of small intestine. The fatigue is crushing some days. Crohn's symptoms often wake me anyway.",
+    "confidence": 0.8
+   },
+   "symptoms": [
+    "fatigue",
+    "bowel_obstruction",
+    "abdominal_pain"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "The fatigue is crushing some days. Crohn's symptoms often wake me anyway. Dr. Anderson, my GI, is pushing for combo therapy - adding methotrexate back at lower dose with Stelara.",
+    "confidence": 0.8
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "developed lung problems, possibly drug-related",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Post-surgery, started on methotrexate, helped for a while but developed lung problems, possibly drug-related."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "stopped working",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Switched to Humira, miraculous for three years, then stopped working."
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "Developed antibodies within six months",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Insurance wouldn't cover Stelara without failing another anti-TNF first, so tried Remicade. Developed antibodies within six months."
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Finally got Stelara approved, been on it for two years. The every 8-week injection is manageable"
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "not_started",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 5,
+    "evidence": "Dr. Anderson, my GI, is pushing for combo therapy - adding methotrexate back at lower dose with Stelara. Hesitant due to previous lung issues."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "unknown",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Initially misdiagnosed with ulcerative colitis"
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "Took two years to get the correct Crohn's diagnosis after a small bowel follow-through showed involvement beyond the colon."
+   },
+   {
+    "encounter_type": "surgeon",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 3,
+    "evidence": "By then, I'd already developed strictures requiring surgical resection."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": "Dr. Anderson, my GI",
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 4,
+    "evidence": "Switched to Humira... Insurance wouldn't cover Stelara without failing another anti-TNF first, so tried Remicade. Finally got Stelara approved... Dr. Anderson, my GI, is pushing for combo therapy - adding methotrexate back at lower dose with Stelara."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Finally got Stelara approved, been on it for two years.",
+    "confidence": null
+   },
+   "drug_name": "Stelara",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance wouldn't cover Stelara without failing another anti-TNF first",
+     "overcome": true
+    },
+    {
+     "type": "cost_insurance",
+     "evidence": "though expensive even with insurance. Copay assistance program helps, but always worried it'll end.",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 4,
+    "status": "inferred",
+    "evidence": "Sequence of encounters from initial misdiagnosis to GI specialist prescribing biologics.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "methotrexate",
+    "Humira",
+    "Remicade",
+    "Stelara",
+    "methotrexate"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P007",
+  "profile": {
+   "name": "Jennifer",
+   "age": {
+    "value": 45,
+    "status": "stated",
+    "evidence": "I'm Jennifer, 45",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 3.0,
+    "status": "stated",
+    "evidence": "diagnosed with Crohn's three years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "teacher",
+    "status": "stated",
+    "evidence": "Work full-time as a teacher",
+    "confidence": null
+   },
+   "comorbidities": [
+    "hypothyroid",
+    "fibromyalgia",
+    "Vitamin D deficiency",
+    "Osteoporosis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "small_intestine_other",
+    "status": "stated",
+    "evidence": "extensive small bowel disease",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Started aggressively with prednisone and azathioprine combination. GI doctor recommended biologics immediately given my age and disease extent. Still have breakthrough symptoms.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "weight_loss",
+    "diarrhea"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Been stable-ish for 18 months. Still have breakthrough symptoms, especially during stress.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Tapered off after three months.",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started aggressively with prednisone and azathioprine combination. Prednisone gave me moon face, insomnia, mood swings - my teenage kids didn't recognize me. Tapered off after three months."
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "and azathioprine combination. Azathioprine alone wasn't holding things."
+   },
+   {
+    "name_raw": "Entyvio",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": "Started Entyvio as insurance covered it better than others. Been stable-ish for 18 months. Still have breakthrough symptoms, especially during stress."
+   },
+   {
+    "name_raw": "immunomodulator",
+    "drug_class": "immunomodulator",
+    "outcome": "not_started",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": "Next appointment discussing adding immunomodulator to Entyvio."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally, severe weight loss and persistent diarrhea led to proper GI workup. Colonoscopy and MRI enterography showed extensive small bowel disease."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "GI doctor recommended biologics immediately given my age and disease extent. Started Entyvio as insurance covered it better than others."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started Entyvio",
+    "confidence": null
+   },
+   "drug_name": "Entyvio",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "decades of misdiagnosis. Finally, severe weight loss and persistent diarrhea led to proper GI workup.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "azathioprine",
+    "entyvio",
+    "immunomodulator"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P008",
+  "profile": {
+   "name": "David",
+   "age": {
+    "value": 29,
+    "status": "stated",
+    "evidence": "David, 29",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 8.0,
+    "status": "inferred",
+    "evidence": "diagnosed with Crohn's at 21... David, 29",
+    "confidence": 1.0
+   },
+   "occupation": {
+    "value": "remote tech job",
+    "status": "stated",
+    "evidence": "chose remote tech job",
+    "confidence": null
+   },
+   "comorbidities": [
+    "ADHD",
+    "generalized anxiety",
+    "kidney stones"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "severe inflammation throughout colon and terminal ileum",
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "stated",
+    "evidence": "Emergency colonoscopy found severe inflammation",
+    "confidence": null
+   },
+   "symptoms": [
+    "fatigue",
+    "abdominal_pain",
+    "bloody_diarrhea",
+    "bowel_obstruction"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Been on Humira four years now. Starting to notice decreased effectiveness.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "partial",
+    "reason_stopped": "nausea",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "6-MP",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "pancreatitis",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "lost effectiveness",
+    "is_current": false,
+    "sequence_index": 5,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 6,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "blood in stool sent me to ER"
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "Doctor suggested biologics. Insurance required failing two conventional therapies first."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Been on Humira four years now.",
+    "confidence": null
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "step_therapy",
+     "evidence": "Insurance required failing two conventional therapies first.",
+     "overcome": null
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": null,
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P009",
+  "profile": {
+   "name": "Rachel",
+   "age": {
+    "value": 36,
+    "status": "stated",
+    "evidence": "Rachel, 36, female.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 3.0,
+    "status": "inferred",
+    "evidence": "Crohn's diagnosis came late - age 33. ... Clock is ticking at 36.",
+    "confidence": 0.9
+   },
+   "occupation": {
+    "value": "finance",
+    "status": "stated",
+    "evidence": "Chalked up to busy career in finance.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "asthma",
+    "rheumatoid arthritis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "stated",
+    "evidence": "Colonoscopy showed skip lesions throughout colon, classic Crohn's pattern.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "inferred",
+    "evidence": "Finally, hospitalization for severe dehydration and weight loss forced the issue. ... Another hospitalization convinced me. Started Entyvio infusions.",
+    "confidence": 0.8
+   },
+   "symptoms": [
+    "weight_loss",
+    "fatigue",
+    "abdominal_pain",
+    "joint",
+    "nausea_vomiting",
+    "mouth_ulcers"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Worked well for a year, then started developing joint pain. ... Entyvio losing effectiveness.",
+    "confidence": 0.8
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 0,
+    "evidence": "Started conservatively with mesalamine. Minimal improvement."
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "mood swings",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Added prednisone for flare control. The mood swings were horrible. Snapped at colleagues, cried in bathroom. Not sustainable in high-pressure job."
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "liver enzymes spiked",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Moved to azathioprine. Three months in, liver enzymes spiked. Had to stop."
+   },
+   {
+    "name_raw": "dietary modifications (SCD diet, supplements, acupuncture)",
+    "drug_class": "other",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Tried dietary modifications instead - SCD diet, supplements, acupuncture. Marginal improvement but not enough."
+   },
+   {
+    "name_raw": "Entyvio",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Started Entyvio infusions. ... Worked well for a year, then started developing joint pain. ... Entyvio losing effectiveness."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 5,
+    "evidence": "Added methotrexate for RA, which ironically might help Crohn's too. Side effects are rough - hair thinning, mouth sores, constant nausea. But the joint pain is manageable now."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "unknown",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 0,
+    "evidence": "Spent years being told IBS, stress, anxiety."
+   },
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally, hospitalization for severe dehydration and weight loss forced the issue."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "Colonoscopy showed skip lesions throughout colon, classic Crohn's pattern. Started conservatively with mesalamine. ... Doctor recommended biologics but I resisted."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started Entyvio infusions. ... Entyvio losing effectiveness. Looking into Stelara as next option.",
+    "confidence": null
+   },
+   "drug_name": "Entyvio",
+   "barriers": [
+    {
+     "type": "patient_fear",
+     "evidence": "Doctor recommended biologics but I resisted. Needle phobia since childhood. The thought of regular injections paralyzed me.",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "truncated",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 3,
+    "status": "inferred",
+    "evidence": "Spent years being told IBS, stress, anxiety. -> Finally, hospitalization for severe dehydration and weight loss forced the issue. -> Colonoscopy showed skip lesions throughout colon, classic Crohn's pattern. Started conservatively with mesalamine. ... Doctor recommended biologics but I resisted.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "azathioprine",
+    "dietary modifications (SCD diet, supplements, acupuncture)",
+    "Entyvio",
+    "methotrexate"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P010",
+  "profile": {
+   "name": "Mark",
+   "age": {
+    "value": 48,
+    "status": "stated",
+    "evidence": "48",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 5.0,
+    "status": "stated",
+    "evidence": "diagnosed with Crohn's five years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "middle management",
+    "status": "stated",
+    "evidence": "Work in middle management.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "type 2 diabetic",
+    "Crohn's-related arthritis",
+    "shingles"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Colonoscopy revealed severe ileocolonic Crohn's.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "stated",
+    "evidence": "Colonoscopy revealed severe ileocolonic Crohn's.",
+    "confidence": null
+   },
+   "symptoms": [
+    "diarrhea",
+    "weight_loss",
+    "joint",
+    "fatigue",
+    "bowel_obstruction"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Life is manageable. Not great, but manageable. ... Side effects include frequent infections. Had shingles last year, excruciating. ... Crohn's flared. ... fatigue and joint pain make it nearly impossible.",
+    "confidence": 0.8
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "effective",
+    "reason_stopped": "side_effects",
+    "is_current": false,
+    "sequence_index": 0,
+    "evidence": "Started triple therapy - prednisone, azathioprine, and mesalamine. Prednisone sent blood sugars through roof. ... Tapered prednisone after two months."
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "effective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started triple therapy - prednisone, azathioprine, and mesalamine. ... Azathioprine and mesalamine maintained remission for about a year. ... GI doctor switched approach. Stopped mesalamine, wasn't really helping. Started methotrexate for both conditions."
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "ineffective",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Started triple therapy - prednisone, azathioprine, and mesalamine. ... Azathioprine and mesalamine maintained remission for about a year. ... GI doctor switched approach. Stopped mesalamine, wasn't really helping."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Started methotrexate for both conditions. Helped joints but Crohn's flared."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Finally approved for Humira. ... Been on Humira two years. Life is manageable. Not great, but manageable. Inject every two weeks."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gp_pcp",
+    "specialty_raw": "Primary care",
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 0,
+    "evidence": "Primary care ran basic tests, all normal except elevated CRP."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": "gastroenterologist",
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Referred to gastroenterologist. ... Colonoscopy revealed severe ileocolonic Crohn's. Started triple therapy - prednisone, azathioprine, and mesalamine. ... Finally agreed to biologics. ... Finally approved for Humira."
+   },
+   {
+    "encounter_type": "other_specialist",
+    "specialty_raw": "Endocrinologist",
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 2,
+    "evidence": "Prednisone sent blood sugars through roof. Endocrinologist had to add insulin to my diabetes regimen."
+   },
+   {
+    "encounter_type": "other_specialist",
+    "specialty_raw": "Rheumatologist",
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 3,
+    "evidence": "Rheumatologist said it's enteropathic arthritis, related to Crohn's."
+   },
+   {
+    "encounter_type": "other_specialist",
+    "specialty_raw": "Nutritionist",
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 4,
+    "evidence": "Nutritionist threw up her hands."
+   },
+   {
+    "encounter_type": "other_specialist",
+    "specialty_raw": "Physical therapy",
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 5,
+    "evidence": "Physical therapy twice weekly."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Finally approved for Humira. ... Been on Humira two years.",
+    "confidence": null
+   },
+   "drug_name": "Humira",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance nightmare began. Required documentation of failure of multiple therapies. Appeals process took four months. Meanwhile, suffering. Finally approved for Humira. The co-pay even with insurance - $400 monthly. Thank god for manufacturer assistance program.",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 2,
+    "status": "inferred",
+    "evidence": "Primary care ran basic tests, all normal except elevated CRP. Referred to gastroenterologist. ... Finally agreed to biologics. ... Finally approved for Humira.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "azathioprine",
+    "mesalamine",
+    "methotrexate",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P011",
+  "profile": {
+   "name": "Jessica",
+   "age": {
+    "value": 26,
+    "status": "stated",
+    "evidence": "Jessica, 26, female",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 7.0,
+    "status": "inferred",
+    "evidence": "diagnosed with Crohn's at 19... Jessica, 26",
+    "confidence": 1.0
+   },
+   "occupation": {
+    "value": "graphic design",
+    "status": "stated",
+    "evidence": "Found remote job in graphic design.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "PCOS",
+    "severe anxiety",
+    "PTSD"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "stated",
+    "evidence": "Results showed Crohn's throughout colon.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "History of hospitalization, abscess surgery, and multiple biologic failures indicates moderate to severe disease.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "weight_loss",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Currently on Humira, but expresses ongoing uncertainty and fear of future flares/surgery.",
+    "confidence": 0.8
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "weight gain",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "major flare",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "ineffective",
+    "reason_stopped": "massive flare",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "developed antibodies",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 5,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "He immediately sent me to GI specialist. Colonoscopy at 19 was terrifying."
+   },
+   {
+    "encounter_type": "surgeon",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "Ended up needing surgery for abscess... Started Remicade after surgery."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Switched to Humira. The every-two-week injection is manageable.",
+    "confidence": 1.0
+   },
+   "drug_name": "Humira",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 2,
+    "status": "inferred",
+    "evidence": "GP to GI specialist, then GI specialist to surgery/biologic initiation.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "mesalamine",
+    "methotrexate",
+    "Remicade",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P012",
+  "profile": {
+   "name": "Paul",
+   "age": {
+    "value": 52,
+    "status": "stated",
+    "evidence": "Paul, 52, male.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 1.0,
+    "status": "stated",
+    "evidence": "Just diagnosed with Crohn's last year",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "hardware store",
+    "status": "stated",
+    "evidence": "Work part-time in hardware store.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "heart disease",
+    "high blood pressure"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "inferred",
+    "evidence": "CT showed inflammation throughout intestines.",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "moderate",
+    "status": "inferred",
+    "evidence": "Quality of life suffering, missed family gatherings, but not hospitalized for surgery.",
+    "confidence": 0.7
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "urgency",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Improvement is slow but noticeable. Energy better, less urgency.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Mesalamine alone wasn't enough."
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "effective",
+    "reason_stopped": "cardiologist worried about heart",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Prednisone helped but cardiologist worried about heart. Tapered quickly."
+   },
+   {
+    "name_raw": "sulfasalazine",
+    "drug_class": "aminosalicylate",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Terrible headaches",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Tried sulfasalazine next. Terrible headaches, had to stop."
+   },
+   {
+    "name_raw": "Entyvio",
+    "drug_class": "biologic",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Started infusions six months ago."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "severe pain sent me to ER."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "GI doctor said I'm lucky... Doctor wanted to start biologic but I resisted."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started infusions six months ago.",
+    "confidence": 1.0
+   },
+   "drug_name": "Entyvio",
+   "barriers": [
+    {
+     "type": "patient_fear",
+     "evidence": "Already take so many medications for heart. Adding immunosuppressant seemed risky.",
+     "overcome": true
+    },
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance coverage was battle. They wanted me to try anti-TNF first.",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "ER visit led to GI specialist who managed the care.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "sulfasalazine",
+    "Entyvio"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P013",
+  "profile": {
+   "name": "Amanda",
+   "age": {
+    "value": 33,
+    "status": "stated",
+    "evidence": "Amanda, 33",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 8.0,
+    "status": "inferred",
+    "evidence": "diagnosed with Crohn's at 25... 33",
+    "confidence": 1.0
+   },
+   "occupation": {
+    "value": "marketing",
+    "status": "stated",
+    "evidence": "Work in marketing",
+    "confidence": null
+   },
+   "comorbidities": [
+    "lupus"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "severity": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "symptoms": [
+    "fatigue",
+    "joint"
+   ],
+   "disease_control": {
+    "value": "remission",
+    "status": "inferred",
+    "evidence": "grateful for stability",
+    "confidence": 0.8
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": "limited help",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "drug-induced hepatitis",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": "switched to Humira",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "After colonoscopy confirmation, began standard treatment ladder."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Switched from Remicade to Humira",
+    "confidence": 1.0
+   },
+   "drug_name": "Humira",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "GI specialist managed the treatment ladder from diagnosis.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "Mesalamine",
+    "azathioprine",
+    "Remicade",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P014",
+  "profile": {
+   "name": "Brian",
+   "age": {
+    "value": 41,
+    "status": "stated",
+    "evidence": "Brian, 41, male.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 3.0,
+    "status": "stated",
+    "evidence": "Crohn's diagnosed three years ago.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "electrician",
+    "status": "stated",
+    "evidence": "Work as electrician.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "psoriasis",
+    "depression",
+    "psoriatic arthritis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "inferred",
+    "evidence": "Colonoscopy showed patchy inflammation throughout.",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Patient reports fatigue, joint pain, inability to work consistently, and need for combination biologic therapy.",
+    "confidence": 0.8
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "fatigue",
+    "joint"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Stelara helping both conditions somewhat. Not perfect but improvement.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "antispasmodics",
+    "drug_class": "other",
+    "outcome": "ineffective",
+    "reason_stopped": "useless",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "First GI saw said IBS, gave me antispasmodics. Useless."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "ineffective",
+    "reason_stopped": "did not help Crohn's",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Already on methotrexate for psoriasis, doctor hoped would help Crohn's too. Didn't."
+   },
+   {
+    "name_raw": "sulfasalazine",
+    "drug_class": "aminosalicylate",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "allergic reaction. Hives everywhere.",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Added sulfasalazine, allergic reaction. Hives everywhere."
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Started Stelara... Stelara helping both conditions somewhat."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "First GI saw said IBS"
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "Second opinion led to proper testing... Switched to biologic that could treat both conditions. Started Stelara."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started Stelara... Stelara helping both conditions somewhat.",
+    "confidence": null
+   },
+   "drug_name": "Stelara",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance battle epic. They wanted different drugs for each condition. Doctor had to prove medical necessity for combination treatment. Four months of appeals",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 2,
+    "status": "inferred",
+    "evidence": "First GI (IBS diagnosis) -> Second GI (Crohn's diagnosis and biologic initiation).",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "antispasmodics",
+    "methotrexate",
+    "sulfasalazine",
+    "Stelara"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P015",
+  "profile": {
+   "name": "Caroline",
+   "age": {
+    "value": 37,
+    "status": "stated",
+    "evidence": "I'm 37 years old",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 15.0,
+    "status": "stated",
+    "evidence": "been dealing with Crohn's disease for almost 15 years now",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "teacher",
+    "status": "stated",
+    "evidence": "starting my first real job as a teacher",
+    "confidence": null
+   },
+   "comorbidities": [
+    "chronic migraine syndrome",
+    "fibromyalgia"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "inferred",
+    "evidence": "cobblestone road appearance in colonoscopy, history of partial bowel obstruction, and current treatment with Stelara (often used for ileocolonic disease).",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "History of multiple biologic failures, hospitalization for bowel obstruction, and current need for combination therapy.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "weight_loss",
+    "fatigue",
+    "anemia",
+    "bowel_obstruction"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "It's okay, not great. Still have frequent symptoms but avoiding surgery.",
+    "confidence": 1.0
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "effective",
+    "reason_stopped": "side effects",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "flare",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "severe joint pain",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": "stopped working during pregnancy",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": "failed",
+    "is_current": false,
+    "sequence_index": 5,
+    "evidence": null
+   },
+   {
+    "name_raw": "Cimzia",
+    "drug_class": "biologic",
+    "outcome": "not_started",
+    "reason_stopped": "insurance denied",
+    "is_current": false,
+    "sequence_index": 6,
+    "evidence": null
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 7,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "demanded a referral to a specialist. The GI doctor ordered a colonoscopy"
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Been on it [Stelara] two years.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance denied it [Cimzia] three times.",
+     "overcome": null
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "stated",
+    "evidence": "demanded a referral to a specialist",
+    "confidence": null
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "mesalamine",
+    "azathioprine",
+    "Remicade",
+    "Humira",
+    "Cimzia",
+    "Stelara"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P016",
+  "profile": {
+   "name": "Steve",
+   "age": {
+    "value": 44,
+    "status": "stated",
+    "evidence": "I'm Steve, 44 years old",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 2.0,
+    "status": "stated",
+    "evidence": "my Crohn's story started about two years ago.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "construction foreman",
+    "status": "stated",
+    "evidence": "Construction foreman",
+    "confidence": null
+   },
+   "comorbidities": [
+    "back pain",
+    "alcohol use"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "inferred",
+    "evidence": "CT scan showed inflammation all through my intestines.",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Lost about 40 pounds. Look sick. Feel sick. Can't be running to the porta-potty every hour.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "urgency",
+    "weight_loss",
+    "fatigue",
+    "appetite_loss"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Lost about 40 pounds. Look sick. Feel sick. Can't be running to the porta-potty every hour.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "Didn't do much",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "made me crazy. I mean, seriously aggressive.",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "ended up in the ER. Thought I was having appendicitis... admitted me, did a colonoscopy, confirmed it was Crohn's."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "The GI doc... started explaining all these medication options... Now they want to put me on these injection things. Biologics."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "planned",
+    "status": "stated",
+    "evidence": "Now they want to put me on these injection things. Biologics.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "The cost is insane. Insurance through the union is usually good but they're fighting coverage. Something about needing to fail more medications first.",
+     "overcome": false
+    },
+    {
+     "type": "step_therapy",
+     "evidence": "Something about needing to fail more medications first.",
+     "overcome": false
+    },
+    {
+     "type": "patient_fear",
+     "evidence": "Heard they suppress your immune system. In construction, always getting cuts, exposed to stuff. Seems risky.",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "ER admission led directly to GI specialist who manages the Crohn's.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P017",
+  "profile": {
+   "name": null,
+   "age": {
+    "value": 29,
+    "status": "stated",
+    "evidence": "I'm Diana, 29",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.67,
+    "status": "stated",
+    "evidence": "Got diagnosed about eight months ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "Tech company",
+    "status": "stated",
+    "evidence": "Tech company, good benefits.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "ADHD",
+    "anxiety"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate",
+    "status": "stated",
+    "evidence": "the doctor called it mild to moderate.",
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Some weeks I'm fine, others I'm a disaster.",
+    "confidence": 0.8
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started me on mesalamine. Seemed to help at first?"
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": "So now I'm on azathioprine."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "The GI doctor is nice... She mentioned biologics but said we should try other things first."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "not_on",
+    "status": "stated",
+    "evidence": "She mentioned biologics but said we should try other things first. So now I'm on azathioprine.",
+    "confidence": null
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "not_severe_enough",
+     "evidence": "She mentioned biologics but said we should try other things first.",
+     "overcome": null
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Single GI specialist mentioned as managing the care.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "azathioprine"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P018",
+  "profile": {
+   "name": null,
+   "age": {
+    "value": 58,
+    "status": "stated",
+    "evidence": "Richard here, 58 years old.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.5,
+    "status": "stated",
+    "evidence": "Just got hit with this Crohn's diagnosis six months ago.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "type 2 diabetes",
+    "heart attack"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "stated",
+    "evidence": "they found inflammation throughout large intestine.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate",
+    "status": "inferred",
+    "evidence": "Patient is symptomatic (diarrhea, weight loss, urgency) and failing multiple therapies (prednisone, mesalamine, budesonide), suggesting moderate severity.",
+    "confidence": 0.8
+   },
+   "symptoms": [
+    "constipation",
+    "diarrhea",
+    "weight_loss",
+    "urgency"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Patient reports symptoms persist (diarrhea, urgency) and current medication (budesonide) is 'not great'.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "ineffective",
+    "reason_stopped": "blood sugars went crazy, cardiologist concerns",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started me on prednisone first. Blood sugars went crazy... Cardiologist wasn't happy about steroids"
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "Didn't do much",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Tried mesalamine after tapering prednisone. Didn't do much."
+   },
+   {
+    "name_raw": "budesonide",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": "Now on something called budesonide. It's okay, not great."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "GI doctor wants to try biologics but I'm hesitant."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": null,
+    "status": "unknown_churned",
+    "evidence": "GI doctor wants to try biologics but I'm hesitant... Next appointment will discuss options.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "comorbidity_risk",
+     "evidence": "Already on so many meds... Adding immunosuppressants seems risky. What if I get sick? I help watch my grandkids... They're walking petri dishes.",
+     "overcome": null
+    },
+    {
+     "type": "cost_insurance",
+     "evidence": "the cost alone is staggering. We're on Medicare. Coverage is complicated. Donut hole, prior authorizations.",
+     "overcome": null
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Only one GI specialist mentioned as the decision-maker.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "mesalamine",
+    "budesonide"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P019",
+  "profile": {
+   "name": "Natalie",
+   "age": {
+    "value": 24,
+    "status": "stated",
+    "evidence": "I'm Natalie, 24",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "generalized anxiety disorder"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "found inflammation in small intestine and colon",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "stated",
+    "evidence": "Moderate to severe, he said.",
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "fatigue",
+    "urgency"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Humira working okay. Not perfect but better than before. Still have breakthrough symptoms.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 1,
+    "evidence": "Started Humira right away... Humira working okay. Not perfect but better than before."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Family friend who's a GI. Did colonoscopy... Suggested aggressive treatment... Started Humira right away"
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started Humira right away",
+    "confidence": null
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance fight was real. They wanted me to fail other drugs first. Doctor wrote letters, appeals. Finally approved.",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient went directly to a family friend who is a GI for diagnosis and treatment.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P020",
+  "profile": {
+   "name": "Gary",
+   "age": {
+    "value": 46,
+    "status": "stated",
+    "evidence": "Gary, 46",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 7.0,
+    "status": "stated",
+    "evidence": "diagnosed with Crohn's about seven years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "Construction worker",
+    "status": "stated",
+    "evidence": "Construction worker",
+    "confidence": null
+   },
+   "comorbidities": [
+    "high blood pressure"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "inferred",
+    "evidence": "Colonoscopy showed severe inflammation, ulcers everywhere.",
+    "confidence": 0.9
+   },
+   "severity": {
+    "value": "severe",
+    "status": "stated",
+    "evidence": "Colonoscopy showed severe inflammation",
+    "confidence": null
+   },
+   "symptoms": [
+    "bloody_diarrhea",
+    "weight_loss",
+    "abdominal_pain",
+    "fatigue",
+    "joint",
+    "skin"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Starting to notice it's not working as well. More bathroom trips, more pain.",
+    "confidence": 0.8
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "made me rage",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "didn't do much alone",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "sulfasalazine",
+    "drug_class": "aminosalicylate",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "gave me killer headaches",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "made me so nauseous I couldn't work",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "stopped working completely",
+    "is_current": false,
+    "sequence_index": 5,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 6,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Doc pushed for biologics but insurance wanted documentation of failing everything else first."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Been on Humira three years now.",
+    "confidence": null
+   },
+   "drug_name": "Humira",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "insurance wanted documentation of failing everything else first",
+     "overcome": true
+    },
+    {
+     "type": "cost_insurance",
+     "evidence": "Another fight with insurance coming.",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Single GI specialist mentioned managing the biologic transition.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "mesalamine",
+    "sulfasalazine",
+    "methotrexate",
+    "Remicade",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P021",
+  "profile": {
+   "name": "Rachel",
+   "age": {
+    "value": 31,
+    "status": "stated",
+    "evidence": "Rachel, 31",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 5.0,
+    "status": "stated",
+    "evidence": "diagnosed five years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "Lawyer",
+    "status": "stated",
+    "evidence": "Lawyer, 80-hour weeks normal.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "endometriosis",
+    "chronic fatigue syndrome"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Colonoscopy showed Crohn's throughout colon and terminal ileum.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Patient describes failing multiple biologics, ongoing symptoms, and considering surgery/experimental trials.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "fatigue",
+    "abdominal_pain",
+    "diarrhea",
+    "urgency"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Been on it eighteen months. It's okay. Not great, just okay.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "allergic reaction during infusion",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": "effectiveness limited",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Hair started falling out",
+    "is_current": false,
+    "sequence_index": 5,
+    "evidence": null
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 6,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": null,
+    "evidence": "Third [GI] did proper testing... Moved quickly to biologics."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Been on it [Stelara] eighteen months.",
+    "confidence": null
+   },
+   "drug_name": "Stelara",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "The patient describes a sequence of three GIs, with the third being the one who performed the colonoscopy and initiated the biologic pathway.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "azathioprine",
+    "Remicade",
+    "Humira",
+    "methotrexate",
+    "Stelara"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P022",
+  "profile": {
+   "name": "James",
+   "age": {
+    "value": 35,
+    "status": "stated",
+    "evidence": "James, 35.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 2.0,
+    "status": "stated",
+    "evidence": "Crohn's hit me like a truck two years ago.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "Software engineer",
+    "status": "stated",
+    "evidence": "Software engineer, thankfully can work remotely when needed.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "medication-induced diabetes",
+    "osteoporosis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "stated",
+    "evidence": "Emergency colonoscopy confirmed severe Crohn's.",
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "bloody_diarrhea",
+    "fever"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Maybe 60% improvement... Always waiting for next result, next decision point.",
+    "confidence": 0.8
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "effective",
+    "reason_stopped": "tapered",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "High-dose prednisone for two months... Tapered prednisone"
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "partial",
+    "reason_stopped": "Helped minimally",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "started azathioprine. Helped minimally."
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "developed antibodies",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Started Remicade... after year, developed antibodies. Stopped working."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Switched to Humira... Maybe 60% improvement."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "effective",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 5,
+    "evidence": "Doctor added methotrexate... combination helping more than Humira alone."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Emergency room visit started everything."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "GI pushed for biologics quickly given severity."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Switched to Humira... combination helping more than Humira alone.",
+    "confidence": null
+   },
+   "drug_name": "Humira",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance company from hell. Denied coverage three times.",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "ER visit led to GI specialist who prescribed biologics.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "azathioprine",
+    "Remicade",
+    "Humira",
+    "methotrexate"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P023",
+  "profile": {
+   "name": "Monica",
+   "age": {
+    "value": 27,
+    "status": "stated",
+    "evidence": "Monica, 27",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 1.0,
+    "status": "stated",
+    "evidence": "diagnosed last year",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "teacher",
+    "status": "stated",
+    "evidence": "started teaching job",
+    "confidence": null
+   },
+   "comorbidities": [
+    "PCOS",
+    "depression"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "inflammation throughout colon, some in small intestine",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Required prednisone, azathioprine (pancreatitis), methotrexate, and now Humira; patient describes needing 'more aggressive' treatment.",
+    "confidence": 0.8
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Humira helping some. Maybe 40% better.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": "minimal help",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": "weight gain",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "developed pancreatitis",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "unbearable nausea",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 5,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "GI ordered colonoscopy... Doctor recommended biologics."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Finally approved for Humira... Humira helping some.",
+    "confidence": 1.0
+   },
+   "drug_name": "Humira",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance nightmare began. Needed to fail more drugs first despite pancreatitis.",
+     "overcome": null
+    },
+    {
+     "type": "patient_fear",
+     "evidence": "Injection anxiety real... Scared of medications now... fear holds back.",
+     "overcome": null
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient demanded referral to GI, who managed the biologic decision.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "azathioprine",
+    "methotrexate",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P024",
+  "profile": {
+   "name": "Derek",
+   "age": {
+    "value": 40,
+    "status": "stated",
+    "evidence": "Derek, 40",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.25,
+    "status": "stated",
+    "evidence": "just diagnosed three months ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "plumber",
+    "status": "stated",
+    "evidence": "I'm a plumber",
+    "confidence": null
+   },
+   "comorbidities": [
+    "pre-diabetic",
+    "sleep apnea"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "inferred",
+    "evidence": "Found inflammation everywhere.",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "severe",
+    "status": "inferred",
+    "evidence": "Having 15-20 bowel movements daily.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "weight_loss",
+    "fatigue",
+    "appetite_loss"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Having 15-20 bowel movements daily. Can't work like that.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 1,
+    "evidence": "Started mesalamine... Mesalamine alone not enough."
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "blood sugar went crazy",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Started... prednisone. Prednisone helped but blood sugar went crazy... Tapered off quick."
+   },
+   {
+    "name_raw": "sulfasalazine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": "Currently trying sulfasalazine."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally, new doctor took symptoms seriously. Ordered colonoscopy... Doctor wants to try biologics"
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "planned",
+    "status": "stated",
+    "evidence": "Doctor wants to try biologics but insurance saying need to fail more drugs first.",
+    "confidence": null
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "step_therapy",
+     "evidence": "insurance saying need to fail more drugs first",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "One GI specialist mentioned as the one who diagnosed and is managing the biologic request.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "sulfasalazine"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P025",
+  "profile": {
+   "name": "Sophie",
+   "age": {
+    "value": 22,
+    "status": "stated",
+    "evidence": "I'm Sophie, 22",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.5,
+    "status": "stated",
+    "evidence": "just diagnosed six months ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "severe anxiety",
+    "eating disorder"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Extensive involvement small and large intestine.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Patient required prednisone, methotrexate, and escalated to Humira within 6 months due to ongoing symptoms and weight loss.",
+    "confidence": 0.8
+   },
+   "symptoms": [
+    "weight_loss",
+    "diarrhea",
+    "bloody_diarrhea",
+    "abdominal_pain",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Weight stable now, but still experiencing pain and anxiety spirals; Humira started only two months ago.",
+    "confidence": 0.7
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "mood swings and anxiety",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Prednisone caused mood swings. With anxiety already bad, was unbearable. Tapered quickly."
+   },
+   {
+    "name_raw": "Mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Mesalamine helped little."
+   },
+   {
+    "name_raw": "Methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "ineffective",
+    "reason_stopped": "not enough",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Methotrexate not enough. Started Humira two months ago."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Started Humira two months ago. Too early to tell if working."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Went to ER. They took seriously. CT showed inflammation."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "GI consult. Colonoscopy confirmed Crohn's... GI wanted to start methotrexate."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started Humira two months ago.",
+    "confidence": 1.0
+   },
+   "drug_name": "Humira",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 2,
+    "status": "inferred",
+    "evidence": "ER visit followed by GI specialist consult.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "Prednisone",
+    "Mesalamine",
+    "Methotrexate",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P026",
+  "profile": {
+   "name": "Alan",
+   "age": {
+    "value": 50,
+    "status": "stated",
+    "evidence": "Alan, 50",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 8.0,
+    "status": "stated",
+    "evidence": "diagnosed with Crohn's eight years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "construction worker",
+    "status": "stated",
+    "evidence": "Construction worker for twenty years",
+    "confidence": null
+   },
+   "comorbidities": [
+    "Barrett's esophagus",
+    "chronic back pain"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "stated",
+    "evidence": "found inflammation in colon",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Patient has required multiple courses of prednisone, failed multiple immunomodulators, and is currently failing biologic therapy.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "diarrhea",
+    "abdominal_pain",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Remicade effectiveness dropped, failing again, symptoms persisting.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started on mesalamine for Crohn's... Minimal improvement."
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Added prednisone for bad flares. Used it four times now."
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "elevated liver enzymes",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Tried azathioprine, elevated liver enzymes. Stopped."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "made me feel drunk all the time",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": "Methotrexate next, made me feel drunk all the time."
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "effectiveness dropped",
+    "is_current": true,
+    "sequence_index": 5,
+    "evidence": "Finally went on Remicade three years ago... Now failing again."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally saw doctor. Did all the tests... Started on mesalamine... Finally went on Remicade three years ago."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Finally went on Remicade three years ago... Now failing again.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient describes a single GI specialist relationship managing the Crohn's treatment path.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "azathioprine",
+    "methotrexate",
+    "Remicade"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P027",
+  "profile": {
+   "name": "Vanessa",
+   "age": {
+    "value": 32,
+    "status": "stated",
+    "evidence": "I'm Vanessa, 32.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 4.0,
+    "status": "stated",
+    "evidence": "Diagnosed with Crohn's four years ago.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "bipolar disorder",
+    "rheumatoid arthritis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "inferred",
+    "evidence": "Colonoscopy showed severe Crohn's.",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "severe",
+    "status": "stated",
+    "evidence": "Colonoscopy showed severe Crohn's.",
+    "confidence": null
+   },
+   "symptoms": [
+    "bloody_diarrhea",
+    "fistula",
+    "joint",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Does neither well. Jack of all trades, master of none situation... Never stable. Always chaos.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": "lost effectiveness after 18 months",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "hair loss",
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally saw GI. Colonoscopy showed severe Crohn's... Started Remicade immediately after surgery."
+   },
+   {
+    "encounter_type": "surgeon",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 2,
+    "evidence": "Surgery to repair fistulas."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Switched from Remicade to Humira",
+    "confidence": null
+   },
+   "drug_name": "Humira",
+   "barriers": [
+    {
+     "type": "patient_fear",
+     "evidence": "Surgery risky with my mental health. What if become depressed during recovery? Non-compliance post-surgery could be fatal.",
+     "overcome": null
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient went from symptoms to GI specialist who diagnosed and prescribed.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "Remicade",
+    "Humira",
+    "methotrexate",
+    "prednisone"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P028",
+  "profile": {
+   "name": "Thomas",
+   "age": {
+    "value": 43,
+    "status": "stated",
+    "evidence": "Thomas, 43",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 6.0,
+    "status": "stated",
+    "evidence": "Crohn's for about six years now.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "accountant",
+    "status": "stated",
+    "evidence": "Own a small accounting firm.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "chronic kidney disease"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Colonoscopy revealed Crohn's throughout colon, some small intestine involvement.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Patient reports bathroom urgency every hour, business failure, and need for biologics, implying significant impact on daily life.",
+    "confidence": 0.8
+   },
+   "symptoms": [
+    "urgency",
+    "diarrhea"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Started Entyvio three months ago, too early to tell if working; budesonide helps somewhat but not long-term.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "kidney function started declining",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started conservatively with mesalamine. Helped initially. Then kidney function started declining. Nephrologist said stop immediately."
+   },
+   {
+    "name_raw": "budesonide",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": "Started budesonide... Helps somewhat but not long-term solution."
+   },
+   {
+    "name_raw": "Entyvio",
+    "drug_class": "biologic",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": "Started three months ago. Too early to tell if working."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "GI wants biologics but nephrologist concerned... Finally convinced doctors to try Entyvio."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Finally convinced doctors to try Entyvio... Started three months ago.",
+    "confidence": 1.0
+   },
+   "drug_name": "Entyvio",
+   "barriers": [
+    {
+     "type": "comorbidity_risk",
+     "evidence": "Nephrologist concerned. Immune suppression with kidney disease risky.",
+     "overcome": true
+    },
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance denied three times. Said not proven safe with kidney disease.",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient describes GI specialist as the primary decision maker for biologics.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "budesonide",
+    "Entyvio"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P029",
+  "profile": {
+   "name": "Linda",
+   "age": {
+    "value": 38,
+    "status": "stated",
+    "evidence": "Linda, 38",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 12.0,
+    "status": "stated",
+    "evidence": "living with Crohn's for twelve years now",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "lawyer",
+    "status": "inferred",
+    "evidence": "Made partner... briefs, arguments, strategy... Junior associates think I'm machine",
+    "confidence": 1.0
+   },
+   "comorbidities": [
+    "thyroid disease",
+    "chronic migraines"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "inferred",
+    "evidence": "Colonoscopy showed extensive disease",
+    "confidence": 0.7
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "extensive disease, history of multiple biologics, ongoing symptoms",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "bloody_diarrhea",
+    "abdominal_pain",
+    "weight_loss",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Working okay. Not great, just okay.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "minimal help",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "Prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": "side effects",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "Azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "effective",
+    "reason_stopped": "stopped working",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "Methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Hair loss",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "failed",
+    "is_current": false,
+    "sequence_index": 5,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": "less effective",
+    "is_current": false,
+    "sequence_index": 6,
+    "evidence": null
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 7,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally saw GI. Colonoscopy showed extensive disease."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Currently on Stelara.",
+    "confidence": null
+   },
+   "drug_name": "Stelara",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance fought it hard. Six months of appeals while suffering.",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient went directly to GI specialist after symptoms.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "Mesalamine",
+    "Prednisone",
+    "Azathioprine",
+    "Methotrexate",
+    "Remicade",
+    "Humira",
+    "Stelara"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P030",
+  "profile": {
+   "name": "Marcus",
+   "age": {
+    "value": 29,
+    "status": "stated",
+    "evidence": "Marcus, 29",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 2.0,
+    "status": "stated",
+    "evidence": "diagnosed two years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "tech startup founder",
+    "status": "stated",
+    "evidence": "rising star in tech startup",
+    "confidence": null
+   },
+   "comorbidities": [
+    "depression",
+    "ADHD"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "stated",
+    "evidence": "Colonoscopy showed aggressive Crohn's. Entire colon affected.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "stated",
+    "evidence": "Severe dehydration, anemia. Hospitalization. Colonoscopy showed aggressive Crohn's.",
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "weight_loss",
+    "fatigue",
+    "anemia"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Helps some. Maybe 40% better.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started high-dose prednisone."
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "body couldn't keep up",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Tried working through it. Mesalamine... but body couldn't keep up."
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "ineffective",
+    "reason_stopped": "body couldn't keep up",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "azathioprine, kept pushing. But body couldn't keep up."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Started Humira six months ago. Helps some. Maybe 40% better."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally saw doctor after collapsing at work. Severe dehydration, anemia. Hospitalization."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "Next appointment discussing Stelara or Entyvio."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started Humira six months ago.",
+    "confidence": null
+   },
+   "drug_name": "Humira",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "The patient was hospitalized and diagnosed, then managed by a GI specialist who is now discussing a switch.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "mesalamine",
+    "azathioprine",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P031",
+  "profile": {
+   "name": "Patricia",
+   "age": {
+    "value": 46,
+    "status": "stated",
+    "evidence": "Patricia, 46",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 15.0,
+    "status": "stated",
+    "evidence": "Crohn's for fifteen years.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "teacher",
+    "status": "stated",
+    "evidence": "Was teacher.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "fibromyalgia",
+    "breast cancer",
+    "depression"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "inferred",
+    "evidence": "Moderate to severe Crohn's throughout.",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "stated",
+    "evidence": "Moderate to severe Crohn's throughout.",
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "fatigue",
+    "bowel_obstruction"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Working somewhat. Better than nothing. But nowhere near remission.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": null,
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "Prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": null,
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": "cancer diagnosis",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Moved to biologics seven years ago. Remicade first."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started Stelara after cancer treatment... Working somewhat.",
+    "confidence": null
+   },
+   "drug_name": "Stelara",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient describes moving to biologics under GI care.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "Mesalamine",
+    "Prednisone",
+    "Remicade",
+    "Stelara"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P032",
+  "profile": {
+   "name": null,
+   "age": {
+    "value": 54,
+    "status": "stated",
+    "evidence": "Frank, 54.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 1.0,
+    "status": "stated",
+    "evidence": "Diagnosed with Crohn's just last year.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "mechanic",
+    "status": "stated",
+    "evidence": "Worked as mechanic forty years.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "diabetes",
+    "heart disease",
+    "arthritis",
+    "depression"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Colonoscopy found inflammation throughout colon, some in small bowel.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "inferred",
+    "evidence": "Fifteen bathroom trips a day, lost forty pounds, unable to work, housebound.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "weight_loss",
+    "fatigue",
+    "appetite_loss"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Fifteen bathroom trips a day, lost forty pounds, miserable, symptoms not controlled by current meds.",
+    "confidence": 0.95
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started mesalamine. Nothing."
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Blood sugar went insane. Cardiologist had fit.",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Added prednisone. Blood sugar went insane. Cardiologist had fit. Stopped that quick."
+   },
+   {
+    "name_raw": "sulfasalazine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": "Now trying sulfasalazine."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "GI doctor wants biologics but insurance says no."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "not_on",
+    "status": "stated",
+    "evidence": "GI doctor wants biologics but insurance says no.",
+    "confidence": null
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "step_therapy",
+     "evidence": "insurance says no. Need to fail more drugs first.",
+     "overcome": false
+    },
+    {
+     "type": "cost_insurance",
+     "evidence": "insurance says no.",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "GI specialist is the primary manager of the Crohn's care.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "sulfasalazine"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P033",
+  "profile": {
+   "name": "Nina",
+   "age": {
+    "value": 26,
+    "status": "stated",
+    "evidence": "Nina, 26.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 7.0,
+    "status": "stated",
+    "evidence": "Diagnosed at 19. Seven years of hell.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "eczema",
+    "bipolar II"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "severity": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "symptoms": [
+    "bloody_diarrhea",
+    "abdominal_pain",
+    "weight_loss",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Neither perfect but both manageable. That's win in my book.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": null,
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": null,
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "partial",
+    "reason_stopped": "nausea",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": "severe eczema",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 5,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Referred immediately. Colonoscopy at 19 was terrifying."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Current medication regimen: Stelara",
+    "confidence": 1.0
+   },
+   "drug_name": "Stelara",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Referred immediately from health center to GI specialist.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "methotrexate",
+    "Humira",
+    "Stelara"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P034",
+  "profile": {
+   "name": "Robert",
+   "age": {
+    "value": 61,
+    "status": "stated",
+    "evidence": "Robert, 61.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 5.0,
+    "status": "stated",
+    "evidence": "Crohn's diagnosed five years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "COPD",
+    "peripheral neuropathy",
+    "hypertension",
+    "pre-diabetic"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Found Crohn's throughout colon and terminal ileum.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Significant damage done by diagnosis, multiple failed therapies, and current biologic use.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "urgency",
+    "abdominal_pain",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Not great but better than before. Can leave house now.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": "Minimal improvement",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "budesonide",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": "long-term steroids not option at my age with my conditions",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Liver didn't like it.",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "The fatigue was unbearable.",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 5,
+    "evidence": "Started Remicade year ago... improvement noticeable."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Doctor wanted biologics from start but I resisted."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started Remicade year ago.",
+    "confidence": null
+   },
+   "drug_name": "Remicade",
+   "barriers": [
+    {
+     "type": "comorbidity_risk",
+     "evidence": "Scared of immune suppression with lung disease. What if get pneumonia?",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "The patient describes a progression of doctors leading to the GI specialist who diagnosed and managed the biologic therapy.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "budesonide",
+    "azathioprine",
+    "methotrexate",
+    "Remicade"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P035",
+  "profile": {
+   "name": "Ashley",
+   "age": {
+    "value": 30,
+    "status": "stated",
+    "evidence": "Ashley, 30.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 14.0,
+    "status": "inferred",
+    "evidence": "Diagnosed with Crohn's at 16... Ashley, 30.",
+    "confidence": 1.0
+   },
+   "occupation": {
+    "value": "graphic designer",
+    "status": "stated",
+    "evidence": "Work part-time as graphic designer.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "primary sclerosing cholangitis",
+    "autoimmune hepatitis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "inferred",
+    "evidence": "Triple threat of doom... liver and intestines are basically attacking themselves... fatigue is unbearable... can barely manage [part-time work].",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "weight_loss",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Nothing works perfectly. Everything is compromise... fatigue is unbearable... can barely manage [part-time work].",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": null,
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started mesalamine and prednisone."
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": null,
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Started mesalamine and prednisone."
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": "liver enzymes went crazy",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Started Remicade at 17. Worked well for several years... at 22, liver enzymes went crazy. Stopped everything."
+   },
+   {
+    "name_raw": "Entyvio",
+    "drug_class": "biologic",
+    "outcome": null,
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Entyvio for Crohn's since it's supposedly liver-safe."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally pediatric GI took seriously. Colonoscopy showed Crohn's. Started mesalamine and prednisone."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Entyvio for Crohn's since it's supposedly liver-safe.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": null,
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P036",
+  "profile": {
+   "name": "William",
+   "age": {
+    "value": 48,
+    "status": "stated",
+    "evidence": "William, 48",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 3.0,
+    "status": "stated",
+    "evidence": "diagnosed with Crohn's three years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "owner of a small construction company",
+    "status": "stated",
+    "evidence": "Own a small construction company.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "psoriasis",
+    "psoriatic arthritis",
+    "depression"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "inferred",
+    "evidence": "colonoscopy revealed extensive Crohn's",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "extensive Crohn's, failing multiple biologics, severe impact on daily function and work",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "fatigue",
+    "joint",
+    "skin"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Maybe 50% improvement overall.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "NSAIDs",
+    "drug_class": "other",
+    "outcome": "ineffective",
+    "reason_stopped": "made everything worse",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Spent two years trying different NSAIDs, which probably made everything worse."
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": "Started on Stelara... Helped both conditions somewhat. Maybe 50% improvement overall."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "colonoscopy revealed extensive Crohn's. The good news? Doc said we could treat both conditions with same biologic."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started on Stelara... Helped both conditions somewhat.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "insurance company decided after a year it wasn't working well enough. Denied renewal.",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "truncated",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "GI specialist identified as the one who diagnosed and prescribed the biologic.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "NSAIDs",
+    "Stelara"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P037",
+  "profile": {
+   "name": "Karen",
+   "age": {
+    "value": 34,
+    "status": "stated",
+    "evidence": "I'm Karen, 34",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 6.0,
+    "status": "stated",
+    "evidence": "diagnosed with Crohn's six years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "postpartum anxiety",
+    "lupus"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "stated",
+    "evidence": "Colonoscopy showed Crohn's throughout colon.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "Patient describes severe abdominal pain, diarrhea, and failure of initial therapies, requiring escalation to biologics.",
+    "confidence": 0.8
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "fatigue",
+    "joint"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Helps both conditions moderately. Maybe 60% improvement.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "Wasn't enough.",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "partial",
+    "reason_stopped": "Joint pain started (lupus diagnosis).",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally got to GI. Colonoscopy showed Crohn's throughout colon."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Started Humira two years ago.",
+    "confidence": null
+   },
+   "drug_name": null,
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient went from primary care to GI specialist who diagnosed and prescribed.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "azathioprine",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P038",
+  "profile": {
+   "name": "Daniel",
+   "age": {
+    "value": 37,
+    "status": "stated",
+    "evidence": "Daniel, 37",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 10.0,
+    "status": "stated",
+    "evidence": "Crohn's for ten years now.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "software architect",
+    "status": "stated",
+    "evidence": "Was software architect.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "ankylosing spondylitis",
+    "chronic kidney disease"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Crohn's throughout small bowel, some colon.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "inferred",
+    "evidence": "Patient is on disability, has failed multiple biologics, and describes life as 'survival mode' and 'managing decline'.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "urgency",
+    "fatigue",
+    "joint"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Patient reports 'Humira. Less effective. Maybe 40% improvement' and 'Quality of life terrible'.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "stopped working",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally diagnosed with both conditions... Started biologics immediately."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Switched to Humira. Less effective.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "comorbidity_risk",
+     "evidence": "nephrologist said kidneys couldn't handle anything stronger",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient describes a direct path to GI diagnosis and treatment initiation.",
+    "confidence": 0.8
+   },
+   "treatment_sequence": [
+    "Remicade",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P039",
+  "profile": {
+   "name": "Michelle",
+   "age": {
+    "value": 41,
+    "status": "stated",
+    "evidence": "Michelle, 41",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 8.0,
+    "status": "stated",
+    "evidence": "dealing with Crohn's for about eight years",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "real estate agent",
+    "status": "stated",
+    "evidence": "Real estate agent.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "rheumatoid arthritis",
+    "fibromyalgia"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "inferred",
+    "evidence": "Colonoscopy showed Crohn's throughout.",
+    "confidence": 0.9
+   },
+   "severity": {
+    "value": "moderate",
+    "status": "inferred",
+    "evidence": "Humira helps somewhat, maybe 50%.",
+    "confidence": 0.7
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "weight_loss",
+    "fatigue",
+    "joint"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Helps somewhat. Maybe 50%.",
+    "confidence": 1.0
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Weight gain horrible",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Hair fell out",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally saw GI. Colonoscopy showed Crohn's throughout."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Switched to Humira three years ago. Helps somewhat.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient went directly to GI specialist after symptoms persisted.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "methotrexate",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P040",
+  "profile": {
+   "name": "George",
+   "age": {
+    "value": 52,
+    "status": "stated",
+    "evidence": "George, 52",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 7.0,
+    "status": "stated",
+    "evidence": "diagnosed with Crohn's seven years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "accountant",
+    "status": "stated",
+    "evidence": "Work as accountant.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "type 2 diabetes",
+    "hypertension",
+    "osteoporosis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "severe Crohn's throughout colon and terminal ileum",
+    "confidence": null
+   },
+   "severity": {
+    "value": "severe",
+    "status": "stated",
+    "evidence": "Colonoscopy revealed severe Crohn's",
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "fatigue",
+    "anemia"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Currently on it but not as effective. Maybe 50% improvement.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 1,
+    "evidence": "Prednisone and azathioprine combo... Still on it."
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "liver enzymes started climbing",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Azathioprine helped for about two years. Then liver enzymes started climbing. Had to stop."
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "developed antibodies",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Switched to Remicade... Then developed antibodies. Stopped working completely within weeks."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Tried Humira next. Currently on it but not as effective."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "not_started",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 5,
+    "evidence": "GI wants to add methotrexate."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Colonoscopy revealed severe Crohn's... Started aggressive treatment immediately."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Tried Humira next. Currently on it",
+    "confidence": 1.0
+   },
+   "drug_name": "Humira",
+   "barriers": [
+    {
+     "type": "cost_insurance",
+     "evidence": "Insurance fought it hard. Six months of appeals",
+     "overcome": true
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient saw doctor after 3 months of symptoms, leading to diagnosis and treatment initiation.",
+    "confidence": 0.8
+   },
+   "treatment_sequence": [
+    "Prednisone",
+    "azathioprine",
+    "Remicade",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P041",
+  "profile": {
+   "name": "Julie",
+   "age": {
+    "value": 35,
+    "status": "stated",
+    "evidence": "I'm Julie, 35.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 7.0,
+    "status": "inferred",
+    "evidence": "Diagnosed with Crohn's at 28... I'm 35.",
+    "confidence": 1.0
+   },
+   "occupation": {
+    "value": "corporate finance",
+    "status": "stated",
+    "evidence": "Left banking for corporate finance role.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "endometriosis",
+    "chronic migraines"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "severity": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "fatigue",
+    "constipation"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Currently on Stelara for Crohn's. It's okay. Maybe 60% better.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": null,
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started me immediately on prednisone and mesalamine."
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": null,
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Started me immediately on prednisone and mesalamine."
+   },
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "ineffective",
+    "reason_stopped": "stopped working",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": "Finally went on Remicade... Then it stopped working."
+   },
+   {
+    "name_raw": "Stelara",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 4,
+    "evidence": "Currently on Stelara for Crohn's."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "not_started",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 5,
+    "evidence": "Doctor wants to try combination therapy next. Stelara plus methotrexate."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "collapsed at work. Hospitalization led to diagnosis."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "Remember the GI saying my intestines looked like a war zone. Started me immediately on prednisone and mesalamine."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Currently on Stelara for Crohn's.",
+    "confidence": 1.0
+   },
+   "drug_name": "Stelara",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Hospitalization led to diagnosis and immediate treatment by GI.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "mesalamine",
+    "Remicade",
+    "Stelara",
+    "methotrexate"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P042",
+  "profile": {
+   "name": "Kevin",
+   "age": {
+    "value": 39,
+    "status": "stated",
+    "evidence": "Kevin, 39.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 5.0,
+    "status": "stated",
+    "evidence": "Crohn's hit me five years ago.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "psoriatic arthritis",
+    "depression"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "stated",
+    "evidence": "Colonoscopy confirmed moderate to severe Crohn's.",
+    "confidence": null
+   },
+   "symptoms": [
+    "bloody_diarrhea",
+    "fatigue",
+    "abdominal_pain"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "About 70% improvement. Best I've felt since diagnosis. But still not normal.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": "wasn't lasting solution",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": "wasn't lasting solution",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "sulfasalazine",
+    "drug_class": "aminosalicylate",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "Allergic reaction - hives everywhere.",
+    "is_current": false,
+    "sequence_index": 3,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "The nausea was unbearable.",
+    "is_current": false,
+    "sequence_index": 4,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 5,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Colonoscopy confirmed moderate to severe Crohn's. Started on mesalamine... Finally started Humira."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Finally started Humira... About 70% improvement... grateful for Humira working.",
+    "confidence": null
+   },
+   "drug_name": null,
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient describes diagnosis and treatment initiation within the same GI specialist relationship.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "sulfasalazine",
+    "methotrexate",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P043",
+  "profile": {
+   "name": "Sandra",
+   "age": {
+    "value": 44,
+    "status": "stated",
+    "evidence": "Sandra, 44.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 12.0,
+    "status": "stated",
+    "evidence": "Diagnosed with Crohn's twelve years ago.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "Hashimoto's thyroiditis",
+    "osteoarthritis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileal",
+    "status": "stated",
+    "evidence": "Resection of terminal ileum.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "History of multiple surgeries, multiple biologic failures, and ongoing symptoms despite treatment.",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "fatigue",
+    "abdominal_pain"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Humira provides 60% help, methotrexate adds improvement to 75%, but patient reports current path is unsustainable.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Remicade",
+    "drug_class": "biologic",
+    "outcome": "effective",
+    "reason_stopped": "developed antibodies",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": "losing effectiveness",
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Next appointment discussing medication change."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Humira losing effectiveness.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "patient_fear",
+     "evidence": "scared of transition period. What if I flare?",
+     "overcome": false
+    },
+    {
+     "type": "cost_insurance",
+     "evidence": "Can't afford time off. Already used FMLA this year.",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient is currently under the care of a GI specialist for ongoing management.",
+    "confidence": 0.8
+   },
+   "treatment_sequence": [
+    "Remicade",
+    "Humira",
+    "methotrexate"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P044",
+  "profile": {
+   "name": null,
+   "age": {
+    "value": 27,
+    "status": "stated",
+    "evidence": "Peter, 27",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 2.0,
+    "status": "stated",
+    "evidence": "diagnosed two years ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "junior architect",
+    "status": "stated",
+    "evidence": "working as junior architect",
+    "confidence": null
+   },
+   "comorbidities": [
+    "ADHD",
+    "anxiety"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "stated",
+    "evidence": "inflammation throughout sigmoid colon and rectum",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate",
+    "status": "inferred",
+    "evidence": "patient is 40% functional, failing mesalamine and azathioprine, but not currently hospitalized or requiring surgery.",
+    "confidence": 0.8
+   },
+   "symptoms": [
+    "urgency",
+    "abdominal_pain",
+    "bloody_diarrhea"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Helps maybe 40%.",
+    "confidence": 1.0
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine suppositories and oral",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started mesalamine suppositories and oral. Awkward and minimal help."
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "anxiety/panic attacks",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Added prednisone. Energy through roof but anxiety went crazy."
+   },
+   {
+    "name_raw": "azathioprine",
+    "drug_class": "immunomodulator",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": "Started azathioprine six months ago. Helps maybe 40%."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally saw GI... Doctor wants to try biologics"
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": null,
+    "status": "unknown_churned",
+    "evidence": "Doctor wants to try biologics... Will probably agree to biologics. Can't continue at 40% functional. But scared.",
+    "confidence": 0.9
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "patient_fear",
+     "evidence": "I'm terrified. Already immunocompromised enough... needles trigger anxiety.",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Patient went directly to GI specialist after symptoms worsened.",
+    "confidence": 1.0
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "azathioprine"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P045",
+  "profile": {
+   "name": null,
+   "age": {
+    "value": 33,
+    "status": "stated",
+    "evidence": "Rosa here, 33 years old.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.33,
+    "status": "stated",
+    "evidence": "Got diagnosed with Crohn's about four months ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "elementary school teacher",
+    "status": "stated",
+    "evidence": "Work as elementary school teacher.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "PCOS",
+    "insulin resistance"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "stated",
+    "evidence": "Found inflammation in terminal ileum and ascending colon.",
+    "confidence": null
+   },
+   "severity": {
+    "value": "moderate",
+    "status": "inferred",
+    "evidence": "Patient is on budesonide, mesalamine, and methotrexate, and reports severe pain and urgency, but has not yet required surgery or biologics.",
+    "confidence": 0.7
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "urgency",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Started on budesonide and mesalamine. Some improvement but not much.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "budesonide",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 1,
+    "evidence": null
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": null
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": null
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Doctor mentioned biologics might be next step but insurance wants me to fail more medications first."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "not_on",
+    "status": "inferred",
+    "evidence": "Patient is currently on methotrexate and states doctor mentioned biologics as a 'next step' pending insurance requirements.",
+    "confidence": 0.9
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "step_therapy",
+     "evidence": "insurance wants me to fail more medications first",
+     "overcome": null
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "truncated",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "One GI specialist encounter mentioned where biologics were discussed.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "budesonide",
+    "mesalamine",
+    "methotrexate"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P046",
+  "profile": {
+   "name": null,
+   "age": {
+    "value": 49,
+    "status": "stated",
+    "evidence": "Ben, 49, male.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 1.5,
+    "status": "stated",
+    "evidence": "Crohn's diagnosis came eighteen months ago",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "Construction foreman",
+    "status": "stated",
+    "evidence": "Construction foreman",
+    "confidence": null
+   },
+   "comorbidities": [
+    "pre-diabetic",
+    "chronic back pain"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "colonic",
+    "status": "inferred",
+    "evidence": "Colonoscopy showed severe disease.",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "severe",
+    "status": "stated",
+    "evidence": "Colonoscopy showed severe disease.",
+    "confidence": null
+   },
+   "symptoms": [
+    "bloody_diarrhea",
+    "bowel_obstruction"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "stated",
+    "evidence": "Maybe 50% improvement. Better than nothing but still struggling.",
+    "confidence": null
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "blood sugar go haywire",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Prednisone made blood sugar go haywire."
+   },
+   {
+    "name_raw": "Mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": "didn't touch it",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Mesalamine didn't touch it."
+   },
+   {
+    "name_raw": "Humira",
+    "drug_class": "biologic",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": "Currently on Humira."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Colonoscopy showed severe disease... Started treatment immediately"
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "on",
+    "status": "stated",
+    "evidence": "Currently on Humira.",
+    "confidence": null
+   },
+   "drug_name": "Humira",
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "stated",
+    "evidence": "Colonoscopy showed severe disease... Started treatment immediately",
+    "confidence": null
+   },
+   "treatment_sequence": [
+    "Prednisone",
+    "Mesalamine",
+    "Humira"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P047",
+  "profile": {
+   "name": null,
+   "age": {
+    "value": 41,
+    "status": "stated",
+    "evidence": "Donna, 41, female.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.41,
+    "status": "inferred",
+    "evidence": "Diagnosed with Crohn's five months ago",
+    "confidence": 1.0
+   },
+   "occupation": {
+    "value": "office manager",
+    "status": "stated",
+    "evidence": "working as office manager.",
+    "confidence": null
+   },
+   "comorbidities": [
+    "hypothyroid",
+    "depression"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "small_intestine_other",
+    "status": "stated",
+    "evidence": "Found Crohn's in small intestine.",
+    "confidence": null
+   },
+   "severity": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "diarrhea",
+    "urgency",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "But some improvement in symptoms. Maybe 30%.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "effective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started on prednisone and mesalamine. Prednisone helped"
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": "Started on prednisone and mesalamine."
+   },
+   {
+    "name_raw": "methotrexate",
+    "drug_class": "immunomodulator",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": "Trying methotrexate now... some improvement in symptoms. Maybe 30%."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Finally got to good GI who actually listened."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "drug_name": null,
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "truncated",
+  "derived": null,
+  "extraction_notes": "The transcript ends mid-sentence ('Not worry about mom...'), indicating truncation."
+ },
+ {
+  "patient_id": "P048",
+  "profile": {
+   "name": "Larry",
+   "age": {
+    "value": 56,
+    "status": "stated",
+    "evidence": "Larry, 56.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.05,
+    "status": "inferred",
+    "evidence": "Just found out I have Crohn's three weeks ago.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": "construction company owner",
+    "status": "stated",
+    "evidence": "man who used to run construction company",
+    "confidence": null
+   },
+   "comorbidities": [
+    "diabetes",
+    "heart disease"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "small_intestine_other",
+    "status": "inferred",
+    "evidence": "emergency surgery to remove blocked section... foot of intestine gone",
+    "confidence": 0.9
+   },
+   "severity": {
+    "value": "severe",
+    "status": "inferred",
+    "evidence": "severe pain, emergency surgery, bowel obstruction",
+    "confidence": 0.9
+   },
+   "symptoms": [
+    "abdominal_pain",
+    "bowel_obstruction"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "can barely make it to bathroom",
+    "confidence": 0.8
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "Mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 1,
+    "evidence": "Started on medications... Mesalamine"
+   },
+   {
+    "name_raw": "antibiotics",
+    "drug_class": "antibiotic",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": "and antibiotics for now."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "er",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Went to ER with severe pain."
+   },
+   {
+    "encounter_type": "surgeon",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": false,
+    "sequence_index": 2,
+    "evidence": "Emergency surgery to remove blocked section"
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 3,
+    "evidence": "Doctor wants biologics after I heal from surgery."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "planned",
+    "status": "stated",
+    "evidence": "Doctor wants biologics after I heal from surgery.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [],
+   "barriers_status": "not_mentioned"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "ER visit led to diagnosis and GI follow-up plan.",
+    "confidence": null
+   },
+   "treatment_sequence": [
+    "Mesalamine",
+    "antibiotics"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P049",
+  "profile": {
+   "name": "Tammy",
+   "age": {
+    "value": 28,
+    "status": "stated",
+    "evidence": "Tammy, 28, female.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.1,
+    "status": "inferred",
+    "evidence": "diagnosed last month",
+    "confidence": 1.0
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "eating disorder",
+    "anxiety"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": "ileocolonic",
+    "status": "inferred",
+    "evidence": "inflammation throughout intestines",
+    "confidence": 0.8
+   },
+   "severity": {
+    "value": "moderate_to_severe",
+    "status": "inferred",
+    "evidence": "GI wants to be aggressive given my age and extent of disease",
+    "confidence": 0.9
+   },
+   "symptoms": [],
+   "disease_control": {
+    "value": "partial",
+    "status": "inferred",
+    "evidence": "Too early to tell if working",
+    "confidence": 0.7
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "manic, insomnia",
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started on prednisone in hospital. Made me manic. Didn't sleep for four days."
+   },
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ongoing_unknown",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 2,
+    "evidence": "Now on mesalamine. Too early to tell if working."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "surgeon",
+    "specialty_raw": null,
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "Crohn's diagnosed last month during what should have been routine appendectomy."
+   },
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "GI wants to be aggressive... Mentioned biologics."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": null,
+    "status": "unknown_churned",
+    "evidence": "Mentioned biologics. But reading side effects online... I'm 28. Whole life ahead. Or maybe not.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "patient_fear",
+     "evidence": "reading side effects online. Cancer risk? Serious infections?",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "truncated",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 1,
+    "status": "inferred",
+    "evidence": "Diagnosis at surgery, then GI consultation.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "prednisone",
+    "mesalamine"
+   ]
+  },
+  "extraction_notes": null
+ },
+ {
+  "patient_id": "P050",
+  "profile": {
+   "name": null,
+   "age": {
+    "value": 62,
+    "status": "stated",
+    "evidence": "Victor, 62, male.",
+    "confidence": null
+   },
+   "years_since_diagnosis": {
+    "value": 0.67,
+    "status": "stated",
+    "evidence": "Diagnosed with Crohn's eight months ago.",
+    "confidence": null
+   },
+   "occupation": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "comorbidities": [
+    "COPD",
+    "arthritis"
+   ]
+  },
+  "disease": {
+   "location": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "severity": {
+    "value": null,
+    "status": "not_mentioned",
+    "evidence": null,
+    "confidence": null
+   },
+   "symptoms": [
+    "weight_loss",
+    "fatigue"
+   ],
+   "disease_control": {
+    "value": "poor",
+    "status": "inferred",
+    "evidence": "Helps a little. Maybe 20%. GI wants to try biologics... stuck with inadequate treatment.",
+    "confidence": 0.9
+   }
+  },
+  "treatments": [
+   {
+    "name_raw": "mesalamine",
+    "drug_class": "aminosalicylate",
+    "outcome": "ineffective",
+    "reason_stopped": null,
+    "is_current": false,
+    "sequence_index": 1,
+    "evidence": "Started treatment with mesalamine. Nothing."
+   },
+   {
+    "name_raw": "prednisone",
+    "drug_class": "corticosteroid",
+    "outcome": "adverse_reaction",
+    "reason_stopped": "breathing got worse",
+    "is_current": false,
+    "sequence_index": 2,
+    "evidence": "Tried prednisone but breathing got worse. Respiratory doctor said absolutely not."
+   },
+   {
+    "name_raw": "budesonide",
+    "drug_class": "corticosteroid",
+    "outcome": "partial",
+    "reason_stopped": null,
+    "is_current": true,
+    "sequence_index": 3,
+    "evidence": "Now on budesonide. Helps a little. Maybe 20%."
+   }
+  ],
+  "encounters": [
+   {
+    "encounter_type": "gi_specialist",
+    "specialty_raw": null,
+    "biologic_decision_point": true,
+    "on_referral_path": true,
+    "sequence_index": 1,
+    "evidence": "GI wants to try biologics but lung doctor says too risky with COPD."
+   },
+   {
+    "encounter_type": "other_specialist",
+    "specialty_raw": "respiratory doctor",
+    "biologic_decision_point": false,
+    "on_referral_path": true,
+    "sequence_index": 2,
+    "evidence": "Respiratory doctor said absolutely not."
+   }
+  ],
+  "biologic": {
+   "status": {
+    "value": "discussed_rejected",
+    "status": "stated",
+    "evidence": "GI wants to try biologics but lung doctor says too risky with COPD.",
+    "confidence": 1.0
+   },
+   "drug_name": null,
+   "barriers": [
+    {
+     "type": "comorbidity_risk",
+     "evidence": "lung doctor says too risky with COPD. Might get infection that kills me.",
+     "overcome": false
+    }
+   ],
+   "barriers_status": "stated"
+  },
+  "completeness": "complete",
+  "derived": {
+   "referral_steps_gp_to_prescriber": {
+    "value": 2,
+    "status": "inferred",
+    "evidence": "GI specialist and respiratory specialist involved in the decision-making process.",
+    "confidence": 0.9
+   },
+   "treatment_sequence": [
+    "mesalamine",
+    "prednisone",
+    "budesonide"
+   ]
+  },
+  "extraction_notes": null
+ }
+]

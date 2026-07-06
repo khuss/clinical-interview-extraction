@@ -1,0 +1,51 @@
+patient_id,age,years_since_dx,occupation,comorbidities,location,severity,severity_basis,symptoms,disease_control,disease_control_basis,on_biologic,biologic_status,biologic_basis,completeness,churn,referral_steps
+P001,34,8.0,marketing manager,['psoriasis'],ileocolonic,moderate_to_severe,stated,"['abdominal_pain', 'weight_loss', 'diarrhea']",remission,stated,True,on,stated,complete,False,2.0
+P002,42,3.0,high school teacher,"['type 2 diabetes', 'anemia', 'minor stroke', 'arthritis']",ileocolonic,moderate_to_severe,inferred,"['nausea_vomiting', 'abdominal_pain', 'bloody_diarrhea', 'anemia', 'joint']",poor,inferred,False,planned,stated,complete,False,2.0
+P003,28,12.0,remote work,"['anxiety disorder', 'PCOS', 'osteopenia', 'depression']",,,not_mentioned,"['abdominal_pain', 'diarrhea', 'fatigue', 'joint', 'skin', 'bowel_obstruction', 'fistula']",poor,inferred,True,on,stated,complete,False,2.0
+P004,55,0.5,construction business owner,"['hypertension', 'high cholesterol', 'depression']",colonic,severe,inferred,"['abdominal_pain', 'fatigue', 'joint']",poor,inferred,False,planned,stated,complete,False,2.0
+P005,31,5.0,,"['endometriosis', 'migraines']",ileocolonic,moderate,inferred,['fatigue'],partial,stated,True,on,stated,complete,False,2.0
+P006,38,8.0,IT,"['depression', 'sleep apnea', 'short bowel syndrome']",small_intestine_other,moderate_to_severe,inferred,"['fatigue', 'bowel_obstruction', 'abdominal_pain']",partial,inferred,True,on,stated,complete,False,4.0
+P007,45,3.0,teacher,"['hypothyroid', 'fibromyalgia', 'Vitamin D deficiency', 'Osteoporosis']",small_intestine_other,moderate_to_severe,inferred,"['weight_loss', 'diarrhea']",partial,inferred,True,on,stated,complete,False,1.0
+P008,29,8.0,remote tech job,"['ADHD', 'generalized anxiety', 'kidney stones']",ileocolonic,severe,stated,"['fatigue', 'abdominal_pain', 'bloody_diarrhea', 'bowel_obstruction']",partial,inferred,True,on,stated,complete,False,2.0
+P009,36,3.0,finance,"['asthma', 'rheumatoid arthritis']",colonic,severe,inferred,"['weight_loss', 'fatigue', 'abdominal_pain', 'joint', 'nausea_vomiting', 'mouth_ulcers']",partial,inferred,True,on,stated,truncated,True,3.0
+P010,48,5.0,middle management,"['type 2 diabetic', ""Crohn's-related arthritis"", 'shingles']",ileocolonic,severe,stated,"['diarrhea', 'weight_loss', 'joint', 'fatigue', 'bowel_obstruction']",partial,inferred,True,on,stated,complete,False,2.0
+P011,26,7.0,graphic design,"['PCOS', 'severe anxiety', 'PTSD']",colonic,moderate_to_severe,inferred,"['abdominal_pain', 'diarrhea', 'weight_loss', 'fatigue']",partial,inferred,True,on,stated,complete,False,2.0
+P012,52,1.0,hardware store,"['heart disease', 'high blood pressure']",ileocolonic,moderate,inferred,"['abdominal_pain', 'urgency', 'fatigue']",partial,inferred,True,on,stated,complete,False,2.0
+P013,33,8.0,marketing,['lupus'],,,not_mentioned,"['fatigue', 'joint']",remission,inferred,True,on,stated,complete,False,1.0
+P014,41,3.0,electrician,"['psoriasis', 'depression', 'psoriatic arthritis']",colonic,moderate_to_severe,inferred,"['abdominal_pain', 'fatigue', 'joint']",partial,stated,True,on,stated,complete,False,1.0
+P015,37,15.0,teacher,"['chronic migraine syndrome', 'fibromyalgia']",ileocolonic,moderate_to_severe,inferred,"['abdominal_pain', 'diarrhea', 'weight_loss', 'fatigue', 'anemia', 'bowel_obstruction']",partial,stated,True,on,stated,complete,False,1.0
+P016,44,2.0,construction foreman,"['back pain', 'alcohol use']",ileocolonic,moderate_to_severe,inferred,"['abdominal_pain', 'diarrhea', 'urgency', 'weight_loss', 'fatigue', 'appetite_loss']",poor,inferred,False,planned,stated,complete,False,2.0
+P017,29,0.67,Tech company,"['ADHD', 'anxiety']",,moderate,stated,"['abdominal_pain', 'fatigue']",partial,inferred,False,not_on,stated,complete,False,1.0
+P018,58,0.5,,"['type 2 diabetes', 'heart attack']",colonic,moderate,inferred,"['constipation', 'diarrhea', 'weight_loss', 'urgency']",poor,inferred,,,unknown_churned,complete,False,1.0
+P019,24,,,['generalized anxiety disorder'],ileocolonic,moderate_to_severe,stated,"['abdominal_pain', 'fatigue', 'urgency']",partial,inferred,True,on,stated,complete,False,1.0
+P020,46,7.0,Construction worker,['high blood pressure'],colonic,severe,stated,"['bloody_diarrhea', 'weight_loss', 'abdominal_pain', 'fatigue', 'joint', 'skin']",partial,inferred,True,on,stated,complete,False,1.0
+P021,31,5.0,Lawyer,"['endometriosis', 'chronic fatigue syndrome']",ileocolonic,moderate_to_severe,inferred,"['fatigue', 'abdominal_pain', 'diarrhea', 'urgency']",partial,stated,True,on,stated,complete,False,
+P022,35,2.0,Software engineer,"['medication-induced diabetes', 'osteoporosis']",,severe,stated,"['abdominal_pain', 'bloody_diarrhea', 'fever']",partial,inferred,True,on,stated,complete,False,2.0
+P023,27,1.0,teacher,"['PCOS', 'depression']",ileocolonic,moderate_to_severe,inferred,"['abdominal_pain', 'fatigue']",partial,stated,True,on,stated,complete,False,1.0
+P024,40,0.25,plumber,"['pre-diabetic', 'sleep apnea']",ileocolonic,severe,inferred,"['abdominal_pain', 'diarrhea', 'weight_loss', 'fatigue', 'appetite_loss']",poor,inferred,False,planned,stated,complete,False,1.0
+P025,22,0.5,,"['severe anxiety', 'eating disorder']",ileocolonic,moderate_to_severe,inferred,"['weight_loss', 'diarrhea', 'bloody_diarrhea', 'abdominal_pain', 'fatigue']",partial,inferred,True,on,stated,complete,False,2.0
+P026,50,8.0,construction worker,"[""Barrett's esophagus"", 'chronic back pain']",colonic,moderate_to_severe,inferred,"['diarrhea', 'abdominal_pain', 'fatigue']",poor,inferred,True,on,stated,complete,False,1.0
+P027,32,4.0,,"['bipolar disorder', 'rheumatoid arthritis']",colonic,severe,stated,"['bloody_diarrhea', 'fistula', 'joint', 'fatigue']",poor,inferred,True,on,stated,complete,False,1.0
+P028,43,6.0,accountant,['chronic kidney disease'],ileocolonic,moderate_to_severe,inferred,"['urgency', 'diarrhea']",partial,inferred,True,on,stated,complete,False,1.0
+P029,38,12.0,lawyer,"['thyroid disease', 'chronic migraines']",colonic,moderate_to_severe,inferred,"['bloody_diarrhea', 'abdominal_pain', 'weight_loss', 'fatigue']",partial,stated,True,on,stated,complete,False,1.0
+P030,29,2.0,tech startup founder,"['depression', 'ADHD']",colonic,severe,stated,"['abdominal_pain', 'diarrhea', 'weight_loss', 'fatigue', 'anemia']",partial,stated,True,on,stated,complete,False,2.0
+P031,46,15.0,teacher,"['fibromyalgia', 'breast cancer', 'depression']",ileocolonic,moderate_to_severe,stated,"['abdominal_pain', 'fatigue', 'bowel_obstruction']",partial,stated,True,on,stated,complete,False,1.0
+P032,54,1.0,mechanic,"['diabetes', 'heart disease', 'arthritis', 'depression']",ileocolonic,severe,inferred,"['abdominal_pain', 'diarrhea', 'weight_loss', 'fatigue', 'appetite_loss']",poor,inferred,False,not_on,stated,complete,False,1.0
+P033,26,7.0,,"['eczema', 'bipolar II']",,,not_mentioned,"['bloody_diarrhea', 'abdominal_pain', 'weight_loss', 'fatigue']",partial,inferred,True,on,stated,complete,False,1.0
+P034,61,5.0,,"['COPD', 'peripheral neuropathy', 'hypertension', 'pre-diabetic']",ileocolonic,moderate_to_severe,inferred,"['urgency', 'abdominal_pain', 'fatigue']",partial,stated,True,on,stated,complete,False,1.0
+P035,30,14.0,graphic designer,"['primary sclerosing cholangitis', 'autoimmune hepatitis']",,severe,inferred,"['abdominal_pain', 'diarrhea', 'weight_loss', 'fatigue']",poor,inferred,True,on,stated,complete,False,1.0
+P036,48,3.0,owner of a small construction company,"['psoriasis', 'psoriatic arthritis', 'depression']",ileocolonic,moderate_to_severe,inferred,"['fatigue', 'joint', 'skin']",partial,stated,True,on,stated,truncated,True,1.0
+P037,34,6.0,,"['postpartum anxiety', 'lupus']",colonic,moderate_to_severe,inferred,"['abdominal_pain', 'diarrhea', 'fatigue', 'joint']",partial,stated,True,on,stated,complete,False,1.0
+P038,37,10.0,software architect,"['ankylosing spondylitis', 'chronic kidney disease']",ileocolonic,severe,inferred,"['abdominal_pain', 'diarrhea', 'urgency', 'fatigue', 'joint']",poor,inferred,True,on,stated,complete,False,1.0
+P039,41,8.0,real estate agent,"['rheumatoid arthritis', 'fibromyalgia']",ileocolonic,moderate,inferred,"['abdominal_pain', 'diarrhea', 'weight_loss', 'fatigue', 'joint']",partial,stated,True,on,stated,complete,False,1.0
+P040,52,7.0,accountant,"['type 2 diabetes', 'hypertension', 'osteoporosis']",ileocolonic,severe,stated,"['abdominal_pain', 'fatigue', 'anemia']",partial,inferred,True,on,stated,complete,False,1.0
+P041,35,7.0,corporate finance,"['endometriosis', 'chronic migraines']",,,not_mentioned,"['abdominal_pain', 'fatigue', 'constipation']",partial,inferred,True,on,stated,complete,False,2.0
+P042,39,5.0,,"['psoriatic arthritis', 'depression']",,moderate_to_severe,stated,"['bloody_diarrhea', 'fatigue', 'abdominal_pain']",partial,inferred,True,on,stated,complete,False,1.0
+P043,44,12.0,,"[""Hashimoto's thyroiditis"", 'osteoarthritis']",ileal,moderate_to_severe,inferred,"['fatigue', 'abdominal_pain']",partial,inferred,True,on,stated,complete,False,1.0
+P044,27,2.0,junior architect,"['ADHD', 'anxiety']",colonic,moderate,inferred,"['urgency', 'abdominal_pain', 'bloody_diarrhea']",partial,stated,,,unknown_churned,complete,False,1.0
+P045,33,0.33,elementary school teacher,"['PCOS', 'insulin resistance']",ileocolonic,moderate,inferred,"['abdominal_pain', 'urgency', 'fatigue']",partial,stated,False,not_on,inferred,truncated,True,1.0
+P046,49,1.5,Construction foreman,"['pre-diabetic', 'chronic back pain']",colonic,severe,stated,"['bloody_diarrhea', 'bowel_obstruction']",partial,stated,True,on,stated,complete,False,1.0
+P047,41,0.41,office manager,"['hypothyroid', 'depression']",small_intestine_other,,not_mentioned,"['abdominal_pain', 'diarrhea', 'urgency', 'fatigue']",partial,inferred,,,not_mentioned,truncated,True,
+P048,56,0.05,construction company owner,"['diabetes', 'heart disease']",small_intestine_other,severe,inferred,"['abdominal_pain', 'bowel_obstruction']",poor,inferred,False,planned,stated,complete,False,2.0
+P049,28,0.1,,"['eating disorder', 'anxiety']",ileocolonic,moderate_to_severe,inferred,[],partial,inferred,,,unknown_churned,truncated,True,2.0
+P050,62,0.67,,"['COPD', 'arthritis']",,,not_mentioned,"['weight_loss', 'fatigue']",poor,inferred,False,discussed_rejected,stated,complete,False,1.0

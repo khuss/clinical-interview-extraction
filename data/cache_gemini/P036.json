@@ -1,0 +1,115 @@
+{
+ "patient_id": "P036",
+ "profile": {
+  "name": "William",
+  "age": {
+   "value": 48,
+   "status": "stated",
+   "evidence": "William, 48",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 3.0,
+   "status": "stated",
+   "evidence": "diagnosed with Crohn's three years ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "owner of a small construction company",
+   "status": "stated",
+   "evidence": "Own a small construction company.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "psoriasis",
+   "psoriatic arthritis",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "inferred",
+   "evidence": "colonoscopy revealed extensive Crohn's",
+   "confidence": 0.8
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "extensive Crohn's, failing multiple biologics, severe impact on daily function and work",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "fatigue",
+   "joint",
+   "skin"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Maybe 50% improvement overall.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "NSAIDs",
+   "drug_class": "other",
+   "outcome": "ineffective",
+   "reason_stopped": "made everything worse",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Spent two years trying different NSAIDs, which probably made everything worse."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "Started on Stelara... Helped both conditions somewhat. Maybe 50% improvement overall."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "colonoscopy revealed extensive Crohn's. The good news? Doc said we could treat both conditions with same biologic."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started on Stelara... Helped both conditions somewhat.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "insurance company decided after a year it wasn't working well enough. Denied renewal.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "truncated",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "GI specialist identified as the one who diagnosed and prescribed the biologic.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "NSAIDs",
+   "Stelara"
+  ]
+ },
+ "extraction_notes": null
+}

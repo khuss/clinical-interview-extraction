@@ -1,0 +1,191 @@
+{
+ "patient_id": "P023",
+ "profile": {
+  "name": "Monica",
+  "age": {
+   "value": 27,
+   "status": "stated",
+   "evidence": "Monica, 27",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 1.0,
+   "status": "inferred",
+   "evidence": "Diagnosed last year, currently 27, diagnosed at 26 ('Chronic illness at 26')",
+   "confidence": 0.9
+  },
+  "occupation": {
+   "value": "teacher",
+   "status": "stated",
+   "evidence": "Graduated, started teaching job",
+   "confidence": null
+  },
+  "comorbidities": [
+   "PCOS",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Found inflammation throughout colon, some in small intestine",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Failed mesalamine, prednisone, azathioprine (pancreatitis), methotrexate; now on Humira with only ~40% improvement; doctor says need to be more aggressive",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "urgency",
+   "weight_loss",
+   "fatigue",
+   "nausea_vomiting"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Humira helping some. Maybe 40% better. Not enough but scared to switch.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "fiber supplements",
+   "drug_class": "other",
+   "outcome": "ineffective",
+   "reason_stopped": "Made symptoms worse",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Campus health said stress, IBS. Gave me fiber supplements, made worse."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Minimal help",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started mesalamine. Minimal help."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Used for flare; weight gain side effect noted",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Added prednisone for flare. Gained all weight back plus more."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Developed pancreatitis, week in hospital",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Tried azathioprine. Developed pancreatitis. Week in hospital."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Unbearable nausea, missed too many days of work",
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "Tried methotrexate. Nausea unbearable. Couldn't teach, missed too many days."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 6,
+   "evidence": "Finally approved for Humira... Humira helping some. Maybe 40% better. Not enough but scared to switch."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "campus health",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Campus health said stress, IBS. Gave me fiber supplements."
+  },
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "primary doctor",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Primary doctor blamed weight. Said lose pounds, problems would resolve. Finally demanded specialist referral."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "GI ordered colonoscopy. Found inflammation throughout colon, some in small intestine. Crohn's disease... Doctor recommended biologics... Finally approved for Humira."
+  },
+  {
+   "encounter_type": "er",
+   "specialty_raw": "hospital",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 4,
+   "evidence": "Developed pancreatitis. Week in hospital. Traumatic experience."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Finally approved for Humira... Humira helping some. Maybe 40% better.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Insurance nightmare began. Needed to fail more drugs first despite pancreatitis. Tried methotrexate. Nausea unbearable... Finally approved for Humira.",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance nightmare began. Needed to fail more drugs first despite pancreatitis.",
+    "overcome": true
+   },
+   {
+    "type": "patient_fear",
+    "evidence": "Injection anxiety real... Scared of medications now but need treatment... scared to switch. What if next thing worse? Doctor says need to be more aggressive but fear holds back.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/PCP (step 1) -> GI specialist who ultimately prescribed Humira (step 2)",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "fiber supplements",
+   "mesalamine",
+   "prednisone",
+   "azathioprine",
+   "methotrexate",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Antidepressants mentioned but excluded from treatments as they are for depression (comorbidity), not Crohn's. PCOS and depression recorded as comorbidities. Fiber supplements included as they were prescribed by campus health for GI symptoms. Campus health encounter included as it was the first medical contact for GI symptoms and part of the diagnostic journey. Hospital admission for pancreatitis marked on_referral_path=false as it was a side event (adverse reaction to azathioprine) not a referral step. Doctor is currently recommending more aggressive treatment (increase Humira frequency, add drug, or switch biologics) but no decision has been made yet — this is an open deliberation, not a settled plan."
+}

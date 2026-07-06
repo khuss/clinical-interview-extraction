@@ -1,0 +1,143 @@
+{
+ "patient_id": "P004",
+ "profile": {
+  "name": "Robert",
+  "age": {
+   "value": 55,
+   "status": "stated",
+   "evidence": "55 years old",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.5,
+   "status": "inferred",
+   "evidence": "just diagnosed with Crohn's six months ago",
+   "confidence": 0.9
+  },
+  "occupation": {
+   "value": "construction business owner",
+   "status": "inferred",
+   "evidence": "running my construction business",
+   "confidence": 0.9
+  },
+  "comorbidities": [
+   "hypertension",
+   "high cholesterol",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "extensive involvement of my colon",
+   "confidence": null
+  },
+  "severity": {
+   "value": "severe",
+   "status": "inferred",
+   "evidence": "collapsed at a job site from dehydration and severe abdominal pain... fatigue affects my work... joint pain is getting worse... can barely manage 6 [hours of work]... can barely get out of bed... inflammation needs to be controlled to prevent complications, mentioned something about increased colon cancer risk",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "fatigue",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "prednisone immediately, which helped, but he said it's not a long-term solution. Tried mesalamine next, minimal improvement. Then sulfasalazine, which gave me terrible headaches. I've been trying to manage with diet changes and budesonide, but I know it's not enough. The fatigue affects my work... The joint pain is getting worse too, some days I can barely get out of bed.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "effective",
+   "reason_stopped": "not a long-term solution",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started me on prednisone immediately, which helped, but he said it's not a long-term solution."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": "minimal improvement",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Tried mesalamine next, minimal improvement."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "terrible headaches",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Then sulfasalazine, which gave me terrible headaches."
+  },
+  {
+   "name_raw": "budesonide",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "I've been trying to manage with diet changes and budesonide, but I know it's not enough."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Emergency room visit led to CT scan showing significant inflammation."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "They referred me to a GI specialist, took two months to get in. Dr. Williams did a colonoscopy and confirmed Crohn's disease... Now he wants me on a biologic, recommended Entyvio."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "planned",
+   "status": "stated",
+   "evidence": "Now he wants me on a biologic, recommended Entyvio.",
+   "confidence": null
+  },
+  "drug_name": "Entyvio",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "The problem is I'm self-employed, my insurance is catastrophic coverage only. The medication would cost me $5,000 per infusion, every 8 weeks. That's impossible.",
+    "overcome": null
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 0,
+   "status": "inferred",
+   "evidence": "Patient went to ER, then referred to GI specialist. No mention of GP/PCP in the referral chain.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "sulfasalazine",
+   "budesonide"
+  ]
+ },
+ "extraction_notes": null
+}

@@ -1,0 +1,113 @@
+{
+ "patient_id": "P017",
+ "profile": {
+  "name": "Diana",
+  "age": {
+   "value": 29,
+   "status": "stated",
+   "evidence": "I'm Diana, 29, female",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.67,
+   "status": "inferred",
+   "evidence": "Got diagnosed about eight months ago",
+   "confidence": 0.9
+  },
+  "occupation": {
+   "value": "tech company employee",
+   "status": "inferred",
+   "evidence": "Tech company, good benefits. But I've used a lot of sick time already this year.",
+   "confidence": 0.85
+  },
+  "comorbidities": [
+   "ADHD",
+   "anxiety"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "mild",
+   "status": "stated",
+   "evidence": "the doctor called it mild to moderate",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Some weeks I'm fine, others I'm a disaster. symptoms are all over the place.",
+   "confidence": 0.75
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started me on mesalamine. Seemed to help at first? Hard to tell because my symptoms are all over the place."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "So now I'm on azathioprine. The blood tests to monitor it are annoying."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI doctor",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "When they finally did the colonoscopy, there was definite inflammation... The GI doctor is nice but seems hesitant to be aggressive with treatment. She mentioned biologics but said we should try other things first. So now I'm on azathioprine."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "not_on",
+   "status": "stated",
+   "evidence": "She mentioned biologics but said we should try other things first. So now I'm on azathioprine.",
+   "confidence": 0.95
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "She mentioned biologics but said we should try other things first. So now I'm on azathioprine.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Only a GI specialist is mentioned; no GP referral step described explicitly, but GI is the treating provider.",
+   "confidence": 0.6
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "azathioprine"
+  ]
+ },
+ "extraction_notes": "Severity stated as 'mild to moderate'; mapped to mild as the lower bound given ambiguity. Mesalamine may still be ongoing alongside azathioprine but is described in past tense ('started me on', 'seemed to help at first') while azathioprine is described in present tense ('now I'm on'), so mesalamine is marked not current. ADHD medication mentioned but excluded from treatments as it is for a comorbidity, not Crohn's. No GP encounter explicitly described; only GI specialist mentioned. Patient is planning to ask about biologics again at next appointment but has not yet done so — this is a future intention, not a settled decision, so biologic status remains not_on. Transcript ends with a complete thought ('Need to speak up.') — completeness is complete."
+}

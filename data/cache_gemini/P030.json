@@ -1,0 +1,138 @@
+{
+ "patient_id": "P030",
+ "profile": {
+  "name": "Marcus",
+  "age": {
+   "value": 29,
+   "status": "stated",
+   "evidence": "Marcus, 29",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 2.0,
+   "status": "stated",
+   "evidence": "diagnosed two years ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "tech startup founder",
+   "status": "stated",
+   "evidence": "rising star in tech startup",
+   "confidence": null
+  },
+  "comorbidities": [
+   "depression",
+   "ADHD"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "Colonoscopy showed aggressive Crohn's. Entire colon affected.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "severe",
+   "status": "stated",
+   "evidence": "Severe dehydration, anemia. Hospitalization. Colonoscopy showed aggressive Crohn's.",
+   "confidence": null
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "weight_loss",
+   "fatigue",
+   "anemia"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Helps some. Maybe 40% better.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started high-dose prednisone."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "body couldn't keep up",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Tried working through it. Mesalamine... but body couldn't keep up."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "body couldn't keep up",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "azathioprine, kept pushing. But body couldn't keep up."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Started Humira six months ago. Helps some. Maybe 40% better."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally saw doctor after collapsing at work. Severe dehydration, anemia. Hospitalization."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Next appointment discussing Stelara or Entyvio."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Humira six months ago.",
+   "confidence": null
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "The patient was hospitalized and diagnosed, then managed by a GI specialist who is now discussing a switch.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "azathioprine",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

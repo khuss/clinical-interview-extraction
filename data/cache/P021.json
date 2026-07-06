@@ -1,0 +1,171 @@
+{
+ "patient_id": "P021",
+ "profile": {
+  "name": "Rachel",
+  "age": {
+   "value": 31,
+   "status": "stated",
+   "evidence": "Rachel, 31, diagnosed five years ago.",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 5.0,
+   "status": "stated",
+   "evidence": "diagnosed five years ago",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "Lawyer",
+   "status": "stated",
+   "evidence": "Lawyer, 80-hour weeks normal.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "endometriosis",
+   "chronic fatigue syndrome"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Colonoscopy showed Crohn's throughout colon and terminal ileum.",
+   "confidence": 1.0
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Multiple biologic failures/switches (Remicade allergic reaction, Humira only 50% effective, now on Stelara with 'okay' control), still not controlled after mesalamine, azathioprine, methotrexate, three biologics.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "fatigue",
+   "urgency"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "On Stelara eighteen months: 'It's okay. Not great, just okay.' Prior Humira 'maybe 50% better.' Still not controlled.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Minimal improvement; escalated to azathioprine",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started standard protocol - mesalamine, then added azathioprine. Minimal improvement."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "Minimal improvement; moved to biologics",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "then added azathioprine. Minimal improvement. Moved quickly to biologics."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Allergic reaction during infusion",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Remicade first... Worked for a year then allergic reaction during infusion. Scary."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": "Effectiveness limited; still not controlled",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Switched to Humira. Self-injection more convenient but effectiveness limited. Maybe 50% better."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Added methotrexate. Hair started falling out... Doctor discussing combination therapy - Stelara plus methotrexate plus who knows what else."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 6,
+   "evidence": "Started Stelara. Insurance denied. Appeals process while getting sicker. Finally approved. Been on it eighteen months. It's okay. Not great, just okay."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI (first) - diagnosed IBS",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "First GI said IBS."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI (second) - attributed to stress",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Second said stress."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI (third) - proper testing, colonoscopy, diagnosis and ongoing treatment",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "Finally, third did proper testing. Colonoscopy showed Crohn's throughout colon and terminal ileum. Started standard protocol... Moved quickly to biologics."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Been on it eighteen months. It's okay. Not great, just okay. [Stelara, currently]",
+   "confidence": 1.0
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Started Stelara. Insurance denied. Appeals process while getting sicker. Finally approved.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 3,
+   "status": "inferred",
+   "evidence": "Patient saw three GI specialists before receiving proper diagnosis and treatment including biologics. No explicit GP/PCP visit mentioned before GI referrals, but three GI encounters documented.",
+   "confidence": 0.7
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "azathioprine",
+   "Remicade",
+   "Humira",
+   "methotrexate",
+   "Stelara"
+  ]
+ },
+ "extraction_notes": "GP/PCP visit not explicitly mentioned; patient appears to have gone directly to GI specialists or the initial pathway was not described. Three GI specialists seen before diagnosis. Methotrexate was added during Humira period and appears to be continuing alongside Stelara per 'Stelara plus methotrexate' combination therapy discussion. Endometriosis and chronic fatigue syndrome are comorbidities, not IBD treatments. Therapy (psychological), cleaning service, meal delivery, wigs, diet modifications excluded as non-pharmacological/non-IBD treatments. Surgery discussed but explicitly rejected for now ('choosing medication cocktail over surgery'). Transcript ends with a natural concluding statement."
+}

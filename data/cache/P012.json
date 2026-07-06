@@ -1,0 +1,160 @@
+{
+ "patient_id": "P012",
+ "profile": {
+  "name": "Paul",
+  "age": {
+   "value": 52,
+   "status": "stated",
+   "evidence": "Paul, 52, male.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 1.0,
+   "status": "inferred",
+   "evidence": "Just diagnosed with Crohn's last year",
+   "confidence": 0.9
+  },
+  "occupation": {
+   "value": "hardware store worker (part-time)",
+   "status": "stated",
+   "evidence": "Work part-time in hardware store.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "heart disease",
+   "high blood pressure"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "small_intestine_other",
+   "status": "inferred",
+   "evidence": "CT showed inflammation throughout intestines — 'throughout intestines' suggests diffuse involvement; no specific colonic or ileal designation given",
+   "confidence": 0.5
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Mesalamine alone wasn't enough, sulfasalazine failed, doctor wanted biologic, quality of life suffering, fatigue preventing activity with grandkids",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "urgency",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Improvement is slow but noticeable. Energy better, less urgency. Still careful with diet.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Mesalamine alone wasn't enough",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started with mesalamine and short prednisone course... Mesalamine alone wasn't enough."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Cardiologist worried about heart; tapered quickly",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started with mesalamine and short prednisone course. Prednisone helped but cardiologist worried about heart. Tapered quickly."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Terrible headaches",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Tried sulfasalazine next. Terrible headaches, had to stop."
+  },
+  {
+   "name_raw": "Entyvio",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Finally agreed to try Entyvio... Started infusions six months ago. Improvement is slow but noticeable."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": "Emergency Room",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally, severe pain sent me to ER. CT showed inflammation throughout intestines."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI doctor",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI doctor said I'm lucky no major complications... Doctor wanted to start biologic... Finally agreed to try Entyvio. Doctor said it's gut-selective."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "cardiologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "Prednisone helped but cardiologist worried about heart. Tapered quickly... Doctor argued those risky with heart condition."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Finally agreed to try Entyvio... Started infusions six months ago.",
+   "confidence": 1.0
+  },
+  "drug_name": "Entyvio",
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "Doctor wanted to start biologic but I resisted. Already take so many medications for heart. Adding immunosuppressant seemed risky.",
+    "overcome": true
+   },
+   {
+    "type": "comorbidity_risk",
+    "evidence": "Insurance wanted anti-TNF first; Doctor argued those risky with heart condition — cardiologist concern about systemic immunosuppression with heart disease drove the specific drug choice and insurance battle.",
+    "overcome": true
+   },
+   {
+    "type": "step_therapy",
+    "evidence": "Insurance coverage was battle. They wanted me to try anti-TNF first. Finally approved after three appeals.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient went from ER directly to GI specialist who prescribed the biologic. No GP/PCP step mentioned in the referral chain.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "sulfasalazine",
+   "Entyvio"
+  ]
+ },
+ "extraction_notes": "Patient had probable decades-long undiagnosed Crohn's before formal diagnosis last year. Heart disease and high blood pressure are comorbidities managed separately (medications not listed as IBD treatments). Cardiologist involvement influenced both corticosteroid tapering and biologic selection (anti-TNF rejected due to cardiac risk; vedolizumab/Entyvio chosen for gut-selectivity). Insurance required step therapy through anti-TNF before approving Entyvio; overcome after three appeals. Patient fear of immunosuppression was an additional barrier, overcome after diet/stress management proved insufficient. Disease location described as 'throughout intestines' — mapped to small_intestine_other with low confidence as no specific segment named. Frequent infections (colds) noted as possible side effect of Entyvio."
+}

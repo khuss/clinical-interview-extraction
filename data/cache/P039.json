@@ -1,0 +1,137 @@
+{
+ "patient_id": "P039",
+ "profile": {
+  "name": "Michelle",
+  "age": {
+   "value": 41,
+   "status": "stated",
+   "evidence": "Michelle, 41",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 8.0,
+   "status": "stated",
+   "evidence": "dealing with Crohn's for about eight years",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "Real estate agent",
+   "status": "stated",
+   "evidence": "Real estate agent. Appearance matters. Clients judge.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "rheumatoid arthritis",
+   "fibromyalgia"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed Crohn's throughout — colonoscopy primarily visualizes the colon/terminal ileum; 'throughout' most naturally refers to colonic involvement, though ileocolonic is possible.",
+   "confidence": 0.55
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Failed mesalamine, required prednisone for flares, escalated to methotrexate then biologic (Humira), currently only ~50% controlled, considering switch to Stelara — pattern consistent with moderate-to-severe disease.",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "diarrhea",
+   "weight_loss",
+   "fatigue",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Helps somewhat. Maybe 50%.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Minimal help",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started mesalamine. Minimal help."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Used for flares; side effects (weight gain); implied discontinued as maintenance",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Added prednisone for flares. Weight gain horrible."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Hair fell out; switched to Humira",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Started methotrexate. Hair fell out. Bought wig."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Switched to Humira three years ago. Helps somewhat. Maybe 50%."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally saw GI. Colonoscopy showed Crohn's throughout. Started mesalamine."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI / prescribing physician",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Switched to Humira three years ago... Looking at switching to Stelara. Next appointment next week. Decision time on Stelara."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched to Humira three years ago. Helps somewhat. Maybe 50%.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "No GP visit mentioned; patient went directly to GI specialist who diagnosed and treated. One step to prescriber.",
+   "confidence": 0.75
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "methotrexate",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Patient is currently on Humira (biologic.status=on) with partial control (~50%). A switch to Stelara is being actively considered with a decision appointment next week — this is a planned future switch, not a current biologic change; Humira remains the current biologic. Comorbidities RA and fibromyalgia noted; their treatments are not listed as they are not IBD treatments. Disease location inferred as colonic from colonoscopy context but ileocolonic cannot be excluded. Truncation check: final sentence 'But possibility nonetheless.' is a complete, summarizing thought — transcript is complete."
+}

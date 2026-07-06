@@ -1,0 +1,151 @@
+{
+ "patient_id": "P026",
+ "profile": {
+  "name": "Alan",
+  "age": {
+   "value": 50,
+   "status": "stated",
+   "evidence": "Alan, 50",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 8.0,
+   "status": "stated",
+   "evidence": "diagnosed with Crohn's eight years ago",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "Construction worker",
+   "status": "stated",
+   "evidence": "Construction worker for twenty years",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "Barrett's esophagus",
+   "chronic back pain"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "found inflammation in colon",
+   "confidence": 0.9
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Failed mesalamine, multiple prednisone courses, failed azathioprine, failed methotrexate, now on Remicade which is failing — treatment-refractory course suggests moderate-to-severe disease",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "diarrhea",
+   "abdominal_pain"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Remicade effectiveness dropped, increased frequency helped temporarily, 'Now failing again' — current disease control is poor",
+   "confidence": 0.95
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Minimal improvement",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on mesalamine for Crohn's. Minimal improvement."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Doctor worried about bone density; each taper harder",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Added prednisone for bad flares. Used it four times now. Each time harder to taper. Doctor worried about bone density."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Elevated liver enzymes",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Tried azathioprine, elevated liver enzymes. Stopped."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Made him feel impaired ('drunk all the time'); unsafe for construction work",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Methotrexate next, made me feel drunk all the time. Couldn't work safely."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Finally went on Remicade three years ago. Infusions every eight weeks... Worked well for two years then effectiveness dropped. Increased frequency to every six weeks. Helped temporarily. Now failing again."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "doctor",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally saw doctor. Did all the tests. Colonoscopy, endoscopy, found inflammation in colon."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI/treating physician",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Finally went on Remicade three years ago... Doctor wants to switch to Humira. Will discuss Humira at next appointment."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Finally went on Remicade three years ago. Infusions every eight weeks.",
+   "confidence": 1.0
+  },
+  "drug_name": "Remicade",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Union insurance covers most but co-pays add up. Another prior authorization battle probably.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/PCP initial visit -> GI specialist who prescribed Remicade and is now managing biologics",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "azathioprine",
+   "methotrexate",
+   "Remicade"
+  ]
+ },
+ "extraction_notes": "Patient is currently on Remicade (failing) with a planned switch to Humira discussed but not yet started — biologic.status is 'on' per Remicade. Humira is a planned next step, not yet initiated. PPIs mentioned for Barrett's esophagus — excluded from treatments as they treat a comorbidity, not Crohn's. Back pain and Barrett's esophagus listed as comorbidities only. Prednisone used episodically (4 times) for flares, not as a continuous current therapy — marked is_current=false. Transcript ends with a complete thought ('Bitter? Yes. But earned it.') — completeness=complete."
+}

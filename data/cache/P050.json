@@ -1,0 +1,133 @@
+{
+ "patient_id": "P050",
+ "profile": {
+  "name": "Victor",
+  "age": {
+   "value": 62,
+   "status": "stated",
+   "evidence": "Victor, 62, male.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.67,
+   "status": "inferred",
+   "evidence": "Diagnosed with Crohn's eight months ago.",
+   "confidence": 0.95
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "COPD",
+   "arthritis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Lost 50 pounds, budesonide only helps ~20%, GI wants biologics, quality of life terrible, can't eat or leave house much.",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "weight_loss",
+   "appetite_loss"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Budesonide helps a little, maybe 20%. Quality of life terrible. Stuck with inadequate treatment.",
+   "confidence": 0.95
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "No effect",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started treatment with mesalamine. Nothing."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Worsened breathing; respiratory doctor said absolutely not",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Tried prednisone but breathing got worse. Respiratory doctor said absolutely not."
+  },
+  {
+   "name_raw": "budesonide",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Now on budesonide. Helps a little. Maybe 20%."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "GI wants to try biologics but lung doctor says too risky with COPD."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "Respiratory/Lung doctor",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Lung doctor says too risky with COPD. Might get infection that kills me."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "discussed_rejected",
+   "status": "stated",
+   "evidence": "GI wants to try biologics but lung doctor says too risky with COPD. Might get infection that kills me. So stuck with inadequate treatment.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "comorbidity_risk",
+    "evidence": "Lung doctor says too risky with COPD. Might get infection that kills me.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": "No GP/PCP encounter mentioned; biologic was discussed but rejected, never prescribed.",
+   "confidence": null
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "budesonide"
+  ]
+ },
+ "extraction_notes": "Patient is 62-year-old male, 8 months post-diagnosis. COPD (from 40 years of smoking) and arthritis are comorbidities. Prednisone caused respiratory worsening and was vetoed by respiratory specialist. Biologic was recommended by GI but rejected by lung doctor due to infection risk from COPD — classified as discussed_rejected with comorbidity_risk barrier. Supplements, special food, and Medicare costs mentioned but these are not IBD treatments. Transcript ends with a complete final sentence — not truncated."
+}

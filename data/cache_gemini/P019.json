@@ -1,0 +1,103 @@
+{
+ "patient_id": "P019",
+ "profile": {
+  "name": "Natalie",
+  "age": {
+   "value": 24,
+   "status": "stated",
+   "evidence": "I'm Natalie, 24",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "generalized anxiety disorder"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "found inflammation in small intestine and colon",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "stated",
+   "evidence": "Moderate to severe, he said.",
+   "confidence": null
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "fatigue",
+   "urgency"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Humira working okay. Not perfect but better than before. Still have breakthrough symptoms.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 1,
+   "evidence": "Started Humira right away... Humira working okay. Not perfect but better than before."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Family friend who's a GI. Did colonoscopy... Suggested aggressive treatment... Started Humira right away"
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Humira right away",
+   "confidence": null
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance fight was real. They wanted me to fail other drugs first. Doctor wrote letters, appeals. Finally approved.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient went directly to a family friend who is a GI for diagnosis and treatment.",
+   "confidence": 1.0
+  },
+  "treatment_sequence": [
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

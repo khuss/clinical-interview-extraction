@@ -1,0 +1,161 @@
+{
+ "patient_id": "P002",
+ "profile": {
+  "name": "Michael",
+  "age": {
+   "value": 42,
+   "status": "stated",
+   "evidence": "I'm 42, male",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 3.0,
+   "status": "inferred",
+   "evidence": "The digestive issues started about three years ago; diagnosis followed workup",
+   "confidence": 0.8
+  },
+  "occupation": {
+   "value": "high school teacher",
+   "status": "stated",
+   "evidence": "I'm a high school teacher",
+   "confidence": null
+  },
+  "comorbidities": [
+   "type 2 diabetes",
+   "anemia",
+   "stroke (minor, 2 years ago)",
+   "arthritis (Crohn's-related, knees and lower back)"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Crohn's affecting my terminal ileum and ascending colon",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Failed mesalamine and methotrexate, chronic bleeding causing anemia, biologic recommended by GI, currently on budesonide as bridge",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "bloody_diarrhea",
+   "nausea_vomiting",
+   "anemia",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Budesonide 'helps somewhat but isn't a long-term solution'; still has chronic bleeding and anemia",
+   "confidence": 0.85
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "wreaked havoc on blood sugar control; not stated as fully stopped but implied superseded",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on prednisone for immediate relief, which wreaked havoc on my blood sugar control"
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "no improvement",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "tried mesalamine, no improvement"
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "liver wasn't happy, probably because of diabetes medications",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Moved to methotrexate, but my liver wasn't happy, probably because of my diabetes medications"
+  },
+  {
+   "name_raw": "budesonide",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Meanwhile, I'm on budesonide, which helps somewhat but isn't a long-term solution"
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "not_started",
+   "reason_stopped": "insurance tier 4 cost ($800/month); financial assistance being sought",
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "Dr. Patel wanted to start me on a biologic, specifically Stelara, but my insurance classified it as tier 4, meaning I'd have to pay $800 per month even with coverage"
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "endocrinologist",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "my endocrinologist thought it was diabetic gastroparesis... finally triggered a GI referral"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "gastroenterologist (Dr. Patel)",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "The gastroenterologist, Dr. Patel, was thorough... Dr. Patel wanted to start me on a biologic, specifically Stelara"
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "planned",
+   "status": "stated",
+   "evidence": "Dr. Patel wanted to start me on a biologic, specifically Stelara... We're currently trying to get financial assistance from the drug company",
+   "confidence": 1.0
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "my insurance classified it as tier 4, meaning I'd have to pay $800 per month even with coverage. I'm a high school teacher, that's not feasible.",
+    "overcome": false
+   },
+   {
+    "type": "step_therapy",
+    "evidence": "Failed mesalamine and methotrexate before biologic was recommended",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "Endocrinologist (step 1) referred to GI specialist Dr. Patel (step 2, prescriber/recommender)",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "methotrexate",
+   "budesonide",
+   "Stelara (planned, not yet started)"
+  ]
+ },
+ "extraction_notes": "Metformin and insulin excluded from treatments as they are for diabetes, not Crohn's. Iron supplements excluded as a supplement for comorbid anemia. The biologic (Stelara) has been recommended/planned but not started due to cost barrier; financial assistance is being sought. 'planned' status used because patient has never been on a biologic. Stroke noted as comorbidity. Arthritis flagged as joint symptom per SymptomFlag enum."
+}

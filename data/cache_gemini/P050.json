@@ -1,0 +1,131 @@
+{
+ "patient_id": "P050",
+ "profile": {
+  "name": null,
+  "age": {
+   "value": 62,
+   "status": "stated",
+   "evidence": "Victor, 62, male.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.67,
+   "status": "stated",
+   "evidence": "Diagnosed with Crohn's eight months ago.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "COPD",
+   "arthritis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "symptoms": [
+   "weight_loss",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Helps a little. Maybe 20%. GI wants to try biologics... stuck with inadequate treatment.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started treatment with mesalamine. Nothing."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "breathing got worse",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Tried prednisone but breathing got worse. Respiratory doctor said absolutely not."
+  },
+  {
+   "name_raw": "budesonide",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Now on budesonide. Helps a little. Maybe 20%."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "GI wants to try biologics but lung doctor says too risky with COPD."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "respiratory doctor",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Respiratory doctor said absolutely not."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "discussed_rejected",
+   "status": "stated",
+   "evidence": "GI wants to try biologics but lung doctor says too risky with COPD.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "comorbidity_risk",
+    "evidence": "lung doctor says too risky with COPD. Might get infection that kills me.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GI specialist and respiratory specialist involved in the decision-making process.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "budesonide"
+  ]
+ },
+ "extraction_notes": null
+}

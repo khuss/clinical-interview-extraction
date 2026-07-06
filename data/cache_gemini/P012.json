@@ -1,0 +1,147 @@
+{
+ "patient_id": "P012",
+ "profile": {
+  "name": "Paul",
+  "age": {
+   "value": 52,
+   "status": "stated",
+   "evidence": "Paul, 52, male.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 1.0,
+   "status": "stated",
+   "evidence": "Just diagnosed with Crohn's last year",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "hardware store",
+   "status": "stated",
+   "evidence": "Work part-time in hardware store.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "heart disease",
+   "high blood pressure"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "inferred",
+   "evidence": "CT showed inflammation throughout intestines.",
+   "confidence": 0.8
+  },
+  "severity": {
+   "value": "moderate",
+   "status": "inferred",
+   "evidence": "Quality of life suffering, missed family gatherings, but not hospitalized for surgery.",
+   "confidence": 0.7
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "urgency",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Improvement is slow but noticeable. Energy better, less urgency.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Mesalamine alone wasn't enough."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "effective",
+   "reason_stopped": "cardiologist worried about heart",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Prednisone helped but cardiologist worried about heart. Tapered quickly."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Terrible headaches",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Tried sulfasalazine next. Terrible headaches, had to stop."
+  },
+  {
+   "name_raw": "Entyvio",
+   "drug_class": "biologic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Started infusions six months ago."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "severe pain sent me to ER."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI doctor said I'm lucky... Doctor wanted to start biologic but I resisted."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started infusions six months ago.",
+   "confidence": 1.0
+  },
+  "drug_name": "Entyvio",
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "Already take so many medications for heart. Adding immunosuppressant seemed risky.",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance coverage was battle. They wanted me to try anti-TNF first.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "ER visit led to GI specialist who managed the care.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "sulfasalazine",
+   "Entyvio"
+  ]
+ },
+ "extraction_notes": null
+}

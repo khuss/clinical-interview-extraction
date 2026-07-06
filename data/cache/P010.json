@@ -1,0 +1,175 @@
+{
+ "patient_id": "P010",
+ "profile": {
+  "name": "Mark",
+  "age": {
+   "value": 48,
+   "status": "stated",
+   "evidence": "Mark here, 48",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 5.0,
+   "status": "stated",
+   "evidence": "diagnosed with Crohn's five years ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "middle management",
+   "status": "stated",
+   "evidence": "Work in middle management",
+   "confidence": null
+  },
+  "comorbidities": [
+   "type 2 diabetes",
+   "enteropathic arthritis (Crohn's-related)"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Colonoscopy revealed severe ileocolonic Crohn's",
+   "confidence": null
+  },
+  "severity": {
+   "value": "severe",
+   "status": "stated",
+   "evidence": "Colonoscopy revealed severe ileocolonic Crohn's",
+   "confidence": null
+  },
+  "symptoms": [
+   "diarrhea",
+   "weight_loss",
+   "joint",
+   "fatigue",
+   "abdominal_pain"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Life is manageable. Not great, but manageable — on Humira two years, but still has fatigue, joint pain, frequent infections, and is being prepared for possible switch to Stelara",
+   "confidence": 0.8
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Sent blood sugars through roof; tapered after two months",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started triple therapy - prednisone, azathioprine, and mesalamine. Prednisone sent blood sugars through roof. Tapered prednisone after two months."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": "Crohn's flared when methotrexate was started; implied azathioprine was replaced",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Azathioprine and mesalamine maintained remission for about a year. Then started having severe joint pain... GI doctor switched approach."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Stopped mesalamine, wasn't really helping",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Stopped mesalamine, wasn't really helping."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": "Crohn's flared; switched to biologic",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Started methotrexate for both conditions. Helped joints but Crohn's flared."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Finally approved for Humira... Been on Humira two years. Life is manageable."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "primary care",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Primary care ran basic tests, all normal except elevated CRP. Referred to gastroenterologist."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "gastroenterologist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Referred to gastroenterologist... Colonoscopy revealed severe ileocolonic Crohn's... Finally agreed to biologics... Finally approved for Humira."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "rheumatologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "Rheumatologist said it's enteropathic arthritis, related to Crohn's."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "endocrinologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 4,
+   "evidence": "Endocrinologist had to add insulin to my diabetes regimen."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Finally approved for Humira. Been on Humira two years.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Insurance nightmare began. Required documentation of failure of multiple therapies. Appeals process took four months.",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "The co-pay even with insurance - $400 monthly. Thank god for manufacturer assistance program.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP referred to GI specialist who ultimately prescribed Humira — 2 steps (GP -> GI)",
+   "confidence": 1.0
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "azathioprine",
+   "mesalamine",
+   "methotrexate",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Insulin added for diabetes management (not Crohn's treatment) — excluded from treatments. Nutritionist visit noted but not included as a Crohn's treatment encounter. Stelara mentioned as a future contingency if Humira fails, but patient is currently on Humira and no switch has been initiated; biologic.status remains 'on'. Azathioprine and mesalamine were used concurrently initially; sequence reflects approximate order of introduction and discontinuation."
+}

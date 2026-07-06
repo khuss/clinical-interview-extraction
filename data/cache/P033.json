@@ -1,0 +1,148 @@
+{
+ "patient_id": "P033",
+ "profile": {
+  "name": "Nina",
+  "age": {
+   "value": 26,
+   "status": "stated",
+   "evidence": "Nina, 26.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 7.0,
+   "status": "stated",
+   "evidence": "Diagnosed at 19. Seven years of hell.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "Entry-level marketing",
+   "status": "stated",
+   "evidence": "Entry-level marketing job.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "severe eczema",
+   "bipolar II"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Passing blood, severe pain, living in bathroom; required step-up through mesalamine, prednisone, methotrexate, Humira, and now Stelara; multiple flares causing school interruptions.",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "bloody_diarrhea",
+   "abdominal_pain",
+   "weight_loss",
+   "fatigue",
+   "nausea_vomiting"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Now on Stelara. Helps both conditions somewhat. Neither perfect but both manageable.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": "not explicitly stated; escalated to other therapies",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started with mesalamine and prednisone."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "triggered hypomanic episode; not stated as sole reason for stopping",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started with mesalamine and prednisone. Prednisone triggered my first hypomanic episode."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": "severe nausea; eventually escalated to biologic",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Started methotrexate. Helped Crohn's but made me so nauseous."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "developed severe Humira-induced eczema; switched to Stelara",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Started Humira at 21. Game changer initially. Could eat, energy returned, finished school. But developed severe eczema. Dermatologist said might be Humira-induced."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Now on Stelara. Helps both conditions somewhat. Neither perfect but both manageable."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "college health center",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally went to health center. They actually took it seriously. Referred immediately."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist (colonoscopy, diagnosis, initial treatment)",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Colonoscopy at 19 was terrifying. Doctor said Crohn's. Started with mesalamine and prednisone... Started methotrexate... Started Humira at 21... Now on Stelara."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Now on Stelara.",
+   "confidence": 1.0
+  },
+  "drug_name": "Stelara",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Health center referred directly to GI specialist who managed all IBD treatment including biologics.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "methotrexate",
+   "Humira",
+   "Stelara"
+  ]
+ },
+ "extraction_notes": "Lamotrigine (mood stabilizer), vitamin D, B12, iron, probiotic, and topical steroids for eczema excluded from IBD treatment list as they treat comorbidities (bipolar II, eczema) or are supplements. Humira-induced eczema noted as adverse effect leading to switch to Stelara. Bipolar II diagnosis came at age 25 (last year). Surgery discussed as a future possibility if Stelara fails but not yet planned. Ketamine therapy mentioned as a personal interest for depression, not an IBD treatment."
+}

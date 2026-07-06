@@ -1,0 +1,171 @@
+{
+ "patient_id": "P020",
+ "profile": {
+  "name": "Gary",
+  "age": {
+   "value": 46,
+   "status": "stated",
+   "evidence": "Gary, 46",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 7.0,
+   "status": "stated",
+   "evidence": "diagnosed with Crohn's about seven years ago",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "Construction worker",
+   "status": "stated",
+   "evidence": "Construction worker, so this disease really impacts my livelihood",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "hypertension",
+   "alcohol use (heavy drinking)"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed severe inflammation, ulcers everywhere; initial symptom was bloody stools — colonoscopy findings suggest colonic involvement; no mention of small bowel or ileal disease",
+   "confidence": 0.6
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed severe inflammation, ulcers everywhere; failed multiple therapies; currently on second biologic with waning effectiveness",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "bloody_diarrhea",
+   "weight_loss",
+   "abdominal_pain",
+   "diarrhea",
+   "fatigue",
+   "skin",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Starting to notice it's not working as well. More bathroom trips, more pain — Humira providing some but declining control",
+   "confidence": 0.85
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Caused rage/mood changes, almost lost job from snapping at supervisor",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on prednisone and mesalamine. Prednisone made me rage. Almost lost my job from snapping at supervisor. Got off that quick."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Didn't do much alone",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Mesalamine didn't do much alone."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Gave killer headaches",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Tried sulfasalazine, gave me killer headaches."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Made him so nauseous he couldn't work",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Then methotrexate, made me so nauseous I couldn't work."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "Stopped working completely after ~2 years even with increased frequency",
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "Finally got approved for Remicade. Worked great for about two years, then effectiveness dropped. Increased frequency to every six weeks, helped for a while. Then stopped working completely."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 6,
+   "evidence": "Switched to Humira. Been on Humira three years now. Starting to notice it's not working as well. More bathroom trips, more pain."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "doctor (GP/PCP implied)",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Wife finally made me see doctor when I dropped 20 pounds."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist (colonoscopy, biologics, ongoing management)",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Colonoscopy showed severe inflammation, ulcers everywhere. Doc pushed for biologics... Finally got approved for Remicade... Doc mentioned Stelara next."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Been on Humira three years now.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "insurance wanted documentation of failing everything else first. Took eight months of appeals while I suffered.",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Another fight with insurance coming. Another prior authorization battle. More waiting while suffering.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP visit then GI specialist who managed colonoscopy, prescribed treatments, and approved biologics",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "sulfasalazine",
+   "methotrexate",
+   "Remicade",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Patient is currently on Humira (second biologic) with waning effectiveness. Stelara is being discussed as next step but has not been started — biologic.status remains on for Humira. Insurance step therapy was a major barrier to initial biologic access (8-month delay). Stelara prior authorization battle is anticipated but not yet started. Skin issues and joint pain noted as possible side effects or extraintestinal manifestations. Alcohol use and hypertension noted as comorbidities but not treated as IBD treatments."
+}

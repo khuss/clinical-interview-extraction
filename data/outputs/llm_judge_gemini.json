@@ -1,0 +1,198 @@
+{
+  "P001": {
+    "fidelity": 5,
+    "hallucinations": [],
+    "misses": [
+      "Vitamin D and B12 supplements (mentioned as current treatments for absorption issues \u2014 not captured in treatments array)",
+      "Rheumatologist involvement (mentioned as a current care provider alongside Dr. Chen \u2014 not captured in encounters)",
+      "Initial misdiagnosis of IBS by Dr. Martinez (captured in encounter evidence but not explicitly flagged as a misdiagnosis field)",
+      "Injection site reactions in first months of Humira (minor adverse event not captured)",
+      "Annual cost of ~$70,000 without insurance (not captured anywhere in the JSON)",
+      "Monitoring frequency of every 3 months with Dr. Chen (not captured)"
+    ],
+    "comment": "The extraction is highly faithful and well-structured. All major clinical facts \u2014 diagnosis, disease location, severity, treatment sequence with outcomes, biologic barriers, comorbidities, and disease control status \u2014 are accurately captured with supporting evidence. Minor omissions include current supplement use (vitamin D, B12), the rheumatologist encounter, Humira cost information, monitoring schedule, and injection site reactions. None of these omissions constitute hallucinations or distortions, and the JSON does not assert anything unsupported by the transcript. Overall a strong extraction with only minor incompleteness."
+  },
+  "P002": {
+    "fidelity": 5,
+    "hallucinations": [],
+    "misses": [
+      "Iron supplements (current medication for anemia) not listed in treatments",
+      "Metformin (current diabetes medication, dose adjusted during workup) not listed in treatments or medications",
+      "Insulin (increased due to prednisone) not listed in treatments or medications",
+      "Financial assistance application to drug company is in progress \u2014 captured in barriers but the 'overcome: false' status could be more nuanced (pending, not simply unresolved)",
+      "Job security concern and excessive sick leave mentioned but not captured anywhere in the JSON"
+    ],
+    "comment": "The extraction is highly faithful and well-structured. All major clinical facts \u2014 diagnosis, disease location, comorbidities, treatment sequence with outcomes, biologic barrier, and encounter pathway \u2014 are accurately captured with appropriate evidence citations. Minor misses include the absence of iron supplements, metformin, and insulin as treatments/medications, and the omission of the job security/sick leave psychosocial detail. None of these omissions constitute hallucinations, and no fabricated data is present. Overall fidelity is very high."
+  },
+  "P047": {
+    "fidelity": 4,
+    "hallucinations": [
+      "symptoms list includes 'abdominal_pain' \u2014 the transcript never explicitly mentions abdominal pain; it references urgency/bathroom runs and fatigue but not pain directly",
+      "symptoms list includes 'diarrhea' \u2014 the transcript mentions running to the bathroom but does not explicitly state diarrhea",
+      "mesalamine marked as 'is_current: true' with outcome 'ongoing_unknown' \u2014 the transcript does not clarify whether mesalamine is still being taken; this is an assumption",
+      "prednisone marked as 'is_current: false' \u2014 the transcript does not explicitly say prednisone was stopped, only that methotrexate is being tried now"
+    ],
+    "misses": [
+      "30-pound weight gain in two months from prednisone \u2014 not captured anywhere in the JSON",
+      "hair loss as a side effect of methotrexate \u2014 not captured in symptoms or treatment side effects",
+      "nausea as a current symptom from methotrexate \u2014 not captured in symptoms list",
+      "prior misdiagnosis history (3 years told IBS/stress/hormones) \u2014 not captured",
+      "teenagers in junior year / college prep context \u2014 not captured (though family context is generally outside scope, it reflects psychosocial burden)",
+      "self-esteem and marital stress concerns \u2014 psychosocial/quality-of-life dimension entirely absent from JSON",
+      "workplace performance concerns (mistakes, upcoming review, hiding symptoms) \u2014 not captured",
+      "obesity/weight status resulting from prednisone \u2014 not captured in profile or comorbidities",
+      "colonoscopies previously returning normal (small bowel Crohn's) \u2014 diagnostic history not captured"
+    ],
+    "comment": "The extraction is structurally sound and captures the core clinical facts (diagnosis, location, treatments, comorbidities, occupation, disease control). However, several important details are missing: prednisone-induced weight gain and resulting obesity, methotrexate side effects (hair loss, nausea), prior misdiagnosis history, and significant psychosocial burden (marital stress, workplace risk, self-esteem). Two symptoms (abdominal_pain, diarrhea) are inferred without explicit transcript support. The mesalamine and prednisone current-status inferences are reasonable but not fully supported. Overall a competent extraction with notable gaps in side-effect and psychosocial documentation."
+  },
+  "P048": {
+    "fidelity": 4,
+    "hallucinations": [
+      "encounters[2]: encounter_type='gi_specialist' \u2014 the transcript says 'Doctor wants biologics after I heal from surgery' but does not specify this doctor is a GI specialist; it could be the surgeon or another physician",
+      "encounters[2]: on_referral_path=true \u2014 not stated in transcript",
+      "encounters[1]: on_referral_path=false \u2014 not stated; the transcript gives no information about referral path for the surgical encounter",
+      "derived.referral_steps_gp_to_prescriber value=1 \u2014 the transcript mentions no GP visit; the pathway started at the ER, making this inference unsupported"
+    ],
+    "misses": [
+      "Social/support context: living alone, ex-wife helps occasionally, kids out of state, neighbor checks in, Meals on Wheels \u2014 none captured in JSON",
+      "Financial stress: six-figure surgery bills, insurance disputes, possible need to sell house \u2014 not captured",
+      "Psychological/adjustment: 'still processing', humbling experience, identity loss from running a construction company \u2014 not captured",
+      "Surgical detail: 'foot of intestine gone' (approximately 12 inches removed) \u2014 only partially reflected; the specific quantity is not noted",
+      "biologic.barriers: financial barriers and insurance fighting coverage are clearly stated but barriers list is empty and barriers_status is 'not_mentioned' rather than reflecting the insurance/financial conflict mentioned"
+    ],
+    "comment": "The JSON is largely accurate for the clinical core (diagnosis, medications, biologic plan, comorbidities, severity). The main weaknesses are: (1) the biologic barriers field is empty despite explicit mention of insurance fighting everything and financial hardship; (2) several encounter-level inferences (GI specialist type, referral path flags) are not supported by the transcript; (3) rich psychosocial and financial context present in the transcript is entirely absent. These omissions reduce practical utility but do not constitute major fabrications, hence fidelity 4."
+  },
+  "P015": {
+    "fidelity": 4,
+    "hallucinations": [
+      "disease.location value 'ileocolonic' \u2014 the transcript never specifies disease location; the cobblestone appearance and bowel obstruction do not confirm ileocolonic distribution, and Stelara is used across multiple phenotypes. This is an over-confident inference.",
+      "encounters array lists only one encounter (GI specialist) but frames it as a structured encounter log \u2014 the transcript describes multiple clinical interactions (initial GP, rheumatologist, infusion center, hospitalization) that are omitted without acknowledgment.",
+      "biologic.drug_name is null while biologic.status evidence references Stelara \u2014 the drug name field should be populated given it is explicitly stated."
+    ],
+    "misses": [
+      "Initial misdiagnosis as IBS by first doctor and treatment with fiber supplements \u2014 not captured anywhere in the JSON.",
+      "Rheumatologist consultation for joint pain during azathioprine \u2014 mentioned in transcript but absent from encounters.",
+      "Hospitalization for partial bowel obstruction while fighting Cimzia insurance denial \u2014 a significant clinical event not recorded in encounters.",
+      "Planned future combination therapy: adding methotrexate to Stelara \u2014 mentioned explicitly but not captured in treatments or notes.",
+      "Nutritional supplementation: B12 injections, vitamin D, iron infusions \u2014 clinically relevant and absent.",
+      "Low-residue diet \u2014 dietary management not captured.",
+      "Financial hardship details (~$8,000 annual out-of-pocket, credit card debt, considering bankruptcy) \u2014 relevant social determinant of health, not in barriers or social context.",
+      "Family/social support context: single mother, 12- and 9-year-old children, parents helping \u2014 partially implied but not structured.",
+      "Support group participation \u2014 not captured.",
+      "Mesalamine was used concurrently with prednisone initially, then continued as maintenance \u2014 the JSON implies it was a standalone sequential step, slightly misrepresenting the timeline."
+    ],
+    "comment": "The extraction is broadly accurate for the core treatment sequence and disease severity, and uses appropriate inference flags. However, it misses several clinically and socially important facts (hospitalization, planned methotrexate, nutritional deficiencies, initial misdiagnosis, rheumatology encounter), over-infers disease location with unwarranted confidence, and leaves the current biologic drug_name field null despite it being explicitly stated. These gaps reduce fidelity from a potential 5 to 4."
+  },
+  "P031": {
+    "fidelity": 3,
+    "hallucinations": [
+      "disease.location value 'ileocolonic' \u2014 the transcript says 'Moderate to severe Crohn's throughout' but does not specify ileocolonic distribution; this is an over-specific inference presented with 0.8 confidence",
+      "encounters array with encounter_type 'gi_specialist' and biologic_decision_point/on_referral_path fields \u2014 the transcript never describes a specific GI specialist encounter or referral path; this is fabricated structure",
+      "derived.referral_steps_gp_to_prescriber value of 1 \u2014 no referral pathway is described in the transcript at all",
+      "Cymbalta (duloxetine) for fibromyalgia is clearly mentioned in the transcript but is entirely absent from the treatments list"
+    ],
+    "misses": [
+      "Cymbalta (duloxetine) treatment for fibromyalgia \u2014 explicitly stated in transcript, missing from treatments array",
+      "Two hospitalizations during cancer treatment \u2014 mentioned clearly, not captured anywhere",
+      "Partial obstruction twice post-cancer \u2014 mentioned as a complication, not captured in symptoms or disease history",
+      "Oncologist involvement and concern about immunosuppression \u2014 relevant clinical detail omitted",
+      "Patient is currently on disability (occupation status changed) \u2014 JSON lists occupation as 'teacher' without noting she is no longer working/on disability",
+      "Possible future surgery (resection, temporary ostomy) as next step if Stelara fails \u2014 not captured",
+      "Suicidal ideation / passive questioning of will to live ('sometimes wonder why fight so hard') \u2014 clinically significant, not captured",
+      "Blog activity as coping mechanism \u2014 minor but part of psychosocial profile",
+      "Scar tissue from inflammation noted as consequence of the medication gap \u2014 not captured",
+      "Stage 2 breast cancer at age 44, now cancer-free two years \u2014 cancer details only partially captured (comorbidity listed but staging/current status absent)",
+      "Rheumatologist confirmed fibromyalgia diagnosis \u2014 specialist involvement not noted",
+      "Fear of antidepressants due to drug interactions despite real depression \u2014 nuance lost; depression listed as comorbidity but the treatment avoidance context is missing"
+    ],
+    "comment": "The JSON captures the broad strokes (age, diagnosis duration, severity, treatment sequence, current biologic, partial disease control) but has several significant issues. Cymbalta, a named medication explicitly discussed, is entirely absent. The encounters and referral_steps fields are fabricated structure not supported by the transcript. The ileocolonic location inference is over-specific. Important clinical details like hospitalizations, partial obstructions, disability status, passive suicidal ideation, and the oncologist's role are all missing. The occupation field is misleading since she is no longer working as a teacher and is on disability."
+  },
+  "P004": {
+    "fidelity": 4,
+    "hallucinations": [
+      "budesonide outcome labeled 'partial' \u2014 the transcript says 'I know it's not enough,' which implies inadequate control, but 'partial' is a reasonable inference; however, the JSON does not flag this as inferred in the outcome field, presenting it as a stated classification",
+      "referral_steps_gp_to_prescriber value of 0 \u2014 the transcript never mentions a GP/PCP at all, so inferring '0 steps' is a fabricated numeric conclusion rather than 'unknown'; the evidence note itself admits no GP is mentioned, making the numeric value unsupported"
+    ],
+    "misses": [
+      "Tramadol use (occasional, with dependency concern) is not captured anywhere in treatments or medications",
+      "Clinical trial consideration mentioned by Dr. Williams and being looked into by Robert is absent from the JSON",
+      "Diet changes as a current management strategy are mentioned in the transcript but not reflected in treatments",
+      "Dehydration as a symptom/presenting complaint at the ER is not listed in symptoms",
+      "The 2-month wait to see the GI specialist is noted in the transcript but not captured in the encounter data",
+      "Wife's perspective on paying for biologic and two kids in college (financial/social context) are absent \u2014 though these are contextual, they bear on the barrier analysis",
+      "Considering selling the business (functional/occupational impact) is not captured",
+      "Colon cancer risk concern raised by Dr. Williams is not noted anywhere in the JSON"
+    ],
+    "comment": "The extraction is generally solid and captures the core clinical picture accurately: diagnosis, disease location, severity, treatment sequence, biologic recommendation, and cost barrier. However, several clinically relevant details are missed \u2014 most notably tramadol use, clinical trial consideration, and the dehydration symptom. The referral_steps value of 0 is a borderline hallucination since the transcript provides no basis for a numeric answer. Overall fidelity is good but not complete."
+  },
+  "P038": {
+    "fidelity": 3,
+    "hallucinations": [
+      "encounters[0].encounter_type='gi_specialist': The transcript does not describe a GI specialist encounter specifically; it mentions a rheumatologist and eventual dual diagnosis but no explicit GI specialist encounter is described as a discrete event.",
+      "encounters[0].biologic_decision_point=true and on_referral_path=true: These are asserted without clear transcript support for a structured referral path.",
+      "derived.referral_steps_gp_to_prescriber.value=1: The transcript describes a multi-year, multi-specialist journey (rheumatologist first, then GI symptoms, then diagnosis) \u2014 a single referral step is not supported.",
+      "disease.location.value='ileocolonic': The transcript says 'small bowel, some colon' which could map to this, but 'ileocolonic' is a specific clinical term not used in the transcript and may not accurately capture 'throughout small bowel'.",
+      "biologic.drug_name=null: While null is not a fabrication, the transcript clearly states the current drug is Humira \u2014 this should be populated.",
+      "symptoms includes 'abdominal_pain': The transcript mentions needing the bathroom constantly and urgency but does not explicitly mention abdominal pain."
+    ],
+    "misses": [
+      "Suicidal ideation with a specific plan (pills saved up) is completely absent from the JSON \u2014 this is a critical safety finding in the transcript.",
+      "Stelara is mentioned as a proposed next treatment option \u2014 not captured anywhere in the JSON.",
+      "Clinical trial consideration and exclusion due to kidney disease is not captured.",
+      "Surgery for Crohn's discussed as a next option with complications due to AS \u2014 not captured.",
+      "Therapist/mental health support is mentioned \u2014 not captured.",
+      "Divorce last year \u2014 not captured in social/psychosocial context.",
+      "Financial hardship (lost house, on disability, fraction of former income) \u2014 not captured.",
+      "Social isolation and loneliness \u2014 not captured.",
+      "Three years of unmonitored NSAID use causing CKD \u2014 the causal history is not captured.",
+      "Nephrologist involvement and specialist disagreement (three specialists disagreeing) \u2014 only partially captured.",
+      "Patient's statement 'Until parents gone. Then... we'll see.' indicating ongoing suicidal ideation contingent on parents' death \u2014 not captured.",
+      "Occupation status should reflect 'on disability' not just 'software architect' (former occupation).",
+      "AS symptoms (can't sit or stand long, can't lay flat, can't bend) not captured in symptoms.",
+      "Remicade outcome should note it 'worked initially' before failing \u2014 the JSON says 'ineffective' which is incomplete."
+    ],
+    "comment": "The JSON captures basic demographics, diagnosis history, and treatment sequence reasonably well, but has critical omissions. Most seriously, active suicidal ideation with a specific plan and contingency ('until parents gone, then we'll see') is entirely absent \u2014 a major patient safety miss. The disease location is over-specified with a clinical term not in the transcript. Several important clinical details are missing: Stelara as proposed next therapy, surgery discussion, clinical trial exclusion, CKD causation history, and the full psychosocial picture (divorce, disability, financial loss, isolation). The encounters section is largely fabricated in structure. Overall fidelity is poor-to-moderate."
+  },
+  "P024": {
+    "fidelity": 3,
+    "hallucinations": [
+      "disease.location value 'ileocolonic' \u2014 transcript says 'inflammation everywhere' from colonoscopy but does not specify ileocolonic involvement; this is an over-specific inference not supported by the text",
+      "disease.symptoms includes 'abdominal_pain', 'fatigue', and 'appetite_loss' \u2014 none of these are explicitly mentioned in the transcript",
+      "encounters[0].specialty_raw is null but the encounter is labelled 'gi_specialist' \u2014 the transcript never specifies the specialty; the doctor is described only as a 'new doctor' who ordered a colonoscopy",
+      "encounters[0].sequence_index:1 implies a single structured encounter, but the transcript references multiple visits (colonoscopy, endocrinologist, upcoming appointment) that are collapsed or omitted",
+      "derived.referral_steps_gp_to_prescriber confidence:1.0 \u2014 the transcript gives no information about a GP referral step; this certainty is fabricated"
+    ],
+    "misses": [
+      "Endocrinologist involvement \u2014 transcript explicitly mentions an endocrinologist who was unhappy about blood sugar spike; no encounter or specialist record for this",
+      "Upcoming doctor appointment next week to push for biologics \u2014 a concrete near-future encounter mentioned in transcript but absent from encounters array",
+      "Sulfasalazine adverse effect (terrible headaches) \u2014 transcript clearly states 'Headaches terrible'; the treatment record notes outcome 'ongoing_unknown' but does not capture the adverse effect",
+      "Rapid weight loss explicitly described as a current symptom ('Losing weight rapidly') \u2014 while weight_loss is listed in symptoms, the severity/acuity context is lost",
+      "Psychosocial/functional impact: guilt, marital strain (wife working extra shifts as nurse), children's distress, missing kids' games, considering closing business \u2014 all clinically relevant context entirely absent",
+      "Patient considering second mortgage to fund biologics \u2014 a significant financial barrier not captured",
+      "Patient's long undiagnosed period (years of symptoms attributed to food sensitivities/aging) \u2014 relevant disease history context missing from disease section",
+      "Diet severely restricted to white bread and Ensure \u2014 nutritional status detail absent"
+    ],
+    "comment": "The JSON captures the core treatment sequence, biologic barrier, and basic demographics reasonably well, but introduces several hallucinations (ileocolonic location, unmentioned symptoms like abdominal pain/fatigue/appetite loss, GI specialist label, inflated referral confidence) and misses important documented facts including the endocrinologist encounter, sulfasalazine headache adverse effect, the imminent upcoming appointment, and substantial psychosocial/financial context that is prominent in the transcript. Fidelity is moderate."
+  },
+  "P045": {
+    "fidelity": 4,
+    "hallucinations": [
+      "patient_id 'P045' \u2014 no patient ID appears in the transcript; this is an internal label but technically fabricated from the source text",
+      "symptoms list includes 'fatigue' \u2014 the transcript describes exhaustion from managing illness and pain, but 'fatigue' as a discrete symptom is not explicitly stated; it is a borderline inference",
+      "encounters[0].specialty_raw is null but encounter_type is 'gi_specialist' \u2014 the transcript never specifies the doctor is a GI specialist; it only says 'doctor'"
+    ],
+    "misses": [
+      "Folic acid use \u2014 patient explicitly mentions taking folic acid to manage methotrexate nausea; not captured anywhere in the JSON",
+      "Nausea as a symptom/side effect \u2014 'The nausea is terrible' from methotrexate is not listed in symptoms or treatment side effects",
+      "Symptom duration of ~2 years before diagnosis \u2014 'been dealing with symptoms for at least two years' is not captured",
+      "Prior weight loss of 40 pounds and dismissal by doctors \u2014 clinically relevant history not captured",
+      "Financial stress and living situation (moved back with parents) \u2014 relevant social determinants of health not captured",
+      "Relationship/psychosocial context (boyfriend, postponed wedding, mental health burden) \u2014 not captured",
+      "Workplace risk concern (principal knows but not severity, fear of job loss) \u2014 not captured",
+      "Family support dynamic (parents minimizing illness) \u2014 not captured",
+      "Two near-incontinence incidents at work \u2014 specific urgency severity not captured beyond generic 'urgency' tag",
+      "name field is null \u2014 transcript clearly states the patient's name is Rosa"
+    ],
+    "comment": "The JSON captures the core clinical facts well: diagnosis, disease location, current medications, biologic step-therapy barrier, and partial disease control. However, it misses several important details explicitly stated in the transcript, including folic acid use, nausea as a methotrexate side effect, symptom duration prior to diagnosis, the patient's name (Rosa), and significant psychosocial/occupational context. The GI specialist designation is a mild hallucination since the transcript only says 'doctor.' Overall a solid but incomplete extraction."
+  }
+}

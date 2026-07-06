@@ -1,0 +1,176 @@
+{
+ "patient_id": "P005",
+ "profile": {
+  "name": "Lisa",
+  "age": {
+   "value": 31,
+   "status": "stated",
+   "evidence": "Lisa, 31, female",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 5.0,
+   "status": "stated",
+   "evidence": "diagnosed with Crohn's five years ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "endometriosis",
+   "migraines"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Colonoscopy showed Crohn's in my ileum and cecum.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate",
+   "status": "inferred",
+   "evidence": "Been stable on Humira for two years now, though I still have mini-flares during my period. The fatigue affects everything - work performance, social life, relationship with my boyfriend.",
+   "confidence": null
+  },
+  "symptoms": [
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Been stable on Humira for two years now, though I still have mini-flares during my period.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started with conventional therapy - mesalamine and brief prednisone. Helped initially, but symptoms returned within months."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started with conventional therapy - mesalamine and brief prednisone. Helped initially, but symptoms returned within months."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Developed pancreatitis",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Tried immunomodulators next, azathioprine specifically. Developed pancreatitis, a rare but serious side effect, spent a week in the hospital."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "infusion center was an hour away, and taking that much time off work every 8 weeks was difficult",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "That's when we moved to biologics. Started Remicade, but the infusion center was an hour away, and taking that much time off work every 8 weeks was difficult."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Switched to Humira for the convenience of home injections. ... Been stable on Humira for two years now, though I still have mini-flares during my period."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "doctors kept dismissing my symptoms as period-related or stress."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Finally, a female GI doctor took me seriously and ordered proper testing. Colonoscopy showed Crohn's in my ileum and cecum."
+  },
+  {
+   "encounter_type": "er",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "Developed pancreatitis, a rare but serious side effect, spent a week in the hospital."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 4,
+   "evidence": "That's when we moved to biologics. Started Remicade"
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "Dermatologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 5,
+   "evidence": "Dermatologist says it might be Humira-induced psoriasis."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "nutritionist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 6,
+   "evidence": "Tried working with a nutritionist, but she wasn't familiar with IBD dietary needs."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Been stable on Humira for two years now",
+   "confidence": null
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/PCP (dismissed) -> GI specialist (diagnosed and prescribed initial treatments/biologics)",
+   "confidence": null
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "azathioprine",
+   "Remicade",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

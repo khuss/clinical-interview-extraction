@@ -1,0 +1,126 @@
+{
+ "patient_id": "P024",
+ "profile": {
+  "name": "Derek",
+  "age": {
+   "value": 40,
+   "status": "stated",
+   "evidence": "Derek, 40",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.25,
+   "status": "stated",
+   "evidence": "just diagnosed three months ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "plumber",
+   "status": "stated",
+   "evidence": "I'm a plumber",
+   "confidence": null
+  },
+  "comorbidities": [
+   "pre-diabetic",
+   "sleep apnea"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "inferred",
+   "evidence": "Found inflammation everywhere.",
+   "confidence": 0.8
+  },
+  "severity": {
+   "value": "severe",
+   "status": "inferred",
+   "evidence": "Having 15-20 bowel movements daily.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "weight_loss",
+   "fatigue",
+   "appetite_loss"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Having 15-20 bowel movements daily. Can't work like that.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 1,
+   "evidence": "Started mesalamine... Mesalamine alone not enough."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "blood sugar went crazy",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started... prednisone. Prednisone helped but blood sugar went crazy... Tapered off quick."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Currently trying sulfasalazine."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally, new doctor took symptoms seriously. Ordered colonoscopy... Doctor wants to try biologics"
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "planned",
+   "status": "stated",
+   "evidence": "Doctor wants to try biologics but insurance saying need to fail more drugs first.",
+   "confidence": null
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "insurance saying need to fail more drugs first",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "One GI specialist mentioned as the one who diagnosed and is managing the biologic request.",
+   "confidence": 1.0
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "sulfasalazine"
+  ]
+ },
+ "extraction_notes": null
+}

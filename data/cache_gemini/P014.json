@@ -1,0 +1,143 @@
+{
+ "patient_id": "P014",
+ "profile": {
+  "name": "Brian",
+  "age": {
+   "value": 41,
+   "status": "stated",
+   "evidence": "Brian, 41, male.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 3.0,
+   "status": "stated",
+   "evidence": "Crohn's diagnosed three years ago.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "electrician",
+   "status": "stated",
+   "evidence": "Work as electrician.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "psoriasis",
+   "depression",
+   "psoriatic arthritis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed patchy inflammation throughout.",
+   "confidence": 0.8
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Patient reports fatigue, joint pain, inability to work consistently, and need for combination biologic therapy.",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "fatigue",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Stelara helping both conditions somewhat. Not perfect but improvement.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "antispasmodics",
+   "drug_class": "other",
+   "outcome": "ineffective",
+   "reason_stopped": "useless",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "First GI saw said IBS, gave me antispasmodics. Useless."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "did not help Crohn's",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Already on methotrexate for psoriasis, doctor hoped would help Crohn's too. Didn't."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "allergic reaction. Hives everywhere.",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Added sulfasalazine, allergic reaction. Hives everywhere."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Started Stelara... Stelara helping both conditions somewhat."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "First GI saw said IBS"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Second opinion led to proper testing... Switched to biologic that could treat both conditions. Started Stelara."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Stelara... Stelara helping both conditions somewhat.",
+   "confidence": null
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance battle epic. They wanted different drugs for each condition. Doctor had to prove medical necessity for combination treatment. Four months of appeals",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "First GI (IBS diagnosis) -> Second GI (Crohn's diagnosis and biologic initiation).",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "antispasmodics",
+   "methotrexate",
+   "sulfasalazine",
+   "Stelara"
+  ]
+ },
+ "extraction_notes": null
+}

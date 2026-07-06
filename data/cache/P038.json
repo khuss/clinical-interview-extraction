@@ -1,0 +1,146 @@
+{
+ "patient_id": "P038",
+ "profile": {
+  "name": "Daniel",
+  "age": {
+   "value": 37,
+   "status": "stated",
+   "evidence": "Daniel, 37",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 10.0,
+   "status": "stated",
+   "evidence": "Crohn's for ten years now",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "software architect (now on disability)",
+   "status": "stated",
+   "evidence": "Was software architect. High-paying job. Had to go on disability.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "ankylosing spondylitis",
+   "chronic kidney disease"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Crohn's throughout small bowel, some colon.",
+   "confidence": 1.0
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Poor disease control on current biologic (Humira ~40% improvement), need bathroom constantly, on disability, surgery being considered, clinical trials being explored.",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "diarrhea",
+   "urgency",
+   "fatigue",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "stated",
+   "evidence": "Humira. Less effective. Maybe 40% improvement... Quality of life terrible. Can't sit or stand long from AS. Need bathroom constantly from Crohn's.",
+   "confidence": 1.0
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "Stopped working (secondary loss of response)",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started biologics immediately. Remicade for both conditions. Worked initially... Then Remicade stopped working."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "Switched to Humira. Less effective. Maybe 40% improvement."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "not_started",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Doc wants to try Stelara. Might help both conditions. Kidney doctor reluctant."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "rheumatologist",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Rheumatologist prescribed NSAIDs. Took them for three years."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "gastroenterologist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Finally diagnosed with both conditions... Started biologics immediately. Remicade for both conditions... Doc wants to try Stelara."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "nephrologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "nephrologist said kidneys couldn't handle anything stronger... Kidney doctor reluctant. More arguing between specialists."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched to Humira. Less effective. Maybe 40% improvement. [current treatment, Stelara not yet started]",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "comorbidity_risk",
+    "evidence": "nephrologist said kidneys couldn't handle anything stronger... Kidney doctor reluctant [regarding Stelara]. More arguing between specialists.",
+    "overcome": false
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "For insurance to approve. For something to work. Waiting is all I do.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "Rheumatologist (step 1) -> GI specialist who prescribed biologic (step 2). No explicit GP mentioned but rheumatologist was first specialist seen.",
+   "confidence": 0.75
+  },
+  "treatment_sequence": [
+   "Remicade",
+   "Humira",
+   "Stelara (planned/discussed)"
+  ]
+ },
+ "extraction_notes": "Patient expresses suicidal ideation with a plan (pills saved up) but states he is staying alive for his parents. This is a clinical safety concern. NSAIDs were excluded from treatments list as they were prescribed for ankylosing spondylitis (comorbidity), not Crohn's. Stelara is discussed/proposed but not yet started due to nephrologist reluctance and insurance approval pending — biologic.status remains 'on' (Humira) per rules. Clinical trials mentioned but no specific trial enrolled. Surgery discussed as a future option but not yet performed."
+}

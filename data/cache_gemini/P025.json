@@ -1,0 +1,138 @@
+{
+ "patient_id": "P025",
+ "profile": {
+  "name": "Sophie",
+  "age": {
+   "value": 22,
+   "status": "stated",
+   "evidence": "I'm Sophie, 22",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.5,
+   "status": "stated",
+   "evidence": "just diagnosed six months ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "severe anxiety",
+   "eating disorder"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Extensive involvement small and large intestine.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Patient required prednisone, methotrexate, and escalated to Humira within 6 months due to ongoing symptoms and weight loss.",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "weight_loss",
+   "diarrhea",
+   "bloody_diarrhea",
+   "abdominal_pain",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Weight stable now, but still experiencing pain and anxiety spirals; Humira started only two months ago.",
+   "confidence": 0.7
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "mood swings and anxiety",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Prednisone caused mood swings. With anxiety already bad, was unbearable. Tapered quickly."
+  },
+  {
+   "name_raw": "Mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Mesalamine helped little."
+  },
+  {
+   "name_raw": "Methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "not enough",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Methotrexate not enough. Started Humira two months ago."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Started Humira two months ago. Too early to tell if working."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Went to ER. They took seriously. CT showed inflammation."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI consult. Colonoscopy confirmed Crohn's... GI wanted to start methotrexate."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Humira two months ago.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "ER visit followed by GI specialist consult.",
+   "confidence": 1.0
+  },
+  "treatment_sequence": [
+   "Prednisone",
+   "Mesalamine",
+   "Methotrexate",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

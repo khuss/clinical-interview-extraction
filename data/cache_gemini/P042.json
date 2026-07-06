@@ -1,0 +1,138 @@
+{
+ "patient_id": "P042",
+ "profile": {
+  "name": "Kevin",
+  "age": {
+   "value": 39,
+   "status": "stated",
+   "evidence": "Kevin, 39.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 5.0,
+   "status": "stated",
+   "evidence": "Crohn's hit me five years ago.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "psoriatic arthritis",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "stated",
+   "evidence": "Colonoscopy confirmed moderate to severe Crohn's.",
+   "confidence": null
+  },
+  "symptoms": [
+   "bloody_diarrhea",
+   "fatigue",
+   "abdominal_pain"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "About 70% improvement. Best I've felt since diagnosis. But still not normal.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": "wasn't lasting solution",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": null
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "wasn't lasting solution",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": null
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Allergic reaction - hives everywhere.",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": null
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "The nausea was unbearable.",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": null
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "effective",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": null
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Colonoscopy confirmed moderate to severe Crohn's. Started on mesalamine... Finally started Humira."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Finally started Humira... About 70% improvement... grateful for Humira working.",
+   "confidence": null
+  },
+  "drug_name": null,
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient describes diagnosis and treatment initiation within the same GI specialist relationship.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "sulfasalazine",
+   "methotrexate",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

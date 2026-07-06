@@ -1,0 +1,149 @@
+{
+ "patient_id": "P025",
+ "profile": {
+  "name": "Sophie",
+  "age": {
+   "value": 22,
+   "status": "stated",
+   "evidence": "I'm Sophie, 22",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.5,
+   "status": "stated",
+   "evidence": "just diagnosed six months ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "recent college graduate, job deferred",
+   "status": "stated",
+   "evidence": "Got job offer but had to defer. Can't start career like this.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "severe anxiety",
+   "eating disorder history"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Extensive involvement small and large intestine.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Rapid weight loss, extensive ileocolonic involvement, mesalamine insufficient, methotrexate insufficient, escalated to biologic (Humira) within six months of diagnosis.",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "diarrhea",
+   "bloody_diarrhea",
+   "weight_loss",
+   "abdominal_pain",
+   "nausea_vomiting"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Weight stable now (small victory) but Humira only started two months ago and 'too early to tell if working'; still experiencing bathroom trips and pain at night.",
+   "confidence": 0.75
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Caused unbearable mood swings given pre-existing severe anxiety; tapered quickly.",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Prednisone caused mood swings. With anxiety already bad, was unbearable. Tapered quickly."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Helped little; disease progressed.",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Mesalamine helped little."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "Insufficient disease control; escalated to biologic.",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Methotrexate not enough. Started Humira two months ago."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Started Humira two months ago. Too early to tell if working."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": "Emergency Room",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Blood in stool. Went to ER. They took seriously. CT showed inflammation. GI consult."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI consult. Colonoscopy confirmed Crohn's. Started treatment immediately... GI wanted to start methotrexate... Started Humira two months ago."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Humira two months ago.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Patient went through prednisone, mesalamine, and methotrexate before Humira was started, consistent with step therapy requirement.",
+    "overcome": true
+   },
+   {
+    "type": "patient_fear",
+    "evidence": "Injection days are trauma. Needle phobia from ED treatment history. Full panic attacks. Mom has to hold me.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "No GP visit mentioned; patient went directly to ER, then GI specialist who prescribed. One step from ER to GI prescriber.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "Prednisone",
+   "mesalamine",
+   "methotrexate",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "No GP visit mentioned; first medical contact was ER. Diet changes attempted between mesalamine and methotrexate but not counted as a drug treatment. Nutritionist, therapy, vitamin/supplement use not included in treatments per schema rules. Comorbidities (severe anxiety, eating disorder history) noted in profile only. Patient expressed passive suicidal ideation ('sometimes wonder if life worth living') with safety plan in place — noted for clinical awareness but not extracted as a structured field. Transcript ends with a natural rhetorical closing question; assessed as complete."
+}

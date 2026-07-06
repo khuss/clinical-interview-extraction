@@ -1,0 +1,117 @@
+{
+ "patient_id": "P046",
+ "profile": {
+  "name": null,
+  "age": {
+   "value": 49,
+   "status": "stated",
+   "evidence": "Ben, 49, male.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 1.5,
+   "status": "stated",
+   "evidence": "Crohn's diagnosis came eighteen months ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "Construction foreman",
+   "status": "stated",
+   "evidence": "Construction foreman",
+   "confidence": null
+  },
+  "comorbidities": [
+   "pre-diabetic",
+   "chronic back pain"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed severe disease.",
+   "confidence": 0.8
+  },
+  "severity": {
+   "value": "severe",
+   "status": "stated",
+   "evidence": "Colonoscopy showed severe disease.",
+   "confidence": null
+  },
+  "symptoms": [
+   "bloody_diarrhea",
+   "bowel_obstruction"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Maybe 50% improvement. Better than nothing but still struggling.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "blood sugar go haywire",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Prednisone made blood sugar go haywire."
+  },
+  {
+   "name_raw": "Mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "didn't touch it",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Mesalamine didn't touch it."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Currently on Humira."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Colonoscopy showed severe disease... Started treatment immediately"
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Currently on Humira.",
+   "confidence": null
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "stated",
+   "evidence": "Colonoscopy showed severe disease... Started treatment immediately",
+   "confidence": null
+  },
+  "treatment_sequence": [
+   "Prednisone",
+   "Mesalamine",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

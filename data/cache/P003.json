@@ -1,0 +1,183 @@
+{
+ "patient_id": "P003",
+ "profile": {
+  "name": "Emma",
+  "age": {
+   "value": 28,
+   "status": "stated",
+   "evidence": "I'm Emma, 28 years old",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 12.0,
+   "status": "inferred",
+   "evidence": "Diagnosed at 16, currently 28 years old: 28 - 16 = 12 years",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "remote worker",
+   "status": "inferred",
+   "evidence": "finding remote work. That's been a game-changer for managing symptoms",
+   "confidence": 0.85
+  },
+  "comorbidities": [
+   "anxiety disorder",
+   "PCOS",
+   "osteopenia"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Multiple biologic failures, fistula requiring surgery, years of steroid use causing osteopenia, dropped out of college twice, lost three jobs — consistent with moderate-to-severe disease course",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "fistula",
+   "fatigue",
+   "joint",
+   "skin",
+   "abdominal_pain"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Currently on Stelara; still experiences flares ('canceling dates because of flares'), fatigue, joint pain, skin problems — not in full remission but on active treatment",
+   "confidence": 0.75
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Nothing really worked well",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well"
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Nothing really worked well",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well"
+  },
+  {
+   "name_raw": "6-MP",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "Nothing really worked well",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well"
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "Nothing really worked well",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well"
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "developed antibodies and it stopped working",
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "Finally started Remicade infusions at 19. Life-changing at first, but after three years, developed antibodies and it stopped working"
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "lost effectiveness",
+   "is_current": false,
+   "sequence_index": 6,
+   "evidence": "Switched to Humira, worked for about two years, then lost effectiveness"
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 7,
+   "evidence": "Currently on Stelara every 8 weeks"
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "multiple doctors",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Saw multiple doctors over two years before getting diagnosed"
+  },
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": "surgeon",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 2,
+   "evidence": "developed a fistula that required surgery"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI doctor",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "Finally started Remicade infusions at 19... Switched to Humira... Currently on Stelara every 8 weeks. My GI doctor says many women do fine"
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Currently on Stelara every 8 weeks",
+   "confidence": 1.0
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Each biologic switch required insurance pre-authorization battles that took months. Even with insurance, my out-of-pocket costs are about $6,000 annually",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/multiple doctors (step 1) -> GI specialist who prescribed biologics (step 2); surgery was same-admission/not a referral step toward biologic prescriber",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "sulfasalazine",
+   "mesalamine",
+   "6-MP",
+   "methotrexate",
+   "Remicade",
+   "Humira",
+   "Stelara"
+  ]
+ },
+ "extraction_notes": "Patient has anxiety disorder and PCOS as comorbidities; therapist visits and calcium supplementation noted but excluded from treatments as they are not IBD-specific treatments. Osteopenia noted as a comorbidity resulting from steroid use. Disease location not specified in transcript. Severity inferred as moderate-to-severe based on disease course (multiple biologic failures, fistula surgery, significant functional impairment). Transcript ends at a natural stopping point — completeness set to complete."
+}

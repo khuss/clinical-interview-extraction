@@ -1,0 +1,172 @@
+{
+ "patient_id": "P011",
+ "profile": {
+  "name": "Jessica",
+  "age": {
+   "value": 26,
+   "status": "stated",
+   "evidence": "Jessica, 26, female",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 7.0,
+   "status": "inferred",
+   "evidence": "Diagnosed at 19, currently 26; 26 - 19 = 7 years",
+   "confidence": 0.95
+  },
+  "occupation": {
+   "value": "graphic designer (remote)",
+   "status": "stated",
+   "evidence": "Found remote job in graphic design",
+   "confidence": null
+  },
+  "comorbidities": [
+   "PCOS",
+   "severe anxiety",
+   "PTSD from hospitalizations"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "Results showed Crohn's throughout colon",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Multiple hospitalizations, surgery for abscess, failed multiple therapies, required biologic escalation",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "weight_loss",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Currently on Humira with some functional life restored, but expresses ongoing fatigue, dietary restrictions, and uncertainty about future control ('Will Humira keep working?')",
+   "confidence": 0.75
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Side effects (40-pound weight gain, worsened by PCOS); tapered off",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on prednisone and mesalamine. Prednisone made me gain 40 pounds in two months. Tapered off prednisone"
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Major flare after six months on mesalamine alone",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Tried to maintain on mesalamine alone. Lasted six months before major flare"
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": "Stress-triggered massive flare requiring surgery; superseded by Remicade post-surgery",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Started methotrexate. The weekly injections became my Friday night ritual. Worked okay for a while."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "Developed antibodies after 18 months",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Started Remicade after surgery. Game-changer initially... But after 18 months, developed antibodies."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "effective",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Switched to Humira. The every-two-week injection is manageable. Built life around it."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "college health center",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Health center said stress, normal for new students"
+  },
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "family doctor",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Finally went home and saw family doctor. He immediately sent me to GI specialist."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "Colonoscopy at 19... Results showed Crohn's throughout colon. Started on prednisone and mesalamine... Started Remicade after surgery... Switched to Humira."
+  },
+  {
+   "encounter_type": "er",
+   "specialty_raw": "hospital (inpatient)",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 4,
+   "evidence": "Hospitalized for a week. Started methotrexate."
+  },
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": "surgeon (abscess)",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 5,
+   "evidence": "Ended up needing surgery for abscess. Three months recovery. Started Remicade after surgery."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched to Humira. The every-two-week injection is manageable. Built life around it.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP (family doctor) -> GI specialist (who prescribed biologics): 2 steps",
+   "confidence": 0.95
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "methotrexate",
+   "Remicade",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Supplements (vitamin D, B12, folate, iron, calcium, probiotic) excluded from treatments as they are nutritional supplements, not IBD-specific drugs. CBT/therapy excluded as non-pharmacological and for comorbid anxiety/PTSD. PCOS and anxiety/PTSD recorded as comorbidities. The college health center visit is included as an encounter but was not on the formal referral path to diagnosis. The hospitalization and surgery are same-admission/closely linked events following the GI relationship already established; surgery marked on_referral_path=false as it did not refer onward independently. Remicade was the first biologic (post-surgery), making the GI specialist encounter the biologic_decision_point. Humira is the current biologic; Remicade was prior. No barriers to biologic use stated — patient is currently on Humira with good insurance."
+}

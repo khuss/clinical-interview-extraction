@@ -1,0 +1,133 @@
+{
+ "patient_id": "P032",
+ "profile": {
+  "name": null,
+  "age": {
+   "value": 54,
+   "status": "stated",
+   "evidence": "Frank, 54.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 1.0,
+   "status": "stated",
+   "evidence": "Diagnosed with Crohn's just last year.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "mechanic",
+   "status": "stated",
+   "evidence": "Worked as mechanic forty years.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "diabetes",
+   "heart disease",
+   "arthritis",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Colonoscopy found inflammation throughout colon, some in small bowel.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "severe",
+   "status": "inferred",
+   "evidence": "Fifteen bathroom trips a day, lost forty pounds, unable to work, housebound.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "weight_loss",
+   "fatigue",
+   "appetite_loss"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Fifteen bathroom trips a day, lost forty pounds, miserable, symptoms not controlled by current meds.",
+   "confidence": 0.95
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started mesalamine. Nothing."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Blood sugar went insane. Cardiologist had fit.",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Added prednisone. Blood sugar went insane. Cardiologist had fit. Stopped that quick."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Now trying sulfasalazine."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "GI doctor wants biologics but insurance says no."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "not_on",
+   "status": "stated",
+   "evidence": "GI doctor wants biologics but insurance says no.",
+   "confidence": null
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "insurance says no. Need to fail more drugs first.",
+    "overcome": false
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "insurance says no.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "GI specialist is the primary manager of the Crohn's care.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "sulfasalazine"
+  ]
+ },
+ "extraction_notes": null
+}

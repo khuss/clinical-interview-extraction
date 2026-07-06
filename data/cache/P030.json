@@ -1,0 +1,148 @@
+{
+ "patient_id": "P030",
+ "profile": {
+  "name": "Marcus",
+  "age": {
+   "value": 29,
+   "status": "stated",
+   "evidence": "Marcus, 29",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 2.0,
+   "status": "stated",
+   "evidence": "diagnosed two years ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "former tech startup founder, currently unemployed/job-seeking",
+   "status": "stated",
+   "evidence": "Was rising star in tech startup... Board lost confidence. Asked me to step down. My company, my baby, gone. Applying for jobs.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "severe depression",
+   "ADHD",
+   "anemia"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "Entire colon affected.",
+   "confidence": 0.95
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed aggressive Crohn's. Entire colon affected. Severe dehydration, anemia. Hospitalization. Required high-dose prednisone, then azathioprine, then Humira — only 40% better.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "urgency",
+   "anemia",
+   "fatigue",
+   "weight_loss"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Started Humira six months ago. Helps some. Maybe 40% better. Not enough to return to previous life.",
+   "confidence": 1.0
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started high-dose prednisone. Went from fit to bloated overnight."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "disease progression, body couldn't keep up",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Mesalamine, azathioprine, kept pushing. But body couldn't keep up."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "disease progression, body couldn't keep up",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Mesalamine, azathioprine, kept pushing. But body couldn't keep up."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Started Humira six months ago. Helps some. Maybe 40% better. Not enough to return to previous life."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "doctor",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally saw doctor after collapsing at work."
+  },
+  {
+   "encounter_type": "er",
+   "specialty_raw": "hospital/ER",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Severe dehydration, anemia. Hospitalization. Colonoscopy showed aggressive Crohn's."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist (inferred)",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "Started high-dose prednisone... Mesalamine, azathioprine... Started Humira six months ago. Next appointment discussing Stelara or Entyvio."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Humira six months ago.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP -> hospitalization/GI (colonoscopy, diagnosis, treatment initiated) -> ongoing GI management. Two steps from first doctor contact to biologic prescriber.",
+   "confidence": 0.75
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "azathioprine",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Patient is currently on Humira (partial response, ~40% improvement). Next appointment will discuss switching to Stelara or Entyvio — this is an open deliberation, not yet decided; biologic.status remains 'on' for Humira per rules. Anemia noted as both a symptom of Crohn's and listed under comorbidities. ADHD medication upsetting stomach is noted but the medication itself is excluded from treatments as it is for ADHD, not Crohn's. Suicidal ideation with plan disclosed — flagged for clinical awareness. Depression and ADHD listed as comorbidities only. Low FODMAP diet noted but not included as a formal treatment. Clinical trials mentioned as interest but not enrolled."
+}

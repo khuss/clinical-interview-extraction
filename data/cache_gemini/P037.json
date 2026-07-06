@@ -1,0 +1,119 @@
+{
+ "patient_id": "P037",
+ "profile": {
+  "name": "Karen",
+  "age": {
+   "value": 34,
+   "status": "stated",
+   "evidence": "I'm Karen, 34",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 6.0,
+   "status": "stated",
+   "evidence": "diagnosed with Crohn's six years ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "postpartum anxiety",
+   "lupus"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "Colonoscopy showed Crohn's throughout colon.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Patient describes severe abdominal pain, diarrhea, and failure of initial therapies, requiring escalation to biologics.",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "fatigue",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Helps both conditions moderately. Maybe 60% improvement.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Wasn't enough.",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": null
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": "Joint pain started (lupus diagnosis).",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": null
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": null
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally got to GI. Colonoscopy showed Crohn's throughout colon."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Humira two years ago.",
+   "confidence": null
+  },
+  "drug_name": null,
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient went from primary care to GI specialist who diagnosed and prescribed.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "azathioprine",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

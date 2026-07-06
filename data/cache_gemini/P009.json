@@ -1,0 +1,173 @@
+{
+ "patient_id": "P009",
+ "profile": {
+  "name": "Rachel",
+  "age": {
+   "value": 36,
+   "status": "stated",
+   "evidence": "Rachel, 36, female.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 3.0,
+   "status": "inferred",
+   "evidence": "Crohn's diagnosis came late - age 33. ... Clock is ticking at 36.",
+   "confidence": 0.9
+  },
+  "occupation": {
+   "value": "finance",
+   "status": "stated",
+   "evidence": "Chalked up to busy career in finance.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "asthma",
+   "rheumatoid arthritis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "Colonoscopy showed skip lesions throughout colon, classic Crohn's pattern.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "severe",
+   "status": "inferred",
+   "evidence": "Finally, hospitalization for severe dehydration and weight loss forced the issue. ... Another hospitalization convinced me. Started Entyvio infusions.",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "weight_loss",
+   "fatigue",
+   "abdominal_pain",
+   "joint",
+   "nausea_vomiting",
+   "mouth_ulcers"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Worked well for a year, then started developing joint pain. ... Entyvio losing effectiveness.",
+   "confidence": 0.8
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 0,
+   "evidence": "Started conservatively with mesalamine. Minimal improvement."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "mood swings",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Added prednisone for flare control. The mood swings were horrible. Snapped at colleagues, cried in bathroom. Not sustainable in high-pressure job."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "liver enzymes spiked",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Moved to azathioprine. Three months in, liver enzymes spiked. Had to stop."
+  },
+  {
+   "name_raw": "dietary modifications (SCD diet, supplements, acupuncture)",
+   "drug_class": "other",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Tried dietary modifications instead - SCD diet, supplements, acupuncture. Marginal improvement but not enough."
+  },
+  {
+   "name_raw": "Entyvio",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Started Entyvio infusions. ... Worked well for a year, then started developing joint pain. ... Entyvio losing effectiveness."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Added methotrexate for RA, which ironically might help Crohn's too. Side effects are rough - hair thinning, mouth sores, constant nausea. But the joint pain is manageable now."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "unknown",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 0,
+   "evidence": "Spent years being told IBS, stress, anxiety."
+  },
+  {
+   "encounter_type": "er",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally, hospitalization for severe dehydration and weight loss forced the issue."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Colonoscopy showed skip lesions throughout colon, classic Crohn's pattern. Started conservatively with mesalamine. ... Doctor recommended biologics but I resisted."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Entyvio infusions. ... Entyvio losing effectiveness. Looking into Stelara as next option.",
+   "confidence": null
+  },
+  "drug_name": "Entyvio",
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "Doctor recommended biologics but I resisted. Needle phobia since childhood. The thought of regular injections paralyzed me.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "truncated",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 3,
+   "status": "inferred",
+   "evidence": "Spent years being told IBS, stress, anxiety. -> Finally, hospitalization for severe dehydration and weight loss forced the issue. -> Colonoscopy showed skip lesions throughout colon, classic Crohn's pattern. Started conservatively with mesalamine. ... Doctor recommended biologics but I resisted.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "azathioprine",
+   "dietary modifications (SCD diet, supplements, acupuncture)",
+   "Entyvio",
+   "methotrexate"
+  ]
+ },
+ "extraction_notes": null
+}

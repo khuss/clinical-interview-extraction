@@ -32,9 +32,9 @@ would draw the remission/partial/poor line); `churn` is derived from a single
 `completeness` call that itself has an AMBIGUOUS bucket for exactly this reason.
 
 This module also holds `judge_record()` — a SEPARATE kind of check from everything
-above. `evaluate()` / `agreement_between()` compare an extraction against a golden
-label or another extraction (both need a reference to compare to). `judge_record()`
-instead asks a second model to audit ONE extraction against its own source
+above. `evaluate()` compares an extraction against a golden label (needs a
+reference to compare to). `judge_record()` instead asks a second model to audit
+ONE extraction against its own source
 transcript for fidelity (hallucinated fields, missed facts) — no golden label
 needed, just the transcript the extraction was supposedly drawn from. Useful for
 patients outside the golden 10, where there's no hand label to compare against.
@@ -193,34 +193,6 @@ def evaluate(cache_dir: str | Path = "data/cache", golden: dict = HAND_LABELS) -
     }
 
 
-def agreement_between(
-    a: dict[str, PatientRecord], b: dict[str, PatientRecord], label_a: str = "A", label_b: str = "B"
-) -> dict:
-    """Consistency / model comparison: agreement between two extraction runs on the
-    patients they share. Disagreement is a proxy for (un)reliability — high agreement
-    on a field = the pipeline is stable there; low = shaky. Uses the same per-field
-    scoring rules as `evaluate` (set-overlap for barriers, exact set for treatment
-    classes, exact for everything else)."""
-    shared = [p for p in a if p in b]
-    per_field_scores: dict[str, list[float]] = defaultdict(list)
-    print(f"Comparing {label_a} vs {label_b} on {len(shared)} shared patients\n")
-    for pid in shared:
-        fa, fb = model_fields(a[pid]), model_fields(b[pid])
-        diffs = []
-        for field in fa:
-            per_field_scores[field].append(score_field(field, fa[field], fb[field]))
-            note = _diff_note(field, fa[field], fb[field])
-            if note:
-                diffs.append(note.replace("model=", f"{label_a}=").replace("gold=", f"{label_b}="))
-        if diffs:
-            print(f"  {pid}: " + " | ".join(diffs))
-    print("\nPer-field agreement:")
-    for field, scores in sorted(per_field_scores.items()):
-        avg = sum(scores) / len(scores) if scores else 0
-        print(f"  {field:18} {avg*100:5.0f}%  (n={len(scores)})")
-    return {f: sum(s) / len(s) if s else 0.0 for f, s in per_field_scores.items()}
-
-
 # ---------------------------------------------------------------------------
 # LLM-as-judge: a second model scores ONE extraction against ITS OWN source
 # transcript, independent of any golden label. A cheap fidelity probe — flags
@@ -271,26 +243,57 @@ def judge_record(
     return json.loads(_coerce_json(resp.choices[0].message.content or "{}"))
 
 
-def _run_judge_cli(patient_ids: list[str]) -> None:
-    interviews_path = Path("data/interviews.json")
+def _run_judge_cli(args: list[str]) -> None:
+    """`python src/evaluate.py judge [--model PROVIDER/MODEL] [--cache-dir DIR] [PATIENT_ID ...]`
+
+    The judge is a paid API call, so which provider it costs is a CLI choice, not
+    a hardcoded one: pass --model anthropic/claude-sonnet-4-6 (JUDGE_MODEL, the
+    default — what the committed data/outputs/llm_judge_manual.json used) or
+    --model gemini/gemini-3.1-flash-lite if that's the key you have credit on.
+    Note the golden 10 already have a manual judging pass committed at
+    data/outputs/llm_judge_manual.json — this command reproduces/extends that,
+    it isn't required to see evaluation results."""
+    model = JUDGE_MODEL
     cache_dir = Path("data/cache")
-    if not interviews_path.exists() or not cache_dir.exists():
-        print(f"Expected {interviews_path} and {cache_dir}/ from the repo root — "
+    patient_ids: list[str] = []
+    i = 0
+    while i < len(args):
+        if args[i] == "--model" and i + 1 < len(args):
+            model = args[i + 1]
+            i += 2
+        elif args[i] == "--cache-dir" and i + 1 < len(args):
+            cache_dir = Path(args[i + 1])
+            i += 2
+        else:
+            patient_ids.append(args[i])
+            i += 1
+
+    interviews_path = Path("data/interviews.json")
+    if not interviews_path.exists():
+        print(f"Expected {interviews_path} from the repo root — "
               f"run this as `python src/evaluate.py judge`, not from inside src/.")
         return
 
     interviews = {d["patient_id"]: d["interview_transcript"] for d in json.loads(interviews_path.read_text())}
+    # load_model_records() falls back to the committed data/outputs/records.json
+    # when cache_dir doesn't exist, so this also runs on a fresh checkout with no
+    # prior extraction — see that function's docstring.
     model_recs = load_model_records(cache_dir)
+    if not model_recs:
+        print(f"No records found in {cache_dir}/ or data/outputs/records.json — "
+              f"run src/run_extraction.py first (or pass --cache-dir).")
+        return
     ids = patient_ids or list(model_recs.keys())[:3]
 
+    print(f"Judging with model={model}\n")
     for pid in ids:
         if pid not in model_recs:
-            print(f"{pid}: not found in {cache_dir}/ — run src/run_extraction.py first")
+            print(f"{pid}: not found in {cache_dir}/ or the records.json fallback")
             continue
         if pid not in interviews:
             print(f"{pid}: not found in {interviews_path} — skipping")
             continue
-        v = judge_record(interviews[pid], model_recs[pid].model_dump_json())
+        v = judge_record(interviews[pid], model_recs[pid].model_dump_json(), model=model)
         print(f"{pid}: fidelity={v.get('fidelity')}/5")
         if v.get("hallucinations"):
             print(f"  hallucinations: {v['hallucinations']}")

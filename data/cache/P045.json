@@ -1,0 +1,135 @@
+{
+ "patient_id": "P045",
+ "profile": {
+  "name": "Rosa",
+  "age": {
+   "value": 33,
+   "status": "stated",
+   "evidence": "Rosa here, 33 years old.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.33,
+   "status": "inferred",
+   "evidence": "Diagnosed about four months ago",
+   "confidence": 0.9
+  },
+  "occupation": {
+   "value": "elementary school teacher",
+   "status": "stated",
+   "evidence": "Work as elementary school teacher.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "PCOS",
+   "insulin resistance"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Found inflammation in terminal ileum and ascending colon.",
+   "confidence": 1.0
+  },
+  "severity": {
+   "value": "moderate",
+   "status": "inferred",
+   "evidence": "Some improvement on budesonide/mesalamine but not much; step therapy required before biologics; urgency episodes at work; pain severe enough to curl up and cry — suggests moderate disease not yet classified severe enough to skip step therapy",
+   "confidence": 0.7
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "urgency",
+   "weight_loss",
+   "nausea_vomiting",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Some improvement on budesonide and mesalamine but not much; currently on methotrexate with ongoing urgency episodes and severe pain episodes",
+   "confidence": 0.8
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "budesonide",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": null,
+   "sequence_index": 1,
+   "evidence": "Started on budesonide and mesalamine. Some improvement but not much."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": null,
+   "sequence_index": 2,
+   "evidence": "Started on budesonide and mesalamine. Some improvement but not much."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Currently trying methotrexate. The nausea is terrible."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "GP/PCP",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Doctors kept blaming everything on my weight — implies prior GP-level care before colonoscopy referral."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "gastroenterologist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Finally demanded colonoscopy. Found inflammation in terminal ileum and ascending colon. Started on budesonide and mesalamine. Doctor mentioned biologics might be next step but insurance wants me to fail more medications first."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "planned",
+   "status": "stated",
+   "evidence": "Doctor mentioned biologics might be next step but insurance wants me to fail more medications first.",
+   "confidence": 0.95
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "insurance wants me to fail more medications first",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "truncated",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/PCP (step 1) -> GI specialist who discussed biologics (step 2)",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "budesonide",
+   "mesalamine",
+   "methotrexate"
+  ]
+ },
+ "extraction_notes": "Folic acid mentioned but excluded from treatments as it is a supplement taken to manage methotrexate side effects, not a Crohn's treatment. PCOS and insulin resistance listed as comorbidities; no diabetes medication mentioned. Transcript ends mid-thought ('Trying to stay positive but it's hard...') indicating truncation. Budesonide and mesalamine started together so assigned adjacent sequence indices; it is unclear if either has been stopped. Weight loss of 40 lbs noted but occurred pre-diagnosis as part of a deliberate attempt; ongoing weight loss not explicitly confirmed."
+}

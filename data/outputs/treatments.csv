@@ -1,18 +1,18 @@
 patient_id,seq,name_raw,drug,drug_class,outcome,is_current,reason_stopped
-P001,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,no significant improvement after three months
-P001,2,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,severe nausea and elevated liver enzymes
+P001,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,"after three months, there wasn't much improvement"
+P001,2,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,developed severe nausea and liver enzymes went up
 P001,3,Humira,adalimumab,biologic,effective,True,
-P002,1,prednisone,prednisone,corticosteroid,partial,False,Wreaked havoc on blood sugar control; not a long-term solution implied
-P002,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,No improvement
-P002,3,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,"Liver wasn't happy, probably because of diabetes medications"
+P002,1,prednisone,prednisone,corticosteroid,partial,False,wreaked havoc on blood sugar control; not stated as fully stopped but implied superseded
+P002,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,no improvement
+P002,3,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,"liver wasn't happy, probably because of diabetes medications"
 P002,4,budesonide,budesonide,corticosteroid,partial,True,
-P002,5,Stelara,ustekinumab,biologic,not_started,False,Insurance classified as tier 4 at $800/month; seeking financial assistance
-P003,1,sulfasalazine,sulfasalazine,aminosalicylate,ineffective,False,Did not work well
-P003,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Did not work well
-P003,3,6-MP,mercaptopurine,immunomodulator,ineffective,False,Did not work well
-P003,4,methotrexate,methotrexate,immunomodulator,ineffective,False,Did not work well
-P003,5,Remicade,infliximab,biologic,adverse_reaction,False,Developed antibodies and it stopped working after approximately three years
-P003,6,Humira,adalimumab,biologic,ineffective,False,Lost effectiveness after about two years
+P002,5,Stelara,ustekinumab,biologic,not_started,False,insurance tier 4 cost ($800/month); financial assistance being sought
+P003,1,sulfasalazine,sulfasalazine,aminosalicylate,ineffective,False,Nothing really worked well
+P003,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Nothing really worked well
+P003,3,6-MP,mercaptopurine,immunomodulator,ineffective,False,Nothing really worked well
+P003,4,methotrexate,methotrexate,immunomodulator,ineffective,False,Nothing really worked well
+P003,5,Remicade,infliximab,biologic,adverse_reaction,False,developed antibodies and it stopped working
+P003,6,Humira,adalimumab,biologic,ineffective,False,lost effectiveness
 P003,7,Stelara,ustekinumab,biologic,ongoing_unknown,True,
 P004,1,prednisone,prednisone,corticosteroid,partial,False,not a long-term solution per Dr. Williams
 P004,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,minimal improvement
@@ -20,112 +20,110 @@ P004,3,sulfasalazine,sulfasalazine,aminosalicylate,adverse_reaction,False,terrib
 P004,4,budesonide,budesonide,corticosteroid,partial,True,
 P004,5,Entyvio,vedolizumab,biologic,not_started,False,"cost/insurance barrier — catastrophic coverage only, $5,000 per infusion every 8 weeks"
 P005,1,mesalamine,mesalamine,aminosalicylate,partial,False,symptoms returned within months
-P005,2,prednisone,prednisone,corticosteroid,partial,False,brief course; symptoms returned
+P005,2,prednisone,prednisone,corticosteroid,partial,False,brief course only; symptoms returned
 P005,3,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,"Developed pancreatitis, spent a week in the hospital"
 P005,4,Remicade,infliximab,biologic,partial,False,"infusion center was an hour away, taking too much time off work every 8 weeks"
 P005,5,Humira,adalimumab,biologic,effective,True,
-P006,1,methotrexate (first course),methotrexate,immunomodulator,adverse_reaction,False,"developed lung problems, possibly drug-related"
+P006,1,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,"developed lung problems, possibly drug-related"
 P006,2,Humira,adalimumab,biologic,ineffective,False,stopped working after three years
 P006,3,Remicade,infliximab,biologic,adverse_reaction,False,developed antibodies within six months
 P006,4,Stelara,ustekinumab,biologic,ongoing_unknown,True,
-P006,5,"methotrexate (proposed second course, lower dose)",methotrexate,immunomodulator,not_started,False,patient hesitant due to previous lung issues
 P007,1,prednisone,prednisone,corticosteroid,partial,False,"Side effects (moon face, insomnia, mood swings); tapered off after three months"
 P007,2,azathioprine,azathioprine,immunomodulator,ineffective,False,Azathioprine alone wasn't holding things
 P007,3,Entyvio,vedolizumab,biologic,partial,True,
-P008,1,prednisone,prednisone,corticosteroid,partial,False,"Not explicitly stated; used as initial induction, transitioned to other therapies"
-P008,2,mesalamine,mesalamine,aminosalicylate,partial,False,Not explicitly stated; disease progressed requiring escalation
-P008,3,methotrexate,methotrexate,immunomodulator,partial,False,"Insufficient efficacy after a year; nausea with injections led to switch to pills, then still not enough"
+P008,1,prednisone,prednisone,corticosteroid,partial,False,Short-term induction; made ADHD medication less effective
+P008,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Insufficient; patient progressed to requiring biologics after failing conventional therapies
+P008,3,methotrexate,methotrexate,immunomodulator,partial,False,Insufficient after a year; switched to 6-MP as next step toward biologic qualification
 P008,4,6-MP,mercaptopurine,immunomodulator,adverse_reaction,False,Developed pancreatitis
 P008,5,Remicade,infliximab,biologic,ineffective,False,Lost effectiveness after two years
 P008,6,Humira,adalimumab,biologic,partial,True,
 P009,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Minimal improvement
-P009,2,prednisone,prednisone,corticosteroid,partial,False,Intolerable mood swings; not sustainable
+P009,2,prednisone,prednisone,corticosteroid,partial,False,Not sustainable due to mood swings affecting work
 P009,3,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,Liver enzymes spiked
 P009,4,Entyvio,vedolizumab,biologic,partial,True,
 P009,5,methotrexate,methotrexate,immunomodulator,ongoing_unknown,True,
-P010,1,prednisone,prednisone,corticosteroid,partial,False,Tapered after two months; sent blood sugars through roof
-P010,2,azathioprine,azathioprine,immunomodulator,effective,False,Switched approach when methotrexate was started
-P010,3,mesalamine,mesalamine,aminosalicylate,partial,False,"Stopped mesalamine, wasn't really helping"
-P010,4,methotrexate,methotrexate,immunomodulator,ineffective,False,Helped joints but Crohn's flared
+P010,1,prednisone,prednisone,corticosteroid,partial,False,Sent blood sugars through roof; tapered after two months
+P010,2,azathioprine,azathioprine,immunomodulator,partial,False,Crohn's flared when methotrexate was started; implied azathioprine was replaced
+P010,3,mesalamine,mesalamine,aminosalicylate,ineffective,False,"Stopped mesalamine, wasn't really helping"
+P010,4,methotrexate,methotrexate,immunomodulator,partial,False,Crohn's flared; switched to biologic
 P010,5,Humira,adalimumab,biologic,partial,True,
-P011,1,prednisone,prednisone,corticosteroid,partial,False,Tapered off; significant side effects including 40-pound weight gain worsened by PCOS
-P011,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,"Major flare after six months on mesalamine alone, leading to hospitalization"
-P011,3,methotrexate,methotrexate,immunomodulator,partial,False,"Stress-triggered massive flare, surgery for abscess, then switched to Remicade"
+P011,1,prednisone,prednisone,corticosteroid,partial,False,"Side effects (40-pound weight gain, worsened by PCOS); tapered off"
+P011,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Major flare after six months on mesalamine alone
+P011,3,methotrexate,methotrexate,immunomodulator,partial,False,Stress-triggered massive flare requiring surgery; superseded by Remicade post-surgery
 P011,4,Remicade,infliximab,biologic,ineffective,False,Developed antibodies after 18 months
 P011,5,Humira,adalimumab,biologic,effective,True,
 P012,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Mesalamine alone wasn't enough
 P012,2,prednisone,prednisone,corticosteroid,partial,False,Cardiologist worried about heart; tapered quickly
 P012,3,sulfasalazine,sulfasalazine,aminosalicylate,adverse_reaction,False,Terrible headaches
 P012,4,Entyvio,vedolizumab,biologic,partial,True,
-P013,1,Mesalamine,mesalamine,aminosalicylate,partial,False,limited help
-P013,2,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,drug-induced hepatitis
-P013,3,Remicade,infliximab,biologic,effective,False,possibly triggered lupus; switched to Humira to treat both conditions
+P013,1,Mesalamine,mesalamine,aminosalicylate,partial,False,Limited help
+P013,2,Azathioprine,azathioprine,immunomodulator,adverse_reaction,False,Drug-induced hepatitis
+P013,3,Remicade,infliximab,biologic,effective,False,Switched due to lupus diagnosis (possibly triggered by Remicade); switched to Humira to treat both conditions
 P013,4,Humira,adalimumab,biologic,ongoing_unknown,True,
 P013,5,Methotrexate,methotrexate,immunomodulator,ongoing_unknown,True,
-P014,1,methotrexate,methotrexate,immunomodulator,ineffective,False,Did not help Crohn's; switched to biologic to treat both psoriasis and Crohn's
-P014,2,sulfasalazine,sulfasalazine,aminosalicylate,adverse_reaction,False,Allergic reaction — hives
-P014,3,Stelara,ustekinumab,biologic,partial,True,
+P014,1,antispasmodics,antispasmodics,other,ineffective,False,Useless — did not address Crohn's
+P014,2,methotrexate,methotrexate,immunomodulator,ineffective,False,Did not help Crohn's (was already on it for psoriasis)
+P014,3,sulfasalazine,sulfasalazine,aminosalicylate,adverse_reaction,False,Allergic reaction — hives
+P014,4,Stelara,ustekinumab,biologic,partial,True,
 P015,1,prednisone,prednisone,corticosteroid,partial,False,"Side effects (weight gain, insomnia, mood swings); used as induction only"
 P015,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Flaring again within three months on mesalamine alone
-P015,3,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,Developed severe joint pain; had to stop the medication
+P015,3,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,Developed severe joint pain; stopped due to possible drug-induced arthritis
 P015,4,Remicade,infliximab,biologic,ineffective,False,Secondary loss of response during second pregnancy
-P015,5,Humira,adalimumab,biologic,ineffective,False,Humira failed (loss of response implied)
-P015,6,Cimzia,certolizumab,biologic,not_started,False,Insurance denied three times; eventually approved for Stelara instead
+P015,5,Humira,adalimumab,biologic,ineffective,False,Humira failed after three years
+P015,6,Cimzia,certolizumab,biologic,not_started,False,Insurance denied three times; never actually started
 P015,7,Stelara,ustekinumab,biologic,partial,True,
 P015,8,methotrexate,methotrexate,immunomodulator,not_started,False,
-P016,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,"""Didn't do much"""
-P016,2,prednisone,prednisone,corticosteroid,adverse_reaction,False,"Severe mood/behavioral side effects — ""made me crazy... seriously aggressive. Almost got into a fight at work."""
+P016,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Did not do much
+P016,2,prednisone,prednisone,corticosteroid,partial,False,Severe mood/behavioral side effects — aggression
 P017,1,mesalamine,mesalamine,aminosalicylate,partial,False,
 P017,2,azathioprine,azathioprine,immunomodulator,ongoing_unknown,True,
 P018,1,prednisone,prednisone,corticosteroid,adverse_reaction,False,Blood sugars went crazy; cardiologist unhappy about steroids; tapered off
 P018,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Didn't do much
 P018,3,budesonide,budesonide,corticosteroid,partial,True,
 P019,1,Humira,adalimumab,biologic,partial,True,
-P019,2,immunomodulator,immunomodulator,immunomodulator,not_started,False,
-P020,1,prednisone,prednisone,corticosteroid,adverse_reaction,False,Severe mood/rage side effects — 'almost lost my job from snapping at supervisor'
+P020,1,prednisone,prednisone,corticosteroid,adverse_reaction,False,"Caused rage/mood changes, almost lost job from snapping at supervisor"
 P020,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Didn't do much alone
-P020,3,sulfasalazine,sulfasalazine,aminosalicylate,adverse_reaction,False,Severe headaches
-P020,4,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,Severe nausea preventing work
-P020,5,Remicade,infliximab,biologic,ineffective,False,Secondary loss of response — 'stopped working completely'
+P020,3,sulfasalazine,sulfasalazine,aminosalicylate,adverse_reaction,False,Gave killer headaches
+P020,4,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,Made him so nauseous he couldn't work
+P020,5,Remicade,infliximab,biologic,ineffective,False,Stopped working completely after ~2 years even with increased frequency
 P020,6,Humira,adalimumab,biologic,partial,True,
-P020,7,Stelara,ustekinumab,biologic,not_started,False,
-P021,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Minimal improvement; moved to azathioprine add-on then biologics
-P021,2,azathioprine,azathioprine,immunomodulator,ineffective,False,Minimal improvement; moved quickly to biologics
+P021,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Minimal improvement; escalated to azathioprine
+P021,2,azathioprine,azathioprine,immunomodulator,ineffective,False,Minimal improvement; moved to biologics
 P021,3,Remicade,infliximab,biologic,adverse_reaction,False,Allergic reaction during infusion
-P021,4,Humira,adalimumab,biologic,partial,False,Effectiveness limited; only ~50% better; still not controlled
+P021,4,Humira,adalimumab,biologic,partial,False,Effectiveness limited; still not controlled
 P021,5,methotrexate,methotrexate,immunomodulator,partial,True,
 P021,6,Stelara,ustekinumab,biologic,partial,True,
-P022,1,IV steroids,iv steroids,corticosteroid,effective,False,Inpatient course completed; transitioned to oral prednisone
+P022,1,IV steroids,iv steroids,corticosteroid,partial,False,Inpatient course; transitioned to oral prednisone
 P022,2,prednisone,prednisone,corticosteroid,partial,False,Tapered off; caused steroid-induced diabetes and osteoporosis
-P022,3,azathioprine,azathioprine,immunomodulator,partial,False,Switched strategy; GI pushed for biologics given severity
+P022,3,azathioprine,azathioprine,immunomodulator,partial,False,Insufficient response; switched to biologic
 P022,4,Remicade,infliximab,biologic,ineffective,False,Developed antibodies after about a year; stopped working
 P022,5,Humira,adalimumab,biologic,partial,True,
 P022,6,methotrexate,methotrexate,immunomodulator,partial,True,
-P023,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Minimal help
-P023,2,prednisone,prednisone,corticosteroid,partial,False,Used for flare; weight gain noted; not stated as ongoing
-P023,3,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,"Developed pancreatitis, week in hospital"
-P023,4,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,"Nausea unbearable, couldn't teach, missed too many days"
-P023,5,Humira,adalimumab,biologic,partial,True,
-P024,1,prednisone,prednisone,corticosteroid,partial,False,blood sugar went crazy — pre-diabetic to almost diabetic; endocrinologist not happy; tapered off quickly
+P023,1,fiber supplements,fiber supplements,other,ineffective,False,Made symptoms worse
+P023,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Minimal help
+P023,3,prednisone,prednisone,corticosteroid,partial,False,Used for flare; weight gain side effect noted
+P023,4,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,"Developed pancreatitis, week in hospital"
+P023,5,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,"Unbearable nausea, missed too many days of work"
+P023,6,Humira,adalimumab,biologic,partial,True,
+P024,1,prednisone,prednisone,corticosteroid,partial,False,Blood sugar went dangerously high (pre-diabetic to almost diabetic); endocrinologist not happy; tapered off quickly
 P024,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,
 P024,3,sulfasalazine,sulfasalazine,aminosalicylate,ongoing_unknown,True,
-P025,1,Prednisone,prednisone,corticosteroid,partial,False,Caused severe mood swings intolerable with pre-existing anxiety; tapered quickly
-P025,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Helped little; disease progressed
-P025,3,methotrexate,methotrexate,immunomodulator,ineffective,False,Insufficient disease control; escalated to biologic
+P025,1,Prednisone,prednisone,corticosteroid,partial,False,Caused unbearable mood swings given pre-existing severe anxiety; tapered quickly.
+P025,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,Helped little; disease progressed.
+P025,3,methotrexate,methotrexate,immunomodulator,ineffective,False,Insufficient disease control; escalated to biologic.
 P025,4,Humira,adalimumab,biologic,ongoing_unknown,True,
 P026,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Minimal improvement
-P026,2,prednisone,prednisone,corticosteroid,partial,False,Concern about bone density; difficulty tapering
+P026,2,prednisone,prednisone,corticosteroid,partial,False,Doctor worried about bone density; each taper harder
 P026,3,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,Elevated liver enzymes
 P026,4,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,Made him feel impaired ('drunk all the time'); unsafe for construction work
 P026,5,Remicade,infliximab,biologic,partial,True,
-P026,6,Humira,adalimumab,biologic,not_started,False,
 P027,1,surgery to repair fistulas,surgery to repair fistulas,other,effective,False,
-P027,2,Remicade,infliximab,biologic,partial,False,"switched to Humira, presumably to address both Crohn's and RA; had worked for about 18 months"
+P027,2,Remicade,infliximab,biologic,partial,False,Switched to Humira to address both Crohn's and RA after RA diagnosis
 P027,3,Humira,adalimumab,biologic,partial,True,
 P027,4,methotrexate,methotrexate,immunomodulator,adverse_reaction,True,
 P027,5,prednisone,prednisone,corticosteroid,ongoing_unknown,True,
 P028,1,mesalamine,mesalamine,aminosalicylate,adverse_reaction,False,Kidney function started declining; nephrologist said stop immediately.
-P028,2,dietary management,dietary management,other,partial,False,
+P028,2,dietary management,dietary management,other,partial,False,Some improvement but not enough.
 P028,3,budesonide,budesonide,corticosteroid,partial,True,
 P028,4,Entyvio,vedolizumab,biologic,ongoing_unknown,True,
 P029,1,Mesalamine,mesalamine,aminosalicylate,ineffective,False,minimal help
@@ -133,83 +131,82 @@ P029,2,Prednisone,prednisone,corticosteroid,partial,False,used for flares; side 
 P029,3,Azathioprine,azathioprine,immunomodulator,ineffective,False,stopped working after about two years
 P029,4,Methotrexate,methotrexate,immunomodulator,ineffective,False,implied failure leading to biologic escalation; hair loss noted as side effect
 P029,5,Remicade,infliximab,biologic,ineffective,False,failed
-P029,6,Humira,adalimumab,biologic,partial,False,less effective; implied switch to Stelara
+P029,6,Humira,adalimumab,biologic,partial,False,"less effective, only ~60% improvement; moved to Stelara"
 P029,7,Stelara,ustekinumab,biologic,partial,True,
 P030,1,prednisone,prednisone,corticosteroid,partial,False,
-P030,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,disease progression / inadequate control
-P030,3,azathioprine,azathioprine,immunomodulator,ineffective,False,disease progression / inadequate control
+P030,2,mesalamine,mesalamine,aminosalicylate,ineffective,False,"disease progression, body couldn't keep up"
+P030,3,azathioprine,azathioprine,immunomodulator,ineffective,False,"disease progression, body couldn't keep up"
 P030,4,Humira,adalimumab,biologic,partial,True,
-P031,1,Mesalamine,mesalamine,aminosalicylate,partial,False,
-P031,2,Prednisone,prednisone,corticosteroid,partial,False,
-P031,3,Remicade,infliximab,biologic,effective,False,Cancer diagnosis required stopping all immunosuppressants for chemotherapy
+P031,1,mesalamine,mesalamine,aminosalicylate,partial,False,
+P031,2,prednisone,prednisone,corticosteroid,partial,False,
+P031,3,Remicade,infliximab,biologic,effective,False,Had to stop all immunosuppressants for breast cancer chemotherapy
 P031,4,Stelara,ustekinumab,biologic,partial,True,
 P032,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,No effect
 P032,2,prednisone,prednisone,corticosteroid,adverse_reaction,False,"Blood sugar went insane, cardiologist objected"
 P032,3,sulfasalazine,sulfasalazine,aminosalicylate,partial,True,
-P033,1,mesalamine,mesalamine,aminosalicylate,partial,False,
-P033,2,prednisone,prednisone,corticosteroid,adverse_reaction,False,Triggered hypomanic episode; patient crashed into severe depression and dropped out of school.
-P033,3,methotrexate,methotrexate,immunomodulator,partial,False,Severe nausea; eventually stepped up to biologic.
-P033,4,Humira,adalimumab,biologic,adverse_reaction,False,Developed severe Humira-induced eczema covering entire body; switched to Stelara.
+P033,1,mesalamine,mesalamine,aminosalicylate,partial,False,not explicitly stated; escalated to other therapies
+P033,2,prednisone,prednisone,corticosteroid,partial,False,triggered hypomanic episode; not stated as sole reason for stopping
+P033,3,methotrexate,methotrexate,immunomodulator,partial,False,severe nausea; eventually escalated to biologic
+P033,4,Humira,adalimumab,biologic,adverse_reaction,False,developed severe Humira-induced eczema; switched to Stelara
 P033,5,Stelara,ustekinumab,biologic,partial,True,
-P034,1,Mesalamine,mesalamine,aminosalicylate,ineffective,False,Minimal improvement
-P034,2,Budesonide,budesonide,corticosteroid,partial,False,"Long-term steroids not an option due to age, comorbidities, and weak bones"
-P034,3,Azathioprine,azathioprine,immunomodulator,adverse_reaction,False,Liver toxicity
-P034,4,Methotrexate,methotrexate,immunomodulator,adverse_reaction,False,"Unbearable fatigue, worsened by COPD-related fatigue"
+P034,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Minimal improvement
+P034,2,budesonide,budesonide,corticosteroid,partial,False,Long-term steroids not option at his age with his conditions; bones already weak
+P034,3,azathioprine,azathioprine,immunomodulator,adverse_reaction,False,Liver didn't like it
+P034,4,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,"Unbearable fatigue, couldn't function"
 P034,5,Remicade,infliximab,biologic,partial,True,
-P035,1,mesalamine,mesalamine,aminosalicylate,partial,False,Escalated to Remicade; also stopped everything when liver enzymes went crazy at 22
-P035,2,prednisone,prednisone,corticosteroid,partial,False,Stopped everything when liver enzymes went crazy at 22; later restarted for autoimmune hepatitis (not Crohn's)
-P035,3,Remicade,infliximab,biologic,effective,False,Stopped everything when liver enzymes went crazy at 22; suspected medication cause
-P035,4,Entyvio,vedolizumab,biologic,partial,True,
-P036,1,NSAIDs,nsaids,other,ineffective,False,Made GI issues worse; colonoscopy eventually revealed Crohn's
-P036,2,"biologics for psoriasis (two prior, unspecified)","biologics for psoriasis (two prior, unspecified)",biologic,ineffective,False,Failed both for psoriasis before Crohn's diagnosis
+P035,1,mesalamine,mesalamine,aminosalicylate,partial,False,Stopped everything when liver enzymes went crazy at age 22; thought medication was cause
+P035,2,prednisone,prednisone,corticosteroid,partial,False,Stopped everything when liver enzymes went crazy at age 22
+P035,3,Remicade,infliximab,biologic,effective,False,Stopped everything at age 22 when liver enzymes went crazy; subsequently switched to Entyvio (liver-safe)
+P035,4,azathioprine,azathioprine,immunomodulator,ongoing_unknown,True,
+P035,5,Entyvio,vedolizumab,biologic,partial,True,
+P036,1,NSAIDs,nsaids,other,ineffective,False,Colonoscopy revealed Crohn's; NSAIDs likely worsened GI issues
+P036,2,"biologics (two prior, for psoriasis — unnamed)","biologics (two prior, for psoriasis — unnamed)",biologic,ineffective,False,Failed both for psoriasis before Crohn's diagnosis
 P036,3,Stelara,ustekinumab,biologic,partial,True,
 P036,4,methotrexate,methotrexate,immunomodulator,not_started,False,
 P037,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Wasn't enough; needed stronger meds
 P037,2,azathioprine,azathioprine,immunomodulator,partial,False,Helped for about a year then lupus developed; possibly triggered by Crohn's meds
 P037,3,Humira,adalimumab,biologic,partial,True,
-P038,1,Remicade,infliximab,biologic,ineffective,False,Stopped working
+P038,1,Remicade,infliximab,biologic,ineffective,False,Stopped working (secondary loss of response)
 P038,2,Humira,adalimumab,biologic,partial,True,
 P038,3,Stelara,ustekinumab,biologic,not_started,False,
 P039,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,Minimal help
-P039,2,prednisone,prednisone,corticosteroid,partial,False,Weight gain side effect; used for flares only
-P039,3,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,Hair loss (adverse reaction)
+P039,2,prednisone,prednisone,corticosteroid,partial,False,Used for flares; side effects (weight gain); implied discontinued as maintenance
+P039,3,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,Hair fell out; switched to Humira
 P039,4,Humira,adalimumab,biologic,partial,True,
-P039,5,Stelara,ustekinumab,biologic,not_started,False,
-P040,1,Prednisone,prednisone,corticosteroid,partial,False,Sent blood sugars through roof; also caused osteoporosis from years of use
-P040,2,azathioprine,azathioprine,immunomodulator,partial,False,Liver enzymes started climbing
+P040,1,Prednisone,prednisone,corticosteroid,partial,False,Sent blood sugars through roof; contributed to osteoporosis over years
+P040,2,azathioprine,azathioprine,immunomodulator,partial,False,Liver enzymes started climbing after about two years
 P040,3,Remicade,infliximab,biologic,ineffective,False,Developed antibodies; stopped working completely within weeks
 P040,4,Humira,adalimumab,biologic,partial,True,
-P040,5,methotrexate,methotrexate,immunomodulator,not_started,False,Patient worried about liver damage given prior liver enzyme elevation and diabetes medication history
+P040,5,methotrexate,methotrexate,immunomodulator,not_started,False,
 P041,1,prednisone,prednisone,corticosteroid,effective,False,
 P041,2,mesalamine,mesalamine,aminosalicylate,effective,False,
-P041,3,Remicade,infliximab,biologic,ineffective,False,secondary loss of response — 'it stopped working'
+P041,3,Remicade,infliximab,biologic,ineffective,False,stopped working after approximately four years
 P041,4,Stelara,ustekinumab,biologic,partial,True,
 P041,5,methotrexate,methotrexate,immunomodulator,not_started,False,
-P042,1,mesalamine,mesalamine,aminosalicylate,partial,False,Not a lasting solution
-P042,2,prednisone,prednisone,corticosteroid,partial,False,"Short course only, not a lasting solution"
+P042,1,mesalamine,mesalamine,aminosalicylate,partial,False,Not a lasting solution; escalated therapy
+P042,2,prednisone,prednisone,corticosteroid,partial,False,Short course only; not a lasting solution
 P042,3,sulfasalazine,sulfasalazine,aminosalicylate,adverse_reaction,False,Allergic reaction - hives everywhere
-P042,4,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,"Unbearable nausea, missed too much work"
+P042,4,methotrexate,methotrexate,immunomodulator,adverse_reaction,False,Unbearable nausea; missed significant work
 P042,5,Humira,adalimumab,biologic,partial,True,
 P043,1,surgery - resection of terminal ileum,surgery - resection of terminal ileum,other,partial,False,
 P043,2,Remicade,infliximab,biologic,adverse_reaction,False,Developed antibodies
 P043,3,Humira,adalimumab,biologic,partial,True,
 P043,4,methotrexate,methotrexate,immunomodulator,partial,True,
 P044,1,mesalamine suppositories and oral,mesalamine,aminosalicylate,ineffective,False,minimal help
-P044,2,prednisone,prednisone,corticosteroid,adverse_reaction,False,anxiety/panic attacks; implied not continued long-term
+P044,2,prednisone,prednisone,corticosteroid,adverse_reaction,False,"anxiety went crazy, had panic attack during client presentation"
 P044,3,azathioprine,azathioprine,immunomodulator,partial,True,
 P045,1,budesonide,budesonide,corticosteroid,partial,,
 P045,2,mesalamine,mesalamine,aminosalicylate,partial,,
 P045,3,methotrexate,methotrexate,immunomodulator,ongoing_unknown,True,
 P046,1,Prednisone,prednisone,corticosteroid,adverse_reaction,False,Made blood sugar go haywire (pre-diabetic comorbidity)
-P046,2,Mesalamine,mesalamine,aminosalicylate,ineffective,False,Did not work
+P046,2,Mesalamine,mesalamine,aminosalicylate,ineffective,False,Didn't touch it (no effect)
 P046,3,Humira,adalimumab,biologic,partial,True,
-P047,1,prednisone,prednisone,corticosteroid,partial,False,significant weight gain (30 lbs in two months); implied discontinued as methotrexate is now current therapy
+P047,1,prednisone,prednisone,corticosteroid,partial,False,"significant weight gain (30 lbs in two months), implied discontinued as methotrexate now current"
 P047,2,mesalamine,mesalamine,aminosalicylate,ongoing_unknown,,
 P047,3,methotrexate,methotrexate,immunomodulator,partial,True,
-P048,1,Mesalamine,mesalamine,aminosalicylate,ongoing_unknown,True,
+P048,1,mesalamine,mesalamine,aminosalicylate,ongoing_unknown,True,
 P048,2,antibiotics,antibiotics,antibiotic,ongoing_unknown,True,
-P048,0,emergency surgery (bowel resection),emergency surgery (bowel resection),other,ongoing_unknown,False,
-P049,1,prednisone,prednisone,corticosteroid,adverse_reaction,False,Made me manic. Didn't sleep for four days.
+P049,1,prednisone,prednisone,corticosteroid,adverse_reaction,False,Made me manic. Didn't sleep for four days. Parents thought I was relapsing into disorder.
 P049,2,mesalamine,mesalamine,aminosalicylate,ongoing_unknown,True,
 P050,1,mesalamine,mesalamine,aminosalicylate,ineffective,False,No effect
 P050,2,prednisone,prednisone,corticosteroid,adverse_reaction,False,Worsened breathing; respiratory doctor said absolutely not

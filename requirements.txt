@@ -1,5 +1,7 @@
+# Requires Python 3.12.7 — see README Step 0.
 pydantic>=2.6
 litellm>=1.40
+tenacity>=8.0
 python-dotenv>=1.0
 pandas>=2.0
 pytest>=8.0

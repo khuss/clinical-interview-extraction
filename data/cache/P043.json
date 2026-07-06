@@ -1,0 +1,161 @@
+{
+ "patient_id": "P043",
+ "profile": {
+  "name": "Sandra",
+  "age": {
+   "value": 44,
+   "status": "stated",
+   "evidence": "Sandra, 44.",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 12.0,
+   "status": "stated",
+   "evidence": "Diagnosed with Crohn's twelve years ago.",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "Marketing director",
+   "status": "stated",
+   "evidence": "Work challenging. Marketing director.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "Hashimoto's thyroiditis",
+   "osteoarthritis of spine",
+   "Parkinson's disease (father, not patient)"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileal",
+   "status": "stated",
+   "evidence": "Resection of terminal ileum. Disease came back at anastomosis site within year.",
+   "confidence": 0.85
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Required surgical resection, developed antibodies to Remicade requiring switch, Humira only ~60-75% effective with methotrexate added, now losing effectiveness with possible further surgery discussed.",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "fatigue",
+   "bowel_obstruction",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Humira losing effectiveness, described as ~75% with methotrexate, current path described as 'unsustainable', medication change and possible surgery being discussed.",
+   "confidence": 0.85
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "surgery - resection of terminal ileum",
+   "drug_class": "other",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Had my first surgery at 33. Resection of terminal ileum. Disease came back at anastomosis site within year."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Developed antibodies",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started Remicade. Worked beautifully for five years. Then developed antibodies. Crashed hard."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Tried Humira next. Moderate help. Maybe 60%... Humira losing effectiveness."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Added methotrexate. Hair thinned but improvement to maybe 75%. Manageable."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "multiple doctors (pre-diagnosis)",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Took two years and three doctors to get diagnosis."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist (diagnosis and ongoing management)",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Started Remicade... Tried Humira next... Added methotrexate... Looking at Stelara next. Next appointment discussing medication change."
+  },
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": "surgeon",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "Had my first surgery at 33. Resection of terminal ileum. Also surgery. Another resection maybe. Or strictureplasty."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "orthopedist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 4,
+   "evidence": "Orthopedist says osteoarthritis."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Tried Humira next... Humira losing effectiveness. Looking at Stelara next.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "But scared of transition period. What if I flare? Can't afford time off. Already used FMLA this year.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "Multiple GPs/doctors pre-diagnosis -> GI specialist who prescribed biologics. Two steps on referral path.",
+   "confidence": 0.75
+  },
+  "treatment_sequence": [
+   "surgery (terminal ileum resection)",
+   "Remicade",
+   "Humira",
+   "methotrexate"
+  ]
+ },
+ "extraction_notes": "Patient is currently on Humira (losing effectiveness) with Stelara being discussed as next step — biologic.status is 'on' per Humira as current drug; Stelara is planned/discussed but not yet started. Synthroid excluded from treatments as it is for Hashimoto's thyroiditis, not Crohn's. Father's Parkinson's noted in comorbidities list but flagged as father's condition, not patient's. Osteoarthritis noted as possibly accelerated by Crohn's inflammation or medication. Joint symptom flagged given spine osteoarthritis possibly related to Crohn's extraintestinal manifestation. Transcript ends with a natural concluding reflection; completeness set to complete."
+}

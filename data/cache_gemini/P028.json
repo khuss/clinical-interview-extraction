@@ -1,0 +1,127 @@
+{
+ "patient_id": "P028",
+ "profile": {
+  "name": "Thomas",
+  "age": {
+   "value": 43,
+   "status": "stated",
+   "evidence": "Thomas, 43",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 6.0,
+   "status": "stated",
+   "evidence": "Crohn's for about six years now.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "accountant",
+   "status": "stated",
+   "evidence": "Own a small accounting firm.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "chronic kidney disease"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Colonoscopy revealed Crohn's throughout colon, some small intestine involvement.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Patient reports bathroom urgency every hour, business failure, and need for biologics, implying significant impact on daily life.",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "urgency",
+   "diarrhea"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Started Entyvio three months ago, too early to tell if working; budesonide helps somewhat but not long-term.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "kidney function started declining",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started conservatively with mesalamine. Helped initially. Then kidney function started declining. Nephrologist said stop immediately."
+  },
+  {
+   "name_raw": "budesonide",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "Started budesonide... Helps somewhat but not long-term solution."
+  },
+  {
+   "name_raw": "Entyvio",
+   "drug_class": "biologic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Started three months ago. Too early to tell if working."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "GI wants biologics but nephrologist concerned... Finally convinced doctors to try Entyvio."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Finally convinced doctors to try Entyvio... Started three months ago.",
+   "confidence": 1.0
+  },
+  "drug_name": "Entyvio",
+  "barriers": [
+   {
+    "type": "comorbidity_risk",
+    "evidence": "Nephrologist concerned. Immune suppression with kidney disease risky.",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance denied three times. Said not proven safe with kidney disease.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient describes GI specialist as the primary decision maker for biologics.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "budesonide",
+   "Entyvio"
+  ]
+ },
+ "extraction_notes": null
+}

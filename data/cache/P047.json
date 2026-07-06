@@ -1,0 +1,129 @@
+{
+ "patient_id": "P047",
+ "profile": {
+  "name": "Donna",
+  "age": {
+   "value": 41,
+   "status": "stated",
+   "evidence": "Donna, 41, female.",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 0.42,
+   "status": "inferred",
+   "evidence": "Diagnosed with Crohn's five months ago",
+   "confidence": 0.95
+  },
+  "occupation": {
+   "value": "office manager",
+   "status": "stated",
+   "evidence": "working as office manager",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "hypothyroidism",
+   "depression",
+   "obesity"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "small_intestine_other",
+   "status": "stated",
+   "evidence": "Found Crohn's in small intestine. Explains why colonoscopies kept coming back normal.",
+   "confidence": 1.0
+  },
+  "severity": {
+   "value": "moderate",
+   "status": "inferred",
+   "evidence": "Partial response to methotrexate (~30% improvement), ongoing symptoms including urgency, fatigue, nausea; not hospitalized or surgical, but not mild given functional impairment",
+   "confidence": 0.65
+  },
+  "symptoms": [
+   "diarrhea",
+   "urgency",
+   "fatigue",
+   "nausea_vomiting",
+   "weight_loss"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Some improvement in symptoms. Maybe 30%. Doctor says give it more time — implies incomplete control on current regimen",
+   "confidence": 0.85
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "significant weight gain (30 lbs in two months), implied discontinued as methotrexate now current",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on prednisone and mesalamine. Prednisone helped but gain 30 pounds in two months."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": null,
+   "sequence_index": 2,
+   "evidence": "Started on prednisone and mesalamine. No explicit outcome or discontinuation stated."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Trying methotrexate now. Hair falling out. Nausea constant. But some improvement in symptoms. Maybe 30%. Doctor says give it more time."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "GP/PCP (implied — years of misdiagnosis before GI referral)",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Spent three years being told it was IBS, stress, hormones, everything but actual problem."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Finally got to good GI who actually listened. Did full workup. Found Crohn's in small intestine. Started on prednisone and mesalamine... Trying methotrexate now. Doctor says give it more time."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "not_on",
+   "status": "inferred",
+   "evidence": "No biologic mentioned in treatment history; currently on methotrexate with partial response; no biologic discussion referenced",
+   "confidence": 0.8
+  },
+  "drug_name": null,
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "truncated",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "GP/PCP (years of misdiagnosis) -> GI specialist (diagnosis and treatment). One referral step from GP to GI prescriber.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "methotrexate"
+  ]
+ },
+ "extraction_notes": "Transcript ends mid-thought ('Not worry about mom...') — truncated. Biologic never raised in the transcript; barriers_status set to not_mentioned (not unknown_churned) because the transcript was heading toward personal/family concerns rather than treatment discussion at the cut-off. Mesalamine outcome is unknown — started alongside prednisone, no explicit discontinuation or outcome stated. Weight gain from prednisone noted as adverse effect; obesity also attributed partly to hypothyroidism. Depression and hypothyroidism are comorbidities, not IBD treatments. Hair loss and nausea from methotrexate noted as adverse effects but patient continuing. Severity inferred as moderate given functional impairment and partial treatment response without hospitalization or surgery."
+}

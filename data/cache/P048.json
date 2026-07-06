@@ -1,0 +1,127 @@
+{
+ "patient_id": "P048",
+ "profile": {
+  "name": "Larry",
+  "age": {
+   "value": 56,
+   "status": "stated",
+   "evidence": "Larry, 56.",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 0.06,
+   "status": "inferred",
+   "evidence": "Just found out I have Crohn's three weeks ago.",
+   "confidence": 0.95
+  },
+  "occupation": {
+   "value": "former construction company owner",
+   "status": "stated",
+   "evidence": "Humbling for man who used to run construction company.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "diabetes",
+   "heart disease"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "small_intestine_other",
+   "status": "inferred",
+   "evidence": "Emergency surgery to remove blocked section; 'foot of intestine gone' — bowel obstruction requiring resection suggests small intestine involvement.",
+   "confidence": 0.65
+  },
+  "severity": {
+   "value": "severe",
+   "status": "inferred",
+   "evidence": "Required emergency surgery for bowel obstruction at initial presentation.",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "bowel_obstruction"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Started on medications but too early to know if helping; still in post-surgical recovery.",
+   "confidence": 0.6
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 1,
+   "evidence": "Mesalamine and antibiotics for now. Started on medications but too early to know if helping."
+  },
+  {
+   "name_raw": "antibiotics",
+   "drug_class": "antibiotic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "Mesalamine and antibiotics for now."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": "Emergency Room",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Went to ER with severe pain. Thought heart attack. Was inflammation in intestines."
+  },
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": "Surgery",
+   "biologic_decision_point": true,
+   "on_referral_path": false,
+   "sequence_index": 2,
+   "evidence": "Emergency surgery to remove blocked section — same ER admission, not a new referral step. Doctor wants biologics after I heal from surgery."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "planned",
+   "status": "stated",
+   "evidence": "Doctor wants biologics after I heal from surgery.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "surgery_first",
+    "evidence": "Doctor wants biologics after I heal from surgery — biologic deferred until post-surgical recovery.",
+    "overcome": false
+   },
+   {
+    "type": "comorbidity_risk",
+    "evidence": "Patient has diabetes and heart disease; these comorbidities may factor into timing/safety of biologic initiation, though not explicitly stated as a veto.",
+    "overcome": null
+   }
+  ],
+  "barriers_status": "inferred"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient went directly to ER; surgery and biologic discussion happened within same care episode. No GP visit mentioned.",
+   "confidence": 0.75
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "antibiotics",
+   "biologic (planned)"
+  ]
+ },
+ "extraction_notes": "Patient diagnosed 3 weeks ago after emergency presentation. Surgery was same-admission as ER (on_referral_path=false for surgeon). Biologic is planned post-recovery, not yet started — status is 'planned'. Comorbidity_risk barrier is inferred cautiously given diabetes and heart disease, but the only explicitly stated barrier is surgery_first. Diabetes and heart disease recorded as comorbidities only, not in treatments. Financial stress and insurance denial noted but not directly linked to biologic access in the transcript. barriers_status set to 'inferred' because surgery_first is directly implied by a concrete stated fact, but comorbidity risk is inferred."
+}

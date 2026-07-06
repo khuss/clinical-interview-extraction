@@ -1,0 +1,128 @@
+{
+ "patient_id": "P043",
+ "profile": {
+  "name": "Sandra",
+  "age": {
+   "value": 44,
+   "status": "stated",
+   "evidence": "Sandra, 44.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 12.0,
+   "status": "stated",
+   "evidence": "Diagnosed with Crohn's twelve years ago.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "Hashimoto's thyroiditis",
+   "osteoarthritis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileal",
+   "status": "stated",
+   "evidence": "Resection of terminal ileum.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "History of multiple surgeries, multiple biologic failures, and ongoing symptoms despite treatment.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "fatigue",
+   "abdominal_pain"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Humira provides 60% help, methotrexate adds improvement to 75%, but patient reports current path is unsustainable.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "effective",
+   "reason_stopped": "developed antibodies",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": null
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": "losing effectiveness",
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": null
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": null
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Next appointment discussing medication change."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Humira losing effectiveness.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "scared of transition period. What if I flare?",
+    "overcome": false
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Can't afford time off. Already used FMLA this year.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient is currently under the care of a GI specialist for ongoing management.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "Remicade",
+   "Humira",
+   "methotrexate"
+  ]
+ },
+ "extraction_notes": null
+}

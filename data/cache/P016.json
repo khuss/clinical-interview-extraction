@@ -1,0 +1,135 @@
+{
+ "patient_id": "P016",
+ "profile": {
+  "name": "Steve",
+  "age": {
+   "value": 44,
+   "status": "stated",
+   "evidence": "I'm Steve, 44 years old",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 2.0,
+   "status": "stated",
+   "evidence": "my Crohn's story started about two years ago. At least that's when I was diagnosed.",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "Construction foreman",
+   "status": "stated",
+   "evidence": "Construction foreman, can't be taking sick days.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "chronic back pain",
+   "alcohol use (excessive)"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "small_intestine_other",
+   "status": "inferred",
+   "evidence": "CT scan showed inflammation all through my intestines — suggests diffuse small bowel/intestinal involvement; colonoscopy confirmed Crohn's but specific segment not named. 'All through my intestines' suggests widespread but not specifically ileocolonic confirmed.",
+   "confidence": 0.5
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Lost about 40 pounds, struggling to work, running to porta-potty every hour, ER admission, insurance requiring step therapy before biologics — all consistent with moderate-to-severe disease.",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "urgency",
+   "weight_loss",
+   "malnutrition",
+   "appetite_loss"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Can't be running to the porta-potty every hour on a construction site... Lost about 40 pounds. Look sick. Feel sick. Living on toast and ensures.",
+   "confidence": 0.95
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Did not do much",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started with something called mesalamine. Didn't do much."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Severe mood/behavioral side effects — aggression",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Then prednisone which helped with the gut but made me crazy. I mean, seriously aggressive. Almost got into a fight at work. Had to get off that stuff."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": "Emergency Room",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "ended up in the ER. Thought I was having appendicitis, the pain was so bad. CT scan showed inflammation all through my intestines. They admitted me, did a colonoscopy"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI doctor",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "The GI doc, young guy, very enthusiastic, started explaining all these medication options... Now they want to put me on these injection things. Biologics."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "discussed_rejected",
+   "status": "inferred",
+   "evidence": "Now they want to put me on these injection things. Biologics. The cost is insane. Insurance through the union is fighting coverage. Something about needing to fail more medications first. Patient also expresses fear about immune suppression. Biologic has been discussed/recommended but not yet started due to insurance denial and patient hesitation.",
+   "confidence": 0.85
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Insurance through the union is usually good but they're fighting coverage. Something about needing to fail more medications first.",
+    "overcome": false
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "The cost is insane. Insurance through the union is usually good but they're fighting coverage.",
+    "overcome": false
+   },
+   {
+    "type": "patient_fear",
+    "evidence": "Heard they suppress your immune system. In construction, always getting cuts, exposed to stuff. Seems risky.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "No GP visit mentioned; patient went directly to ER where GI specialist was involved. One step from ER/admission to GI specialist.",
+   "confidence": 0.75
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone"
+  ]
+ },
+ "extraction_notes": "No GP visit mentioned; diagnosis pathway began with ER admission. Biologic discussed and recommended by GI but not started due to insurance step-therapy requirement and patient fear — classified as discussed_rejected (not planned, as patient has not agreed to proceed). Alcohol use and back pain noted as comorbidities, not treated as IBD treatments. Weight loss of 40 lbs and nutritional supplements (Ensures) noted as symptoms/coping, not treatments. Disease location inferred as small_intestine_other due to 'all through my intestines' but ileocolonic cannot be confirmed without more detail. Transcript ends at a natural stopping point — completeness set to complete."
+}

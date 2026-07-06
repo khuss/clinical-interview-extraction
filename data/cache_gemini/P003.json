@@ -1,0 +1,191 @@
+{
+ "patient_id": "P003",
+ "profile": {
+  "name": "Emma",
+  "age": {
+   "value": 28,
+   "status": "stated",
+   "evidence": "28 years old",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 12.0,
+   "status": "inferred",
+   "evidence": "diagnosed with Crohn's at 16. ... 28 years old",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "remote work",
+   "status": "stated",
+   "evidence": "finding remote work. That's been a game-changer for managing symptoms.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "anxiety disorder",
+   "PCOS",
+   "osteopenia",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "fatigue",
+   "joint",
+   "skin",
+   "bowel_obstruction",
+   "fistula"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Nothing really worked well. ... developed antibodies and it stopped working. Switched to Humira, worked for about two years, then lost effectiveness. Currently on Stelara every 8 weeks. The fatigue is what gets me most. ... It's joint pain, skin problems, extreme exhaustion. ... canceling dates because of flares? ... Stress is my biggest trigger. Lost three jobs due to excessive sick days",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Nothing really worked well.",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Nothing really worked well.",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well."
+  },
+  {
+   "name_raw": "6-MP",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "Nothing really worked well.",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "Nothing really worked well.",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Started with sulfasalazine, then mesalamine, then 6-MP, then methotrexate. Nothing really worked well."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "developed antibodies and it stopped working",
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "Finally started Remicade infusions at 19. Life-changing at first, but after three years, developed antibodies and it stopped working."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "lost effectiveness",
+   "is_current": false,
+   "sequence_index": 6,
+   "evidence": "Switched to Humira, worked for about two years, then lost effectiveness."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 7,
+   "evidence": "Currently on Stelara every 8 weeks."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "multiple doctors",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Saw multiple doctors over two years before getting diagnosed."
+  },
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 2,
+   "evidence": "By then, I had developed a fistula that required surgery."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "Finally started Remicade infusions at 19. ... Switched to Humira ... Currently on Stelara every 8 weeks."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Currently on Stelara every 8 weeks.",
+   "confidence": null
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Each biologic switch required insurance pre-authorization battles that took months. ... Even with insurance, my out-of-pocket costs are about $6,000 annually.",
+    "overcome": false
+   },
+   {
+    "type": "patient_fear",
+    "evidence": "The injection anxiety never goes away, even after all these years.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Initial 'multiple doctors' (GP/PCP) -> GI specialist (prescriber)",
+   "confidence": 1.0
+  },
+  "treatment_sequence": [
+   "sulfasalazine",
+   "mesalamine",
+   "6-MP",
+   "methotrexate",
+   "Remicade",
+   "Humira",
+   "Stelara"
+  ]
+ },
+ "extraction_notes": null
+}

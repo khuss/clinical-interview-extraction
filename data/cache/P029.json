@@ -1,0 +1,178 @@
+{
+ "patient_id": "P029",
+ "profile": {
+  "name": "Linda",
+  "age": {
+   "value": 38,
+   "status": "stated",
+   "evidence": "Linda, 38",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 12.0,
+   "status": "stated",
+   "evidence": "living with Crohn's for twelve years now... Diagnosed at 26",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "lawyer",
+   "status": "stated",
+   "evidence": "First symptoms during bar exam prep... Made partner despite everything... Lawyer salary helps.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "thyroid disease",
+   "chronic migraines"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed extensive disease; primary symptoms are bloody diarrhea and cramping, consistent with colonic involvement. No mention of small bowel or ileal disease specifically.",
+   "confidence": 0.55
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Extensive disease on colonoscopy, failed multiple therapies (mesalamine, azathioprine, methotrexate, Remicade, Humira), currently on Stelara with only partial response ('working okay, not great'), six months of insurance appeals while suffering, considering combo therapy and fecal transplant trials.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "bloody_diarrhea",
+   "abdominal_pain",
+   "weight_loss",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Currently on Stelara. Working okay. Not great, just okay.",
+   "confidence": 1.0
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "minimal help",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Mesalamine first, minimal help."
+  },
+  {
+   "name_raw": "Prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "used for flares; side effects (weight gain)",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Prednisone for flares, gained 50 pounds."
+  },
+  {
+   "name_raw": "Azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "stopped working after about two years",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Azathioprine next. Worked for about two years... Then stopped working."
+  },
+  {
+   "name_raw": "Methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "implied failure leading to biologic escalation; hair loss noted as side effect",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Methotrexate added. Hair loss devastating... Moved to biologics five years ago."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "failed",
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "Started Remicade... Humira next after Remicade failed."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": "less effective, only ~60% improvement; moved to Stelara",
+   "is_current": false,
+   "sequence_index": 6,
+   "evidence": "Humira next after Remicade failed. Self-injection easier to hide. But less effective. Maybe 60% improvement."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 7,
+   "evidence": "Currently on Stelara. Insurance fought it hard. Six months of appeals while suffering. Finally approved. Working okay. Not great, just okay."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally saw GI. Colonoscopy showed extensive disease. Started journey through medication ladder."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Moved to biologics five years ago. Started Remicade... Humira next after Remicade failed... Currently on Stelara."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Currently on Stelara.",
+   "confidence": 1.0
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Insurance fought it hard. Six months of appeals while suffering. Finally approved. (Prior biologics Remicade and Humira had to fail first; step therapy implied by the appeals process.)",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance fought it hard. Six months of appeals while suffering. Finally approved.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "No GP visit mentioned; patient went directly to GI specialist who managed all treatment including biologics. One referral step (GI) to prescriber.",
+   "confidence": 0.7
+  },
+  "treatment_sequence": [
+   "Mesalamine",
+   "Prednisone",
+   "Azathioprine",
+   "Methotrexate",
+   "Remicade",
+   "Humira",
+   "Stelara"
+  ]
+ },
+ "extraction_notes": "Synthroid excluded from treatments as it is for thyroid disease (comorbidity), not Crohn's. Chronic migraines and thyroid disease recorded as comorbidities only. Combo therapy (Stelara plus something else) and fecal transplant trials are being discussed/considered but not yet started; not added to treatments. Disease location inferred as colonic based on colonoscopy and symptom profile, but small bowel involvement cannot be excluded given disease severity and extensive description — confidence moderate. No GP/PCP encounter explicitly mentioned; referral path starts at GI."
+}

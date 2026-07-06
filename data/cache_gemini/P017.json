@@ -1,0 +1,113 @@
+{
+ "patient_id": "P017",
+ "profile": {
+  "name": null,
+  "age": {
+   "value": 29,
+   "status": "stated",
+   "evidence": "I'm Diana, 29",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.67,
+   "status": "stated",
+   "evidence": "Got diagnosed about eight months ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "Tech company",
+   "status": "stated",
+   "evidence": "Tech company, good benefits.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "ADHD",
+   "anxiety"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate",
+   "status": "stated",
+   "evidence": "the doctor called it mild to moderate.",
+   "confidence": null
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Some weeks I'm fine, others I'm a disaster.",
+   "confidence": 0.8
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started me on mesalamine. Seemed to help at first?"
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "So now I'm on azathioprine."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "The GI doctor is nice... She mentioned biologics but said we should try other things first."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "not_on",
+   "status": "stated",
+   "evidence": "She mentioned biologics but said we should try other things first. So now I'm on azathioprine.",
+   "confidence": null
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "not_severe_enough",
+    "evidence": "She mentioned biologics but said we should try other things first.",
+    "overcome": null
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Single GI specialist mentioned as managing the care.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "azathioprine"
+  ]
+ },
+ "extraction_notes": null
+}

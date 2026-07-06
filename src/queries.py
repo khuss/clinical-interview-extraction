@@ -76,8 +76,10 @@ def to_frames(records: list[PatientRecord]) -> tuple[pd.DataFrame, pd.DataFrame,
     return pd.DataFrame(pats), pd.DataFrame(treats), pd.DataFrame(encs)
 
 
-def q_drug_usefulness(treats: pd.DataFrame, name: str) -> None:
-    """Of people who tried <drug>, how many found it useful?"""
+def q_drug_usefulness(treats: pd.DataFrame, name: str) -> pd.DataFrame:
+    """Of people who tried <drug>, how many found it useful? Returns the matching
+    treatment rows (not just prints them) so a caller — e.g. a notebook — can build
+    a chart from the same data without recomputing the filter."""
     canon = normalize_drug_name(name)
     sub = treats[treats["drug"] == canon]
     known = sub[sub["outcome"].notna()]
@@ -85,33 +87,38 @@ def q_drug_usefulness(treats: pd.DataFrame, name: str) -> None:
     print(f'\nQ) Of people who tried "{name}", how many found it useful?')
     print(f"   tried: {len(sub)}  |  outcome known: {len(known)}  |  useful (effective/partial): {len(useful)}")
     print(sub[["patient_id", "name_raw", "outcome"]].to_string(index=False))
+    return sub
 
 
-def q_best_treatment_for_symptom(pats: pd.DataFrame, treats: pd.DataFrame, symptom: str) -> None:
+def q_best_treatment_for_symptom(pats: pd.DataFrame, treats: pd.DataFrame, symptom: str) -> pd.DataFrame | None:
     """Among patients with <symptom>, which treatment class had the best outcomes?
     NB: this is a patient-level ASSOCIATION (drug targets the disease, not the symptom),
-    and at n=4 it's only illustrative."""
+    and at n=4 it's only illustrative. Returns the useful_rate/n table (or None if
+    empty) for the same reason as q_drug_usefulness above."""
     ids = pats[pats["symptoms"].apply(lambda s: symptom in s)]["patient_id"]
     sub = treats[treats["patient_id"].isin(ids) & treats["outcome"].notna()]
     print(f'\nQ) Among patients with "{symptom}", which class had the best outcomes?')
     if sub.empty:
         print("   (no outcome-known treatments for that symptom in this sample)")
-        return
+        return None
     tbl = sub.assign(useful=sub["outcome"].isin(USEFUL)).groupby("drug_class")["useful"].agg(["mean", "count"])
     tbl = tbl.rename(columns={"mean": "useful_rate", "count": "n"}).sort_values("useful_rate", ascending=False)
     print(tbl.round(2).to_string())
+    return tbl
 
 
-def q_remission_by_tenure(pats: pd.DataFrame, years: float) -> None:
-    """For people sick > <years>, how many in remission vs still struggling?"""
+def q_remission_by_tenure(pats: pd.DataFrame, years: float) -> pd.DataFrame:
+    """For people sick > <years>, how many in remission vs still struggling?
+    Returns the filtered patients (empty frame if none), same reasoning as above."""
     sub = pats[(pats["years_since_dx"].notna()) & (pats["years_since_dx"] > years)]
     sub = sub[sub["disease_control_basis"].isin(["stated", "inferred"])]
     print(f"\nQ) Of patients diagnosed > {years} years ago, disease control breakdown:")
     if sub.empty:
-        print("   (none in this 4-record sample)")
-        return
+        print("   (none in this sample)")
+        return sub
     print(sub["disease_control"].value_counts().to_string())
     print(sub[["patient_id", "years_since_dx", "disease_control"]].to_string(index=False))
+    return sub
 
 
 def main() -> None:

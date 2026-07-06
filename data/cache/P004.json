@@ -1,0 +1,154 @@
+{
+ "patient_id": "P004",
+ "profile": {
+  "name": "Robert",
+  "age": {
+   "value": 55,
+   "status": "stated",
+   "evidence": "55 years old",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 0.5,
+   "status": "stated",
+   "evidence": "just diagnosed with Crohn's six months ago",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "construction business owner",
+   "status": "stated",
+   "evidence": "running my construction business",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "hypertension",
+   "high cholesterol",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "pretty extensive involvement of my colon",
+   "confidence": 1.0
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Collapsed from dehydration and severe abdominal pain, failed mesalamine and sulfasalazine, GI recommending biologic, fatigue limiting work capacity, joint pain, ongoing inflammation requiring biologic per physician",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "fatigue",
+   "joint",
+   "weight_loss"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Patient states 'I know it's not enough' about current management with diet and budesonide; fatigue limits work to 6-hour days; joint pain worsening; Dr. Williams says inflammation needs to be controlled to prevent complications",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "not a long-term solution per Dr. Williams",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started me on prednisone immediately, which helped, but he said it's not a long-term solution"
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "minimal improvement",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Tried mesalamine next, minimal improvement"
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "terrible headaches",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Then sulfasalazine, which gave me terrible headaches"
+  },
+  {
+   "name_raw": "budesonide",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "I've been trying to manage with diet changes and budesonide, but I know it's not enough"
+  },
+  {
+   "name_raw": "Entyvio",
+   "drug_class": "biologic",
+   "outcome": "not_started",
+   "reason_stopped": "cost/insurance barrier — catastrophic coverage only, $5,000 per infusion every 8 weeks",
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "Now he wants me on a biologic, recommended Entyvio... The medication would cost me $5,000 per infusion, every 8 weeks. That's impossible."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": "Emergency Room",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Emergency room visit led to CT scan showing significant inflammation. They referred me to a GI specialist"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist (Dr. Williams)",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Dr. Williams did a colonoscopy and confirmed Crohn's disease... Now he wants me on a biologic, recommended Entyvio"
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "discussed_rejected",
+   "status": "stated",
+   "evidence": "Now he wants me on a biologic, recommended Entyvio. The problem is I'm self-employed, my insurance is catastrophic coverage only. The medication would cost me $5,000 per infusion, every 8 weeks. That's impossible.",
+   "confidence": 1.0
+  },
+  "drug_name": "Entyvio",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "self-employed with catastrophic coverage only; Entyvio would cost $5,000 per infusion every 8 weeks — described as 'impossible'",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "ER referred to GI specialist (Dr. Williams) who recommended biologic — 2 steps (ER -> GI specialist)",
+   "confidence": 0.85
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "sulfasalazine",
+   "budesonide",
+   "Entyvio (not started)"
+  ]
+ },
+ "extraction_notes": "Tramadol mentioned but excluded from treatments as it is for pain management, not a Crohn's-specific treatment. Hypertension and high cholesterol noted as comorbidities but no medications for them mentioned. Depression noted as comorbidity. No GP/PCP encounter explicitly mentioned — patient went directly to ER. Clinical trials mentioned as a possibility being explored but no specific trial or decision recorded. Weight loss not explicitly stated but inferred from dehydration collapse; fatigue explicitly stated. Joint pain stated as extra-intestinal manifestation."
+}

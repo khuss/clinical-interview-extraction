@@ -1,0 +1,137 @@
+{
+ "patient_id": "P007",
+ "profile": {
+  "name": "Jennifer",
+  "age": {
+   "value": 45,
+   "status": "stated",
+   "evidence": "I'm Jennifer, 45",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 3.0,
+   "status": "stated",
+   "evidence": "diagnosed with Crohn's three years ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "teacher",
+   "status": "stated",
+   "evidence": "Work full-time as a teacher",
+   "confidence": null
+  },
+  "comorbidities": [
+   "hypothyroid",
+   "fibromyalgia",
+   "Vitamin D deficiency",
+   "Osteoporosis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "small_intestine_other",
+   "status": "stated",
+   "evidence": "extensive small bowel disease",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Started aggressively with prednisone and azathioprine combination. GI doctor recommended biologics immediately given my age and disease extent. Still have breakthrough symptoms.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "weight_loss",
+   "diarrhea"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Been stable-ish for 18 months. Still have breakthrough symptoms, especially during stress.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Tapered off after three months.",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started aggressively with prednisone and azathioprine combination. Prednisone gave me moon face, insomnia, mood swings - my teenage kids didn't recognize me. Tapered off after three months."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "and azathioprine combination. Azathioprine alone wasn't holding things."
+  },
+  {
+   "name_raw": "Entyvio",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Started Entyvio as insurance covered it better than others. Been stable-ish for 18 months. Still have breakthrough symptoms, especially during stress."
+  },
+  {
+   "name_raw": "immunomodulator",
+   "drug_class": "immunomodulator",
+   "outcome": "not_started",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Next appointment discussing adding immunomodulator to Entyvio."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally, severe weight loss and persistent diarrhea led to proper GI workup. Colonoscopy and MRI enterography showed extensive small bowel disease."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI doctor recommended biologics immediately given my age and disease extent. Started Entyvio as insurance covered it better than others."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Entyvio",
+   "confidence": null
+  },
+  "drug_name": "Entyvio",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "decades of misdiagnosis. Finally, severe weight loss and persistent diarrhea led to proper GI workup.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "azathioprine",
+   "entyvio",
+   "immunomodulator"
+  ]
+ },
+ "extraction_notes": null
+}

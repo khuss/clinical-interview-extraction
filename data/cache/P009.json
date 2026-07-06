@@ -1,0 +1,170 @@
+{
+ "patient_id": "P009",
+ "profile": {
+  "name": "Rachel",
+  "age": {
+   "value": 36,
+   "status": "stated",
+   "evidence": "Rachel, 36, female.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 3.0,
+   "status": "inferred",
+   "evidence": "Diagnosis at age 33, current age 36; 36 - 33 = 3 years since diagnosis.",
+   "confidence": 0.95
+  },
+  "occupation": {
+   "value": "finance",
+   "status": "stated",
+   "evidence": "busy career in finance. Sixty-hour weeks, eating at desk",
+   "confidence": null
+  },
+  "comorbidities": [
+   "asthma",
+   "rheumatoid arthritis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "stated",
+   "evidence": "Colonoscopy showed skip lesions throughout colon, classic Crohn's pattern.",
+   "confidence": 0.9
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Two hospitalizations, failed multiple therapies (mesalamine, prednisone, azathioprine), now on biologic (Entyvio) that is losing effectiveness.",
+   "confidence": 0.85
+  },
+  "symptoms": [
+   "weight_loss",
+   "fatigue",
+   "nausea_vomiting",
+   "joint",
+   "mouth_ulcers"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Entyvio worked well for a year but is now losing effectiveness; patient is looking into Stelara as next option.",
+   "confidence": 0.85
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Minimal improvement",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started conservatively with mesalamine. Minimal improvement."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Not sustainable due to mood swings affecting work",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Added prednisone for flare control. The mood swings were horrible... Not sustainable in high-pressure job."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Liver enzymes spiked",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Moved to azathioprine. Three months in, liver enzymes spiked. Had to stop."
+  },
+  {
+   "name_raw": "Entyvio",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Started Entyvio infusions... Worked well for a year, then started developing joint pain... Entyvio losing effectiveness."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Added methotrexate for RA, which ironically might help Crohn's too. Side effects are rough - hair thinning, mouth sores, constant nausea. But the joint pain is manageable now."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "GP/PCP (implied - years of IBS/stress/anxiety diagnosis)",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Spent years being told IBS, stress, anxiety."
+  },
+  {
+   "encounter_type": "er",
+   "specialty_raw": "hospital/ER",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "hospitalization for severe dehydration and weight loss forced the issue. Colonoscopy showed skip lesions throughout colon, classic Crohn's pattern."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "gastroenterologist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "Doctor recommended biologics but I resisted... Started Entyvio infusions... Looking into Stelara as next option. Entyvio losing effectiveness."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "rheumatologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 4,
+   "evidence": "Rheumatologist confirmed RA. Added methotrexate for RA."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Entyvio infusions... Entyvio losing effectiveness. Looking into Stelara as next option.",
+   "confidence": 1.0
+  },
+  "drug_name": "Entyvio",
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "Doctor recommended biologics but I resisted. Needle phobia since childhood. The thought of regular injections paralyzed me.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP (years of misdiagnosis) -> hospitalization/ER where Crohn's was diagnosed -> GI specialist who prescribed Entyvio. Two steps from GP to prescriber.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "azathioprine",
+   "Entyvio",
+   "methotrexate"
+  ]
+ },
+ "extraction_notes": "Methotrexate was added for RA but patient notes it may also help Crohn's; it is included in treatments as it has dual relevance. Stelara is mentioned as a future consideration but has not been started; biologic.status remains 'on' (Entyvio current). Dietary modifications (SCD diet, supplements, acupuncture) are not included as formal treatments. Metformin/insulin, Synthroid, fertility medications not mentioned. Rheumatologist encounter marked on_referral_path=false as it was a side consult for RA, not part of the Crohn's referral chain."
+}

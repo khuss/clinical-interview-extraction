@@ -1,0 +1,152 @@
+{
+ "patient_id": "P014",
+ "profile": {
+  "name": "Brian",
+  "age": {
+   "value": 41,
+   "status": "stated",
+   "evidence": "Brian, 41, male.",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 3.0,
+   "status": "stated",
+   "evidence": "Crohn's diagnosed three years ago.",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "electrician",
+   "status": "stated",
+   "evidence": "Work as electrician.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "severe psoriasis",
+   "psoriatic arthritis",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed patchy inflammation throughout — colonoscopy primarily visualizes the colon; 'throughout' suggests colonic involvement, though small bowel cannot be fully excluded.",
+   "confidence": 0.6
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Failed multiple conventional therapies (methotrexate, sulfasalazine allergic reaction), required biologic with 4-month insurance battle, still having 'lots of bad days', and next appointment discussing adding another medication because Stelara 'not quite enough'.",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "fatigue",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Stelara helping both conditions somewhat. Not perfect but improvement. Still have bad days. Lots of them.",
+   "confidence": 1.0
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "antispasmodics",
+   "drug_class": "other",
+   "outcome": "ineffective",
+   "reason_stopped": "Useless — did not address Crohn's",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "First GI saw said IBS, gave me antispasmodics. Useless."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ineffective",
+   "reason_stopped": "Did not help Crohn's (was already on it for psoriasis)",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Already on methotrexate for psoriasis, doctor hoped would help Crohn's too. Didn't."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Allergic reaction — hives",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Added sulfasalazine, allergic reaction. Hives everywhere. Miserable."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Switched to biologic that could treat both conditions. Started Stelara. Stelara helping both conditions somewhat. Not perfect but improvement."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Inferred initial primary care contact before GI referral; GI issues started and were initially thought unrelated to psoriasis."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI — first opinion",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "First GI saw said IBS, gave me antispasmodics."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI — second opinion",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "Second opinion led to proper testing. Colonoscopy showed patchy inflammation throughout. Classic Crohn's. ... Switched to biologic that could treat both conditions. Started Stelara."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Stelara. ... Stelara helping both conditions somewhat.",
+   "confidence": 1.0
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance battle epic. They wanted different drugs for each condition. Doctor had to prove medical necessity for combination treatment. Four months of appeals while suffering. Finally approved.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/PCP (step 1) -> first GI (step 2, misdiagnosed IBS) -> second GI specialist who diagnosed and prescribed biologic (step 3). Steps from GP to prescriber = 2 referral hops.",
+   "confidence": 0.75
+  },
+  "treatment_sequence": [
+   "antispasmodics",
+   "methotrexate",
+   "sulfasalazine",
+   "Stelara"
+  ]
+ },
+ "extraction_notes": "Antidepressants and therapy excluded from treatments (for depression comorbidity, not Crohn's). Methotrexate was originally for psoriasis but was also trialled for Crohn's — included in IBD treatment sequence as it was explicitly hoped to help Crohn's. Next appointment discussion of adding another medication (injection or infusion) noted but no decision reached; Stelara remains current biologic. Psoriatic arthritis inferred from 'joint pain from psoriatic arthritis' stated verbatim. Disease location inferred as colonic from colonoscopy finding; small bowel involvement not explicitly excluded."
+}

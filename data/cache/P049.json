@@ -1,0 +1,120 @@
+{
+ "patient_id": "P049",
+ "profile": {
+  "name": "Tammy",
+  "age": {
+   "value": 28,
+   "status": "stated",
+   "evidence": "Tammy, 28, female.",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 0.08,
+   "status": "inferred",
+   "evidence": "Crohn's diagnosed last month",
+   "confidence": 0.85
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "eating disorder (in recovery)",
+   "anxiety"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "small_intestine_other",
+   "status": "inferred",
+   "evidence": "Surgeon found inflammation throughout intestines — not specifically colon or ileum named, but 'throughout intestines' suggests diffuse small bowel involvement; no specific colonic mention",
+   "confidence": 0.5
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "GI wants to be aggressive given my age and extent of disease — implies significant disease burden; found incidentally during surgery with widespread inflammation",
+   "confidence": 0.75
+  },
+  "symptoms": [
+   "abdominal_pain"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Now on mesalamine. Too early to tell if working — disease control not yet established; recently started treatment",
+   "confidence": 0.6
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Made me manic. Didn't sleep for four days. Parents thought I was relapsing into disorder.",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on prednisone in hospital. Made me manic. Didn't sleep for four days."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "Now on mesalamine. Too early to tell if working."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": "surgeon",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Crohn's diagnosed last month during what should have been routine appendectomy. Surgeon found inflammation throughout intestines."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI wants to be aggressive given my age and extent of disease. Mentioned biologics."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "not_on",
+   "status": "inferred",
+   "evidence": "GI mentioned biologics but patient is currently on mesalamine and is reading about side effects online — biologic discussed but not yet started",
+   "confidence": 0.9
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "But reading side effects online. Cancer risk? Serious infections? I'm 28. Whole life ahead.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "truncated",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "Diagnosed by surgeon during appendectomy -> referred to GI specialist who discussed biologics. No GP visit mentioned prior.",
+   "confidence": 0.7
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine"
+  ]
+ },
+ "extraction_notes": "Transcript ends mid-word ('Chronic...') indicating truncation. Disease location inferred as small_intestine_other from 'inflammation throughout intestines' but specific segment not named. Eating disorder recovery and anxiety recorded as comorbidities only, not treatments. Prednisone adverse reaction (mania/insomnia) likely related to psychiatric vulnerability from eating disorder history. Biologic discussed by GI but patient has not yet decided — patient is actively reading about side effects, representing an open deliberation, so biologic status is not_on (currently on mesalamine only) with patient_fear barrier. No GP/PCP encounter mentioned; diagnosis occurred incidentally during surgery."
+}

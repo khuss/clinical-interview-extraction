@@ -1,0 +1,112 @@
+{
+ "patient_id": "P019",
+ "profile": {
+  "name": "Natalie",
+  "age": {
+   "value": 24,
+   "status": "stated",
+   "evidence": "I'm Natalie, 24, just graduated college",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "occupation": {
+   "value": "marketing firm employee",
+   "status": "stated",
+   "evidence": "First job out of college is at marketing firm.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "generalized anxiety disorder"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Did colonoscopy, found inflammation in small intestine and colon.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "stated",
+   "evidence": "Moderate to severe, he said.",
+   "confidence": null
+  },
+  "symptoms": [
+   "diarrhea",
+   "urgency",
+   "fatigue",
+   "abdominal_pain"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Humira working okay. Not perfect but better than before. Still have breakthrough symptoms.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 1,
+   "evidence": "Started Humira right away, skipping the traditional steps... Humira working okay. Not perfect but better than before. Still have breakthrough symptoms."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "doctor (family friend)",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Parents made me see doctor."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI (family friend)",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Family friend who's a GI. Did colonoscopy, found inflammation in small intestine and colon. Moderate to severe, he said. Suggested aggressive treatment given my age. Started Humira right away."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started Humira right away, skipping the traditional steps.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Insurance fight was real. They wanted me to fail other drugs first. Doctor wrote letters, appeals. Finally approved.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient saw a GP (family friend), who was also the GI specialist — described as 'family friend who's a GI'. The GI directly prescribed Humira. One step from initial doctor visit to prescribing GI.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "Humira"
+  ]
+ },
+ "extraction_notes": "The initial doctor seen ('Parents made me see doctor') appears to be the same person as the GI specialist ('Family friend who's a GI'), so this may be a single encounter rather than a GP-then-GI referral. Encoded as two encounters to reflect the narrative sequence, but referral_steps may effectively be 0 if the first contact was already the GI. Doctor also mentioned possibly adding an immunomodulator, but this is not yet started. Supplements, nutritionist plan, Imodium, and therapy are not included as IBD treatments. Anxiety disorder noted as comorbidity."
+}

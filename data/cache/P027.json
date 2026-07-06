@@ -1,0 +1,180 @@
+{
+ "patient_id": "P027",
+ "profile": {
+  "name": "Vanessa",
+  "age": {
+   "value": 32,
+   "status": "stated",
+   "evidence": "I'm Vanessa, 32.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 4.0,
+   "status": "stated",
+   "evidence": "Diagnosed with Crohn's four years ago.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "graphic designer (formerly freelance, currently unable to work)",
+   "status": "stated",
+   "evidence": "Was graphic designer. Can't maintain freelance schedule with unpredictable symptoms. Applied for disability.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "bipolar disorder",
+   "rheumatoid arthritis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed severe Crohn's with fistulas; bloody diarrhea presentation; colonoscopy as primary diagnostic tool suggests colonic involvement, though exact segment not specified.",
+   "confidence": 0.55
+  },
+  "severity": {
+   "value": "severe",
+   "status": "stated",
+   "evidence": "Colonoscopy showed severe Crohn's. Already had two fistulas forming. Aggressive from start.",
+   "confidence": null
+  },
+  "symptoms": [
+   "bloody_diarrhea",
+   "fistula",
+   "perianal_disease",
+   "joint",
+   "weight_loss",
+   "fatigue",
+   "appetite_loss"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Humira 'does neither well', recurrent flares during manic episodes leading to hospitalization, discussing Stelara or surgery as next steps.",
+   "confidence": 0.92
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "surgery to repair fistulas",
+   "drug_class": "other",
+   "outcome": "effective",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Surgery to repair fistulas. Traumatic. Recovery during depressive episode nearly impossible."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": "Switched to Humira to address both Crohn's and RA after RA diagnosis",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started Remicade immediately after surgery. Infusions every eight weeks became routine. Worked for about eighteen months. Then joints started swelling... Switched from Remicade to Humira, supposed to help both conditions."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Switched from Remicade to Humira, supposed to help both conditions. Does neither well."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Added methotrexate. Hair falling out in clumps."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "prednisone for flares equals 60 pound gain"
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "psychiatrist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 1,
+   "evidence": "Psychiatrist said maybe medication side effect. But gastro symptoms persisted even after med adjustment."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Finally saw GI. Colonoscopy showed severe Crohn's. Already had two fistulas forming."
+  },
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": "surgeon",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "Surgery to repair fistulas. Same care episode following GI diagnosis."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 4,
+   "evidence": "Started Remicade immediately after surgery. No messing with step-up therapy given severity. Switched from Remicade to Humira... Next step discussing Stelara."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "rheumatologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 5,
+   "evidence": "Rheumatologist confirmed RA. Psychiatrist, GI, and rheumatologist barely communicate."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched from Remicade to Humira, supposed to help both conditions. Does neither well.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "surgery_first",
+    "evidence": "Surgery to repair fistulas performed before Remicade was started; 'No messing with step-up therapy given severity' implies surgery preceded biologic initiation.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "No GP visit mentioned; first relevant encounter was psychiatrist (not on IBD referral path), then directly to GI specialist who diagnosed and eventually prescribed biologics. Referral chain to biologic prescriber is effectively 1 step (GI specialist).",
+   "confidence": 0.75
+  },
+  "treatment_sequence": [
+   "surgery (fistula repair)",
+   "Remicade",
+   "Humira",
+   "methotrexate",
+   "prednisone (for flares)"
+  ]
+ },
+ "extraction_notes": "Patient is currently on Humira (biologic, status=on) with Stelara being discussed as a potential next step — this is an open deliberation, not a settled plan; Stelara not added to treatment list as it has not been started. Methotrexate and prednisone are current IBD-related treatments. Bipolar medications and any RA-specific drugs not named are excluded per schema rules. Disease location inferred as colonic based on colonoscopy diagnosis and bloody diarrhea, but small bowel involvement cannot be ruled out. No GP/PCP encounter mentioned; psychiatrist was first contact but not on IBD referral path. Surgery_first barrier is overcome (biologic started post-surgery). Step_therapy barrier explicitly denied: 'No messing with step-up therapy given severity.'"
+}

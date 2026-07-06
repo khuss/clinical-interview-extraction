@@ -1,0 +1,143 @@
+{
+ "patient_id": "P036",
+ "profile": {
+  "name": "William",
+  "age": {
+   "value": 48,
+   "status": "stated",
+   "evidence": "William, 48, diagnosed with Crohn's three years ago.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 3.0,
+   "status": "stated",
+   "evidence": "diagnosed with Crohn's three years ago",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "owner of a small construction company",
+   "status": "stated",
+   "evidence": "Own a small construction company.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "severe psoriasis",
+   "psoriatic arthritis",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Patient describes 50% improvement on Stelara, flares during insurance gap, inability to work physically, fatigue, and doctor wanting to add methotrexate — consistent with moderate-to-severe disease.",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "'Maybe 50% improvement overall' and 'trying to get back to baseline' after insurance gap flare; currently not at remission.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "NSAIDs",
+   "drug_class": "other",
+   "outcome": "ineffective",
+   "reason_stopped": "Colonoscopy revealed Crohn's; NSAIDs likely worsened GI issues",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Spent two years trying different NSAIDs, which probably made everything worse."
+  },
+  {
+   "name_raw": "biologics (two prior, for psoriasis — unnamed)",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "Failed both for psoriasis before Crohn's diagnosis",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "I'd already failed two biologics for psoriasis."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Started on Stelara, which I hadn't tried before. Helped both conditions somewhat. Maybe 50% improvement overall."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "not_started",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Doctor wants to add methotrexate to Stelara. Next month is decision time. Try new combo or switch biologics again."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "doctors (initial GI workup)",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "When I started having GI issues, doctors thought it was related to my arthritis meds. Spent two years trying different NSAIDs."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "gastroenterologist / colonoscopy",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Finally, colonoscopy revealed extensive Crohn's. Doc said we could treat both conditions with same biologic. Started on Stelara."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Started on Stelara... Now trying to get back to baseline.",
+   "confidence": 1.0
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance company decided after a year it wasn't working well enough. Denied renewal. Had to appeal three times while rationing remaining doses. Finally approved but that gap... both conditions flared horribly.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/initial doctors (step 1) -> GI specialist who diagnosed and prescribed Stelara (step 2)",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "NSAIDs",
+   "prior biologics (x2, for psoriasis)",
+   "Stelara",
+   "methotrexate (planned add-on)"
+  ]
+ },
+ "extraction_notes": "Patient had two prior biologic failures for psoriasis before Crohn's diagnosis; these are listed in treatments as they are relevant to the treatment history but predate the Crohn's diagnosis. NSAIDs are included because they were used during the diagnostic workup period and likely worsened GI disease. Methotrexate is listed as not_started — decision pending next month. Depression mentioned but antidepressants excluded from treatments per schema rules (unrelated comorbidity). The two unnamed prior biologics for psoriasis are grouped as one treatment entry since no names are given. Biologic status is 'on' (Stelara currently) even though a switch or add-on is being actively discussed."
+}

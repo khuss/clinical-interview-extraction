@@ -1,0 +1,116 @@
+{
+ "patient_id": "P038",
+ "profile": {
+  "name": "Daniel",
+  "age": {
+   "value": 37,
+   "status": "stated",
+   "evidence": "Daniel, 37",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 10.0,
+   "status": "stated",
+   "evidence": "Crohn's for ten years now.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "software architect",
+   "status": "stated",
+   "evidence": "Was software architect.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "ankylosing spondylitis",
+   "chronic kidney disease"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Crohn's throughout small bowel, some colon.",
+   "confidence": null
+  },
+  "severity": {
+   "value": "severe",
+   "status": "inferred",
+   "evidence": "Patient is on disability, has failed multiple biologics, and describes life as 'survival mode' and 'managing decline'.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "urgency",
+   "fatigue",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Patient reports 'Humira. Less effective. Maybe 40% improvement' and 'Quality of life terrible'.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "stopped working",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": null
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": null
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally diagnosed with both conditions... Started biologics immediately."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched to Humira. Less effective.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "comorbidity_risk",
+    "evidence": "nephrologist said kidneys couldn't handle anything stronger",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient describes a direct path to GI diagnosis and treatment initiation.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "Remicade",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

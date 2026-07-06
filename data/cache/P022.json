@@ -1,0 +1,164 @@
+{
+ "patient_id": "P022",
+ "profile": {
+  "name": "James",
+  "age": {
+   "value": 35,
+   "status": "stated",
+   "evidence": "James, 35.",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 2.0,
+   "status": "stated",
+   "evidence": "Crohn's hit me like a truck two years ago.",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "Software engineer",
+   "status": "stated",
+   "evidence": "Software engineer, thankfully can work remotely when needed.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "medication-induced diabetes (steroid-induced, insulin dependent)",
+   "osteoporosis (steroid-induced)"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "severe",
+   "status": "stated",
+   "evidence": "CT showed massive inflammation. Emergency colonoscopy confirmed severe Crohn's. GI says my disease aggressive.",
+   "confidence": 1.0
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "bloody_diarrhea",
+   "fever",
+   "weight_loss",
+   "fatigue"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Humira/methotrexate combination helping more than Humira alone but only ~60% improvement; surgery looming; disease described as aggressive; living scan to scan.",
+   "confidence": 0.85
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "IV steroids",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Inpatient course; transitioned to oral prednisone",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started IV steroids immediately. Spent week in hospital."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Tapered off; caused steroid-induced diabetes and osteoporosis",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "High-dose prednisone for two months. Developed steroid-induced diabetes. Tapered prednisone."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": "Insufficient response; switched to biologic",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Tapered prednisone, started azathioprine. Helped minimally."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "Developed antibodies after about a year; stopped working",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Started Remicade... Remicade worked initially... But after year, developed antibodies. Stopped working."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Switched to Humira. The every two week injection manageable but not as effective as Remicade was. Maybe 60% improvement."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 6,
+   "evidence": "Doctor added methotrexate. Nausea terrible first few months. Hair thinning. But combination helping more than Humira alone."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": "Emergency Room",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Emergency room visit started everything. Severe pain, bloody diarrhea, fever. CT showed massive inflammation. Emergency colonoscopy confirmed severe Crohn's. Started IV steroids immediately. Spent week in hospital."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI / Gastroenterologist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI pushed for biologics quickly given severity. Started Remicade... Switched to Humira... Doctor added methotrexate. Next step if Humira/methotrexate combo fails is Stelara or Entyvio. GI says my disease aggressive."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched to Humira. The every two week injection manageable but not as effective as Remicade was.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Insurance company from hell. Denied coverage three times. Meanwhile, I'm deteriorating. Lawyer helped appeal. Finally approved after four months.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient went directly to ER where Crohn's was diagnosed and IV steroids started; GI specialist then managed ongoing treatment including biologics. No GP/PCP step mentioned. ER -> GI = 1 step to prescriber.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "IV steroids",
+   "prednisone",
+   "azathioprine",
+   "Remicade",
+   "Humira",
+   "methotrexate"
+  ]
+ },
+ "extraction_notes": "Calcium, vitamin D, and bisphosphonates excluded from treatments as they treat steroid-induced osteoporosis (a comorbidity), not Crohn's directly. Insulin excluded as it treats steroid-induced diabetes comorbidity. Stelara and Entyvio mentioned as future contingency options only ('next step if combo fails') — not yet started or formally planned, so not added to treatments. Remicade was the first biologic (now stopped); Humira is the current biologic. The biologic_decision_point is placed at the GI encounter where Remicade was first prescribed and all subsequent biologic decisions occurred. No GP/PCP encounter mentioned; patient went directly to ER."
+}

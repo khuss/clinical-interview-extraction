@@ -1,0 +1,135 @@
+{
+ "patient_id": "P016",
+ "profile": {
+  "name": "Steve",
+  "age": {
+   "value": 44,
+   "status": "stated",
+   "evidence": "I'm Steve, 44 years old",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 2.0,
+   "status": "stated",
+   "evidence": "my Crohn's story started about two years ago.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "construction foreman",
+   "status": "stated",
+   "evidence": "Construction foreman",
+   "confidence": null
+  },
+  "comorbidities": [
+   "back pain",
+   "alcohol use"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "inferred",
+   "evidence": "CT scan showed inflammation all through my intestines.",
+   "confidence": 0.8
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Lost about 40 pounds. Look sick. Feel sick. Can't be running to the porta-potty every hour.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "urgency",
+   "weight_loss",
+   "fatigue",
+   "appetite_loss"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "Lost about 40 pounds. Look sick. Feel sick. Can't be running to the porta-potty every hour.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Didn't do much",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": null
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "made me crazy. I mean, seriously aggressive.",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": null
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "ended up in the ER. Thought I was having appendicitis... admitted me, did a colonoscopy, confirmed it was Crohn's."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "The GI doc... started explaining all these medication options... Now they want to put me on these injection things. Biologics."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "planned",
+   "status": "stated",
+   "evidence": "Now they want to put me on these injection things. Biologics.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "The cost is insane. Insurance through the union is usually good but they're fighting coverage. Something about needing to fail more medications first.",
+    "overcome": false
+   },
+   {
+    "type": "step_therapy",
+    "evidence": "Something about needing to fail more medications first.",
+    "overcome": false
+   },
+   {
+    "type": "patient_fear",
+    "evidence": "Heard they suppress your immune system. In construction, always getting cuts, exposed to stuff. Seems risky.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "ER admission led directly to GI specialist who manages the Crohn's.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone"
+  ]
+ },
+ "extraction_notes": null
+}

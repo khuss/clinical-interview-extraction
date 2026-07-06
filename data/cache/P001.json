@@ -1,0 +1,141 @@
+{
+ "patient_id": "P001",
+ "profile": {
+  "name": "Sarah",
+  "age": {
+   "value": 34,
+   "status": "stated",
+   "evidence": "I'm Sarah, 34 years old",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 8.0,
+   "status": "stated",
+   "evidence": "I've been dealing with Crohn's for about eight years now. It all started when I was 26",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "marketing manager",
+   "status": "stated",
+   "evidence": "working as a marketing manager in Chicago",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "psoriasis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "significant inflammation in my ileum and parts of my colon",
+   "confidence": 1.0
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "stated",
+   "evidence": "moderate to severe Crohn's like mine",
+   "confidence": 1.0
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "weight_loss"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "My Crohn's is mostly in remission, though I still have the occasional flare, especially when I'm stressed",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "after three months, there wasn't much improvement",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "We started with mesalamine, 4 grams daily. I was hopeful, but after three months, there wasn't much improvement."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "developed severe nausea and liver enzymes went up",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Then we tried azathioprine, which actually made me feel worse. I developed severe nausea and my liver enzymes went up."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "effective",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "I've been on Humira for five years now, self-injecting every two weeks."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "primary care",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "My primary care doctor, Dr. Martinez, initially diagnosed me with IBS... Finally, after about six months of this nightmare, Dr. Martinez referred me to a gastroenterologist"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "gastroenterologist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Dr. Chen brought up biologics. She explained that Humira or Remicade could be game-changers for someone with moderate to severe Crohn's like mine."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "I've been on Humira for five years now, self-injecting every two weeks.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "I was terrified of the injections and the potential side effects - increased infection risk, possible lymphoma.",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "my insurance initially denied coverage. It took three appeals and four months of back and forth before they approved it.",
+    "overcome": true
+   },
+   {
+    "type": "step_therapy",
+    "evidence": "Mesalamine and azathioprine were tried before biologics were approved; insurance required prior treatment failure before approving Humira.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP (Dr. Martinez) referred to GI specialist (Dr. Chen) who prescribed Humira — 2 steps total.",
+   "confidence": 1.0
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "azathioprine",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Vitamin D and B12 supplements excluded from treatments as they are supplements for absorption issues, not IBD-specific drugs. Psoriasis noted as comorbidity; rheumatologist visit not included as a referral-path encounter as it is for a comorbidity, not Crohn's management. Disease control set to 'partial' rather than 'remission' because patient qualifies 'mostly in remission' with ongoing occasional flares."
+}

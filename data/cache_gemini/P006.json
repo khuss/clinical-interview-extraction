@@ -1,0 +1,174 @@
+{
+ "patient_id": "P006",
+ "profile": {
+  "name": "Tom",
+  "age": {
+   "value": 38,
+   "status": "stated",
+   "evidence": "38",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 8.0,
+   "status": "inferred",
+   "evidence": "dealing with Crohn's for about ten years now. Took two years to get the correct Crohn's diagnosis",
+   "confidence": 0.9
+  },
+  "occupation": {
+   "value": "IT",
+   "status": "stated",
+   "evidence": "Work in IT",
+   "confidence": null
+  },
+  "comorbidities": [
+   "depression",
+   "sleep apnea",
+   "short bowel syndrome"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "small_intestine_other",
+   "status": "inferred",
+   "evidence": "small bowel follow-through showed involvement beyond the colon. Lost about 30cm of small intestine.",
+   "confidence": 0.8
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "strictures requiring surgical resection. Lost about 30cm of small intestine. The fatigue is crushing some days. Crohn's symptoms often wake me anyway.",
+   "confidence": 0.8
+  },
+  "symptoms": [
+   "fatigue",
+   "bowel_obstruction",
+   "abdominal_pain"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "The fatigue is crushing some days. Crohn's symptoms often wake me anyway. Dr. Anderson, my GI, is pushing for combo therapy - adding methotrexate back at lower dose with Stelara.",
+   "confidence": 0.8
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "developed lung problems, possibly drug-related",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Post-surgery, started on methotrexate, helped for a while but developed lung problems, possibly drug-related."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "stopped working",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Switched to Humira, miraculous for three years, then stopped working."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "Developed antibodies within six months",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Insurance wouldn't cover Stelara without failing another anti-TNF first, so tried Remicade. Developed antibodies within six months."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "effective",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Finally got Stelara approved, been on it for two years. The every 8-week injection is manageable"
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "not_started",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "Dr. Anderson, my GI, is pushing for combo therapy - adding methotrexate back at lower dose with Stelara. Hesitant due to previous lung issues."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "unknown",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Initially misdiagnosed with ulcerative colitis"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Took two years to get the correct Crohn's diagnosis after a small bowel follow-through showed involvement beyond the colon."
+  },
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "By then, I'd already developed strictures requiring surgical resection."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "Dr. Anderson, my GI",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 4,
+   "evidence": "Switched to Humira... Insurance wouldn't cover Stelara without failing another anti-TNF first, so tried Remicade. Finally got Stelara approved... Dr. Anderson, my GI, is pushing for combo therapy - adding methotrexate back at lower dose with Stelara."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Finally got Stelara approved, been on it for two years.",
+   "confidence": null
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance wouldn't cover Stelara without failing another anti-TNF first",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "though expensive even with insurance. Copay assistance program helps, but always worried it'll end.",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 4,
+   "status": "inferred",
+   "evidence": "Sequence of encounters from initial misdiagnosis to GI specialist prescribing biologics.",
+   "confidence": 1.0
+  },
+  "treatment_sequence": [
+   "methotrexate",
+   "Humira",
+   "Remicade",
+   "Stelara",
+   "methotrexate"
+  ]
+ },
+ "extraction_notes": null
+}

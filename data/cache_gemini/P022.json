@@ -1,0 +1,152 @@
+{
+ "patient_id": "P022",
+ "profile": {
+  "name": "James",
+  "age": {
+   "value": 35,
+   "status": "stated",
+   "evidence": "James, 35.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 2.0,
+   "status": "stated",
+   "evidence": "Crohn's hit me like a truck two years ago.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "Software engineer",
+   "status": "stated",
+   "evidence": "Software engineer, thankfully can work remotely when needed.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "medication-induced diabetes",
+   "osteoporosis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "severe",
+   "status": "stated",
+   "evidence": "Emergency colonoscopy confirmed severe Crohn's.",
+   "confidence": null
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "bloody_diarrhea",
+   "fever"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Maybe 60% improvement... Always waiting for next result, next decision point.",
+   "confidence": 0.8
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "effective",
+   "reason_stopped": "tapered",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "High-dose prednisone for two months... Tapered prednisone"
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": "Helped minimally",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "started azathioprine. Helped minimally."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "developed antibodies",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Started Remicade... after year, developed antibodies. Stopped working."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Switched to Humira... Maybe 60% improvement."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "effective",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Doctor added methotrexate... combination helping more than Humira alone."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Emergency room visit started everything."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI pushed for biologics quickly given severity."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched to Humira... combination helping more than Humira alone.",
+   "confidence": null
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance company from hell. Denied coverage three times.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "ER visit led to GI specialist who prescribed biologics.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "azathioprine",
+   "Remicade",
+   "Humira",
+   "methotrexate"
+  ]
+ },
+ "extraction_notes": null
+}

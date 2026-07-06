@@ -1,0 +1,154 @@
+{
+ "patient_id": "P032",
+ "profile": {
+  "name": "Frank",
+  "age": {
+   "value": 54,
+   "status": "stated",
+   "evidence": "Frank, 54.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 1.0,
+   "status": "stated",
+   "evidence": "Diagnosed with Crohn's just last year.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "mechanic (retired/closed shop)",
+   "status": "stated",
+   "evidence": "Worked as mechanic forty years. Had to close shop.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "diabetes",
+   "heart disease",
+   "arthritis",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Colonoscopy found inflammation throughout colon, some in small bowel.",
+   "confidence": 0.95
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Fifteen bathroom trips a day, can't leave house, lost forty pounds, GI doctor wants biologics, described as complicated case.",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "diarrhea",
+   "urgency",
+   "weight_loss",
+   "malnutrition",
+   "appetite_loss"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "stated",
+   "evidence": "Meanwhile I'm miserable. Fifteen bathroom trips a day. Can't leave house.",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "No effect",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started mesalamine. Nothing."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Blood sugar went insane, cardiologist objected",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Added prednisone. Blood sugar went insane. Cardiologist had fit. Stopped that quick."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 3,
+   "evidence": "Now trying sulfasalazine. Headaches terrible but what choice?"
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "doctor (GP/PCP)",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Wife forced me to mention to doctor."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI doctor",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI doctor wants biologics but insurance says no."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "cardiologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "Cardiologist had fit. Stopped that quick."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "not_on",
+   "status": "stated",
+   "evidence": "GI doctor wants biologics but insurance says no. Need to fail more drugs first.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Insurance says no. Need to fail more drugs first.",
+    "overcome": false
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance says no.",
+    "overcome": false
+   },
+   {
+    "type": "comorbidity_risk",
+    "evidence": "Doctor says I'm complicated case. Multiple conditions make treatment difficult. Everything affects everything else. (diabetes, heart disease made prednisone dangerous; cardiologist already intervened)",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP -> GI specialist (where biologic was discussed but not yet approved). Two steps on referral path.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "sulfasalazine"
+  ]
+ },
+ "extraction_notes": "Patient is currently on sulfasalazine (step therapy). GI has recommended biologics but insurance requires further step therapy failures. Comorbidities (diabetes, heart disease) complicated corticosteroid use and may further complicate biologic selection. Depression noted but antidepressants classified as comorbidity management, not IBD treatment. Cardiologist encounter marked on_referral_path=false as it was a side consult during IBD treatment, not a referral step toward biologic prescribing. Transcript ends with a natural concluding statement; completeness=complete."
+}

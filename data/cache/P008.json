@@ -1,0 +1,172 @@
+{
+ "patient_id": "P008",
+ "profile": {
+  "name": "David",
+  "age": {
+   "value": 29,
+   "status": "stated",
+   "evidence": "David, 29, male",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 8.0,
+   "status": "inferred",
+   "evidence": "Diagnosed at 21, currently 29 years old",
+   "confidence": 0.95
+  },
+  "occupation": {
+   "value": "remote tech job",
+   "status": "stated",
+   "evidence": "Career-wise, chose remote tech job for flexibility.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "ADHD",
+   "generalized anxiety",
+   "kidney stones"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "severe inflammation throughout colon and terminal ileum",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Severe inflammation at diagnosis, hospitalization with obstruction, required step therapy through multiple conventional agents before qualifying for biologics, now on second biologic with decreasing effectiveness",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "fatigue",
+   "abdominal_pain",
+   "bloody_diarrhea",
+   "bowel_obstruction"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Starting to notice decreased effectiveness of Humira; still on it but noticing decline; doctor mentioned next options",
+   "confidence": 0.85
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Short-term induction; made ADHD medication less effective",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on prednisone and mesalamine. Prednisone made my ADHD medication less effective"
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Insufficient; patient progressed to requiring biologics after failing conventional therapies",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started on prednisone and mesalamine... Insurance required failing two conventional therapies first."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "partial",
+   "reason_stopped": "Insufficient after a year; switched to 6-MP as next step toward biologic qualification",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Started methotrexate, helped but the weekly injections made me so nauseous. Switched to pills, better tolerated. After a year, wasn't enough."
+  },
+  {
+   "name_raw": "6-MP",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Developed pancreatitis",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Tried 6-MP next, developed pancreatitis. Finally qualified for biologics."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "Lost effectiveness after two years",
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "Started Remicade... Worked for two years, then lost effectiveness."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 6,
+   "evidence": "Switched to Humira... Been on Humira four years now. Starting to notice decreased effectiveness."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "University health center",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "University health center kept saying stress."
+  },
+  {
+   "encounter_type": "er",
+   "specialty_raw": "Emergency Room",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "blood in stool sent me to ER. Emergency colonoscopy found severe inflammation throughout colon and terminal ileum."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI / treating physician",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "Doctor suggested biologics. Insurance required failing two conventional therapies first... Finally qualified for biologics. Started Remicade... Switched to Humira... Doctor mentioned Stelara or Entyvio as next options."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Been on Humira four years now.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Insurance required failing two conventional therapies first. Tried 6-MP next, developed pancreatitis. Finally qualified for biologics.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "University health center (step 1) -> ER with colonoscopy leading to GI/treating physician (step 2) who prescribed biologics",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "methotrexate",
+   "6-MP",
+   "Remicade",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Patient is currently on Humira (4 years) with decreasing effectiveness; doctor has mentioned Stelara or Entyvio as next options but no switch has occurred yet — biologic.status remains 'on' for Humira. ADHD medications, anxiety/therapy, supplements (D3, B12, iron, multivitamin, probiotic, turmeric), and kidney stone management excluded from treatments as they are not IBD treatments. Methotrexate was initially injected then switched to oral pills — recorded as one treatment entry. Hospitalization with obstruction and NG tube noted but treated as part of the same ongoing GI care relationship, not a separate referral step."
+}

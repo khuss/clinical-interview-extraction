@@ -1,0 +1,146 @@
+{
+ "patient_id": "P042",
+ "profile": {
+  "name": "Kevin",
+  "age": {
+   "value": 39,
+   "status": "stated",
+   "evidence": "Kevin, 39.",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 5.0,
+   "status": "stated",
+   "evidence": "Crohn's hit me five years ago.",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "Software developer",
+   "status": "stated",
+   "evidence": "Software developer, supposed to be reliable.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "psoriatic arthritis",
+   "depression"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "stated",
+   "evidence": "Colonoscopy confirmed moderate to severe Crohn's.",
+   "confidence": 1.0
+  },
+  "symptoms": [
+   "bloody_diarrhea",
+   "fatigue",
+   "abdominal_pain"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Patient states 'About 70% improvement. Best I've felt since diagnosis. But still not normal.' — meaningful improvement but not remission.",
+   "confidence": 0.9
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": "Not a lasting solution; escalated therapy",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on mesalamine and short course prednisone. Helped initially but wasn't lasting solution."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Short course only; not a lasting solution",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started on mesalamine and short course prednisone. Helped initially but wasn't lasting solution."
+  },
+  {
+   "name_raw": "sulfasalazine",
+   "drug_class": "aminosalicylate",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Allergic reaction - hives everywhere",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Tried adding sulfasalazine. Allergic reaction - hives everywhere."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Unbearable nausea; missed significant work",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Switched to methotrexate. The nausea was unbearable. Missed so much work."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Finally started Humira. Helps both Crohn's and psoriatic arthritis. About 70% improvement. Best I've felt since diagnosis."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "doctor (initial)",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Blood in stool finally sent me to doctor. Colonoscopy confirmed moderate to severe Crohn's."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist (managing Crohn's treatment)",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Progression through mesalamine, prednisone, sulfasalazine, methotrexate, then Humira — ongoing GI management. 'Doctor says I'm doing well, considering.'"
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Finally started Humira. Helps both Crohn's and psoriatic arthritis. About 70% improvement.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/initial doctor -> GI specialist who managed escalation to Humira. Two steps.",
+   "confidence": 0.8
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "sulfasalazine",
+   "methotrexate",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Patient mentions being 'already on second one' regarding biologics, implying a prior biologic before Humira; however, no prior biologic is named in the transcript — only mesalamine, prednisone, sulfasalazine, and methotrexate are named before Humira. This may be a patient miscount or reference to a biologic not described. Only named treatments are recorded. Depression and psoriatic arthritis noted as comorbidities; medications for these (if any) not mentioned. Financial stress noted but not recorded as a biologic barrier since Humira is already current and no barrier to it was stated."
+}

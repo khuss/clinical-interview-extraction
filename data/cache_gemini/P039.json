@@ -1,0 +1,130 @@
+{
+ "patient_id": "P039",
+ "profile": {
+  "name": "Michelle",
+  "age": {
+   "value": 41,
+   "status": "stated",
+   "evidence": "Michelle, 41",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 8.0,
+   "status": "stated",
+   "evidence": "dealing with Crohn's for about eight years",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "real estate agent",
+   "status": "stated",
+   "evidence": "Real estate agent.",
+   "confidence": null
+  },
+  "comorbidities": [
+   "rheumatoid arthritis",
+   "fibromyalgia"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "inferred",
+   "evidence": "Colonoscopy showed Crohn's throughout.",
+   "confidence": 0.9
+  },
+  "severity": {
+   "value": "moderate",
+   "status": "inferred",
+   "evidence": "Humira helps somewhat, maybe 50%.",
+   "confidence": 0.7
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "weight_loss",
+   "fatigue",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "stated",
+   "evidence": "Helps somewhat. Maybe 50%.",
+   "confidence": 1.0
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": null
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Weight gain horrible",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": null
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Hair fell out",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": null
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": null
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Finally saw GI. Colonoscopy showed Crohn's throughout."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched to Humira three years ago. Helps somewhat.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Patient went directly to GI specialist after symptoms persisted.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "methotrexate",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

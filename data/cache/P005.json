@@ -1,0 +1,184 @@
+{
+ "patient_id": "P005",
+ "profile": {
+  "name": "Lisa",
+  "age": {
+   "value": 31,
+   "status": "stated",
+   "evidence": "Lisa, 31, female",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 5.0,
+   "status": "stated",
+   "evidence": "diagnosed with Crohn's five years ago",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "endometriosis",
+   "migraines",
+   "Humira-induced psoriasis (suspected)"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "Colonoscopy showed Crohn's in my ileum and cecum",
+   "confidence": 1.0
+  },
+  "severity": {
+   "value": "moderate",
+   "status": "inferred",
+   "evidence": "Failed mesalamine and prednisone, developed pancreatitis on azathioprine, moved to biologics; currently stable on Humira with mini-flares — suggests moderate disease requiring biologic therapy but not severe/uncontrolled",
+   "confidence": 0.7
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "fatigue",
+   "skin"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Been stable on Humira for two years now, though I still have mini-flares during my period",
+   "confidence": 0.85
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": "symptoms returned within months",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started with conventional therapy - mesalamine and brief prednisone. Helped initially, but symptoms returned within months."
+  },
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "brief course only; symptoms returned",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Started with conventional therapy - mesalamine and brief prednisone. Helped initially, but symptoms returned within months."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Developed pancreatitis, spent a week in the hospital",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Tried immunomodulators next, azathioprine specifically. Developed pancreatitis, a rare but serious side effect, spent a week in the hospital."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": "infusion center was an hour away, taking too much time off work every 8 weeks",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Started Remicade, but the infusion center was an hour away, and taking that much time off work every 8 weeks was difficult."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "effective",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Switched to Humira for the convenience of home injections. Been stable on Humira for two years now."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "doctors (dismissive)",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "doctors kept dismissing my symptoms as period-related or stress"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "female GI doctor",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "Finally, a female GI doctor took me seriously and ordered proper testing. Colonoscopy showed Crohn's in my ileum and cecum. Started with conventional therapy - mesalamine and brief prednisone."
+  },
+  {
+   "encounter_type": "er",
+   "specialty_raw": "hospital (pancreatitis admission)",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "Developed pancreatitis, a rare but serious side effect, spent a week in the hospital."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI doctor",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 4,
+   "evidence": "That's when we moved to biologics. Started Remicade... Switched to Humira... GI doctor says many women do it successfully"
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched to Humira for the convenience of home injections. Been stable on Humira for two years now.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Failed mesalamine, prednisone, and azathioprine (stopped due to pancreatitis) before moving to biologics",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance covers the Humira through a specialty pharmacy, but the prior authorization process every year is a nightmare. Always worried they'll deny it.",
+    "overcome": null
+   },
+   {
+    "type": "access",
+    "evidence": "Switched from Remicade to Humira because infusion center was an hour away and taking time off work every 8 weeks was difficult",
+    "overcome": true
+   },
+   {
+    "type": "patient_fear",
+    "evidence": "The injection anxiety is real - I have to psyche myself up for 20 minutes before each dose.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/dismissive doctors (step 1) -> GI specialist who diagnosed and eventually prescribed biologics (step 2)",
+   "confidence": 0.85
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "prednisone",
+   "azathioprine",
+   "Remicade",
+   "Humira"
+  ]
+ },
+ "extraction_notes": "Endometriosis and migraines noted as comorbidities; no IBD-specific treatments for these were mentioned. Suspected Humira-induced psoriasis noted as comorbidity per dermatologist. The hospital admission for pancreatitis was during the existing treatment relationship with the GI specialist, not a new referral step; marked on_referral_path=false. The GI specialist encounter is treated as one continuing relationship (diagnosis through biologic prescribing). Fatigue and skin (psoriasis rash) captured as symptoms; abdominal pain inferred from flares described."
+}

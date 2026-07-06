@@ -1,0 +1,118 @@
+{
+ "patient_id": "P049",
+ "profile": {
+  "name": "Tammy",
+  "age": {
+   "value": 28,
+   "status": "stated",
+   "evidence": "Tammy, 28, female.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.1,
+   "status": "inferred",
+   "evidence": "diagnosed last month",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "comorbidities": [
+   "eating disorder",
+   "anxiety"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "inferred",
+   "evidence": "inflammation throughout intestines",
+   "confidence": 0.8
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "GI wants to be aggressive given my age and extent of disease",
+   "confidence": 0.9
+  },
+  "symptoms": [],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Too early to tell if working",
+   "confidence": 0.7
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "manic, insomnia",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on prednisone in hospital. Made me manic. Didn't sleep for four days."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "Now on mesalamine. Too early to tell if working."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Crohn's diagnosed last month during what should have been routine appendectomy."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "GI wants to be aggressive... Mentioned biologics."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": null,
+   "status": "unknown_churned",
+   "evidence": "Mentioned biologics. But reading side effects online... I'm 28. Whole life ahead. Or maybe not.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "reading side effects online. Cancer risk? Serious infections?",
+    "overcome": false
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "truncated",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "Diagnosis at surgery, then GI consultation.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine"
+  ]
+ },
+ "extraction_notes": null
+}

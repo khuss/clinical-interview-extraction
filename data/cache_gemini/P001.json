@@ -1,0 +1,136 @@
+{
+ "patient_id": "P001",
+ "profile": {
+  "name": "Sarah",
+  "age": {
+   "value": 34,
+   "status": "stated",
+   "evidence": "34 years old",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 8.0,
+   "status": "stated",
+   "evidence": "I've been dealing with Crohn's for about eight years now. It all started when I was 26",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "marketing manager",
+   "status": "stated",
+   "evidence": "working as a marketing manager in Chicago",
+   "confidence": null
+  },
+  "comorbidities": [
+   "psoriasis"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "ileocolonic",
+   "status": "stated",
+   "evidence": "The colonoscopy showed significant inflammation in my ileum and parts of my colon",
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "stated",
+   "evidence": "She explained that Humira or Remicade could be game-changers for someone with moderate to severe Crohn's like mine.",
+   "confidence": null
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "weight_loss",
+   "diarrhea"
+  ],
+  "disease_control": {
+   "value": "remission",
+   "status": "stated",
+   "evidence": "My Crohn's is mostly in remission, though I still have the occasional flare",
+   "confidence": null
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 0,
+   "evidence": "We started with mesalamine, 4 grams daily. I was hopeful, but after three months, there wasn't much improvement."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "developed severe nausea and my liver enzymes went up",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Then we tried azathioprine, which actually made me feel worse. I developed severe nausea and my liver enzymes went up."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "effective",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "I've been on Humira for five years now, self-injecting every two weeks. ... My Crohn's is mostly in remission"
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "primary care doctor",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 0,
+   "evidence": "My primary care doctor, Dr. Martinez, initially diagnosed me with IBS and told me to manage my stress better, eat more fiber."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "gastroenterologist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Dr. Martinez referred me to a gastroenterologist, Dr. Rebecca Chen. ... That's when Dr. Chen brought up biologics. She explained that Humira or Remicade could be game-changers"
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "I've been on Humira for five years now",
+   "confidence": null
+  },
+  "drug_name": "Humira",
+  "barriers": [
+   {
+    "type": "patient_fear",
+    "evidence": "I was terrified of the injections and the potential side effects - increased infection risk, possible lymphoma.",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Plus, my insurance initially denied coverage. It took three appeals and four months of back and forth before they approved it.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP (Dr. Martinez) -> GI Specialist (Dr. Chen)",
+   "confidence": 1.0
+  },
+  "treatment_sequence": [
+   "mesalamine",
+   "azathioprine",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

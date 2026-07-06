@@ -1,0 +1,208 @@
+{
+ "patient_id": "P015",
+ "profile": {
+  "name": "Caroline",
+  "age": {
+   "value": 37,
+   "status": "stated",
+   "evidence": "I'm 37 years old",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 15.0,
+   "status": "stated",
+   "evidence": "been dealing with Crohn's disease for almost 15 years now",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "teacher",
+   "status": "stated",
+   "evidence": "starting my first real job as a teacher",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "chronic migraine syndrome",
+   "fibromyalgia"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "colonic",
+   "status": "inferred",
+   "evidence": "GI doctor ordered a colonoscopy and showed cobblestone road images of intestines; colonoscopy primarily visualizes colon, and cobblestone appearance is classic colonic Crohn's, though small bowel involvement not ruled out",
+   "confidence": 0.55
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Multiple biologic failures, hospitalization with partial bowel obstruction, ongoing frequent symptoms despite Stelara, debilitating fatigue, long treatment history including multiple biologics",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "urgency",
+   "weight_loss",
+   "fatigue",
+   "joint",
+   "bowel_obstruction",
+   "anemia"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Still have frequent symptoms but avoiding surgery. That's the goal now - avoid surgery as long as possible.",
+   "confidence": 0.95
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "prednisone",
+   "drug_class": "corticosteroid",
+   "outcome": "partial",
+   "reason_stopped": "Side effects (weight gain, insomnia, mood swings); used as induction only",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Started on prednisone and mesalamine right away. The prednisone was horrible - gained 30 pounds, couldn't sleep, mood swings that scared me. But it did calm the inflammation."
+  },
+  {
+   "name_raw": "mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ineffective",
+   "reason_stopped": "Flaring again within three months on mesalamine alone",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Tried to maintain on just mesalamine but within three months I was flaring again."
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Developed severe joint pain; stopped due to possible drug-induced arthritis",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Added azathioprine. Worked for about a year until I developed severe joint pain... had to stop the medication."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "Secondary loss of response during second pregnancy",
+   "is_current": false,
+   "sequence_index": 4,
+   "evidence": "Started Remicade when I was 24... Remicade worked wonderfully for about four years... Then during my second pregnancy, it stopped working."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "ineffective",
+   "reason_stopped": "Humira failed after three years",
+   "is_current": false,
+   "sequence_index": 5,
+   "evidence": "After delivery, started Humira... Humira worked for three years... When Humira failed..."
+  },
+  {
+   "name_raw": "Cimzia",
+   "drug_class": "biologic",
+   "outcome": "not_started",
+   "reason_stopped": "Insurance denied three times; never actually started",
+   "is_current": false,
+   "sequence_index": 6,
+   "evidence": "tried Cimzia. Insurance denied it three times."
+  },
+  {
+   "name_raw": "Stelara",
+   "drug_class": "biologic",
+   "outcome": "partial",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 7,
+   "evidence": "Finally got approved for Stelara. Been on it two years. It's okay, not great. Still have frequent symptoms but avoiding surgery."
+  },
+  {
+   "name_raw": "methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "not_started",
+   "reason_stopped": null,
+   "is_current": false,
+   "sequence_index": 8,
+   "evidence": "Doctor mentioned combination therapy next - adding methotrexate to Stelara."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": "GP/PCP",
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "When I finally saw a doctor, she said IBS and gave me fiber supplements."
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "GI specialist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "After six months of increasing pain and weight loss, I demanded a referral to a specialist. The GI doctor ordered a colonoscopy immediately... That's when we moved to biologics. Started Remicade when I was 24."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "Rheumatologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "Rheumatologist couldn't determine if it was drug-induced or Crohn's-related arthritis."
+  },
+  {
+   "encounter_type": "er",
+   "specialty_raw": "Hospital/ER",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 4,
+   "evidence": "While fighting insurance, ended up hospitalized with partial bowel obstruction."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Finally got approved for Stelara. Been on it two years.",
+   "confidence": 1.0
+  },
+  "drug_name": "Stelara",
+  "barriers": [
+   {
+    "type": "step_therapy",
+    "evidence": "Multiple prior biologics (Remicade, Humira) required before Stelara; Cimzia denied three times by insurance before Stelara approved",
+    "overcome": true
+   },
+   {
+    "type": "cost_insurance",
+    "evidence": "Insurance denied Cimzia three times. Finally got approved for Stelara.",
+    "overcome": true
+   }
+  ],
+  "barriers_status": "stated"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP (step 1) -> GI specialist who prescribed biologics (step 2)",
+   "confidence": 0.95
+  },
+  "treatment_sequence": [
+   "prednisone",
+   "mesalamine",
+   "azathioprine",
+   "Remicade",
+   "Humira",
+   "Cimzia (denied, not started)",
+   "Stelara",
+   "methotrexate (planned combination)"
+  ]
+ },
+ "extraction_notes": "Patient is currently on Stelara (biologic, status=on). Cimzia was denied by insurance and never started — listed as not_started. Methotrexate is planned as add-on combination therapy, not yet started. B12 injections, vitamin D, iron infusions are supplements/supportive care for deficiencies, not IBD treatments — excluded from treatments list. Chronic migraine and fibromyalgia are comorbidities. Rheumatologist visit was a side consult (not on referral path). Hospitalization for bowel obstruction was not a new referral step leading to a new provider. Disease location inferred as colonic from colonoscopy/cobblestone description but small bowel involvement cannot be excluded. Transcript ends with a complete, settled thought ('Kids need me') — completeness=complete."
+}

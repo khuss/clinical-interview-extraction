@@ -1,0 +1,126 @@
+{
+ "patient_id": "P013",
+ "profile": {
+  "name": "Amanda",
+  "age": {
+   "value": 33,
+   "status": "stated",
+   "evidence": "Amanda, 33",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 8.0,
+   "status": "inferred",
+   "evidence": "diagnosed with Crohn's at 25... 33",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "marketing",
+   "status": "stated",
+   "evidence": "Work in marketing",
+   "confidence": null
+  },
+  "comorbidities": [
+   "lupus"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "symptoms": [
+   "fatigue",
+   "joint"
+  ],
+  "disease_control": {
+   "value": "remission",
+   "status": "inferred",
+   "evidence": "grateful for stability",
+   "confidence": 0.8
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": "limited help",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": null
+  },
+  {
+   "name_raw": "azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "drug-induced hepatitis",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": null
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "effective",
+   "reason_stopped": "switched to Humira",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": null
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": null
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "After colonoscopy confirmation, began standard treatment ladder."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched from Remicade to Humira",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "GI specialist managed the treatment ladder from diagnosis.",
+   "confidence": 0.9
+  },
+  "treatment_sequence": [
+   "Mesalamine",
+   "azathioprine",
+   "Remicade",
+   "Humira"
+  ]
+ },
+ "extraction_notes": null
+}

@@ -1,0 +1,123 @@
+{
+ "patient_id": "P048",
+ "profile": {
+  "name": "Larry",
+  "age": {
+   "value": 56,
+   "status": "stated",
+   "evidence": "Larry, 56.",
+   "confidence": null
+  },
+  "years_since_diagnosis": {
+   "value": 0.05,
+   "status": "inferred",
+   "evidence": "Just found out I have Crohn's three weeks ago.",
+   "confidence": null
+  },
+  "occupation": {
+   "value": "construction company owner",
+   "status": "stated",
+   "evidence": "man who used to run construction company",
+   "confidence": null
+  },
+  "comorbidities": [
+   "diabetes",
+   "heart disease"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": "small_intestine_other",
+   "status": "inferred",
+   "evidence": "emergency surgery to remove blocked section... foot of intestine gone",
+   "confidence": 0.9
+  },
+  "severity": {
+   "value": "severe",
+   "status": "inferred",
+   "evidence": "severe pain, emergency surgery, bowel obstruction",
+   "confidence": 0.9
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "bowel_obstruction"
+  ],
+  "disease_control": {
+   "value": "poor",
+   "status": "inferred",
+   "evidence": "can barely make it to bathroom",
+   "confidence": 0.8
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 1,
+   "evidence": "Started on medications... Mesalamine"
+  },
+  {
+   "name_raw": "antibiotics",
+   "drug_class": "antibiotic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 2,
+   "evidence": "and antibiotics for now."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "er",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Went to ER with severe pain."
+  },
+  {
+   "encounter_type": "surgeon",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 2,
+   "evidence": "Emergency surgery to remove blocked section"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": null,
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 3,
+   "evidence": "Doctor wants biologics after I heal from surgery."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "planned",
+   "status": "stated",
+   "evidence": "Doctor wants biologics after I heal from surgery.",
+   "confidence": 1.0
+  },
+  "drug_name": null,
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 1,
+   "status": "inferred",
+   "evidence": "ER visit led to diagnosis and GI follow-up plan.",
+   "confidence": null
+  },
+  "treatment_sequence": [
+   "Mesalamine",
+   "antibiotics"
+  ]
+ },
+ "extraction_notes": null
+}

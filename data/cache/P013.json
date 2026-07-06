@@ -1,0 +1,155 @@
+{
+ "patient_id": "P013",
+ "profile": {
+  "name": "Amanda",
+  "age": {
+   "value": 33,
+   "status": "stated",
+   "evidence": "Amanda, 33",
+   "confidence": 1.0
+  },
+  "years_since_diagnosis": {
+   "value": 8.0,
+   "status": "inferred",
+   "evidence": "Diagnosed at 25, currently 33 years old",
+   "confidence": 1.0
+  },
+  "occupation": {
+   "value": "marketing",
+   "status": "stated",
+   "evidence": "Work in marketing, high stress.",
+   "confidence": 1.0
+  },
+  "comorbidities": [
+   "lupus"
+  ]
+ },
+ "disease": {
+  "location": {
+   "value": null,
+   "status": "not_mentioned",
+   "evidence": null,
+   "confidence": null
+  },
+  "severity": {
+   "value": "moderate_to_severe",
+   "status": "inferred",
+   "evidence": "Required step up to biologics after azathioprine adverse reaction; currently on Humira with methotrexate; bad days can't get out of bed, everything hurts",
+   "confidence": 0.72
+  },
+  "symptoms": [
+   "abdominal_pain",
+   "diarrhea",
+   "fatigue",
+   "joint",
+   "skin"
+  ],
+  "disease_control": {
+   "value": "partial",
+   "status": "inferred",
+   "evidence": "Grateful for stability but bad days really bad, can't get out of bed, everything hurts; also managing lupus symptoms concurrently",
+   "confidence": 0.7
+  }
+ },
+ "treatments": [
+  {
+   "name_raw": "Mesalamine",
+   "drug_class": "aminosalicylate",
+   "outcome": "partial",
+   "reason_stopped": "Limited help",
+   "is_current": false,
+   "sequence_index": 1,
+   "evidence": "Mesalamine first, limited help."
+  },
+  {
+   "name_raw": "Azathioprine",
+   "drug_class": "immunomodulator",
+   "outcome": "adverse_reaction",
+   "reason_stopped": "Drug-induced hepatitis",
+   "is_current": false,
+   "sequence_index": 2,
+   "evidence": "Added azathioprine, developed drug-induced hepatitis. Scary few weeks waiting for liver to recover."
+  },
+  {
+   "name_raw": "Remicade",
+   "drug_class": "biologic",
+   "outcome": "effective",
+   "reason_stopped": "Switched due to lupus diagnosis (possibly triggered by Remicade); switched to Humira to treat both conditions",
+   "is_current": false,
+   "sequence_index": 3,
+   "evidence": "Started Remicade at 26. Worked beautifully for three years... Switched from Remicade to Humira, helps both theoretically."
+  },
+  {
+   "name_raw": "Humira",
+   "drug_class": "biologic",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 4,
+   "evidence": "Switched from Remicade to Humira, helps both theoretically. The injections are routine now."
+  },
+  {
+   "name_raw": "Methotrexate",
+   "drug_class": "immunomodulator",
+   "outcome": "ongoing_unknown",
+   "reason_stopped": null,
+   "is_current": true,
+   "sequence_index": 5,
+   "evidence": "Methotrexate for good measure."
+  }
+ ],
+ "encounters": [
+  {
+   "encounter_type": "gp_pcp",
+   "specialty_raw": null,
+   "biologic_decision_point": false,
+   "on_referral_path": true,
+   "sequence_index": 1,
+   "evidence": "Inferred initial presentation before colonoscopy confirmation and specialist care"
+  },
+  {
+   "encounter_type": "gi_specialist",
+   "specialty_raw": "gastroenterologist",
+   "biologic_decision_point": true,
+   "on_referral_path": true,
+   "sequence_index": 2,
+   "evidence": "After colonoscopy confirmation, began standard treatment ladder... Moved to biologics earlier than typical. Started Remicade at 26."
+  },
+  {
+   "encounter_type": "other_specialist",
+   "specialty_raw": "rheumatologist",
+   "biologic_decision_point": false,
+   "on_referral_path": false,
+   "sequence_index": 3,
+   "evidence": "Rheumatologist ran tests, confirmed lupus... Switched from Remicade to Humira, helps both theoretically. Added hydroxychloroquine for lupus."
+  }
+ ],
+ "biologic": {
+  "status": {
+   "value": "on",
+   "status": "stated",
+   "evidence": "Switched from Remicade to Humira, helps both theoretically. The injections are routine now.",
+   "confidence": 1.0
+  },
+  "drug_name": "Humira",
+  "barriers": [],
+  "barriers_status": "not_mentioned"
+ },
+ "completeness": "complete",
+ "derived": {
+  "referral_steps_gp_to_prescriber": {
+   "value": 2,
+   "status": "inferred",
+   "evidence": "GP/PCP (step 1) -> GI specialist who prescribed Remicade/biologics (step 2)",
+   "confidence": 0.75
+  },
+  "treatment_sequence": [
+   "Mesalamine",
+   "Azathioprine",
+   "Remicade",
+   "Humira",
+   "Methotrexate"
+  ]
+ },
+ "extraction_notes": "Hydroxychloroquine excluded from treatments as it is for lupus (comorbidity), not Crohn's. Methotrexate included as it is used for IBD/Crohn's as well as lupus and was listed alongside Crohn's treatment context. Disease location not mentioned. Severity inferred as moderate-to-severe based on biologic use and symptom burden. Lupus may be contributing to joint/skin symptoms making Crohn's-specific severity harder to isolate. Patient expresses concern about future biologic options ('What happens when Humira stops working? Running out of biologics to try') but this is a worry, not a current barrier — Humira is currently working."
+}
