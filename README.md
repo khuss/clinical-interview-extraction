@@ -1,4 +1,6 @@
-# Crohn's Interview Extraction — PharmaCorp Take-Home
+# Crohn's Interview Extraction
+
+> All 50 interview transcripts are synthetic. No real patient data is used.
 
 This is a proof of concept for turning 50 unstructured Crohn's disease patient
 interviews into a structured dataset PharmaCorp can query and act on. The system is

@@ -1,4 +1,4 @@
-"""Pydantic schema for the the company Crohn's extraction challenge.
+"""Pydantic schema for the Crohn's interview extraction pipeline.
 
 Design goals
 ------------
